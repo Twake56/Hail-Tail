@@ -44,11 +44,11 @@ namespace MyLogs
                     watch.Changed += new FileSystemEventHandler(OnChanged);
                     watch.EnableRaisingEvents = true;
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
-                    textBox1.Text = reader.ReadToEnd();
+                    logRichTextBox1.Text = reader.ReadToEnd();
                     reader.Close();
                     FollowTailCheckBox.Checked = true;
-                    textBox1.SelectionStart = textBox1.Text.Length;
-                    textBox1.ScrollToCaret();
+                    logRichTextBox1.SelectionStart = logRichTextBox1.Text.Length;
+                    logRichTextBox1.ScrollToCaret();
                 }
                 catch (IOException ioe)
                 {
@@ -59,9 +59,9 @@ namespace MyLogs
         }
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-            if (textBox1.InvokeRequired)
+            if (logRichTextBox1.InvokeRequired)
             {
-                textBox1.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+                logRichTextBox1.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
             }
             else
             {
@@ -70,18 +70,18 @@ namespace MyLogs
                 {
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
                     //textBox1.Text = "";
-                    textBox1.Text = reader.ReadToEnd();
+                    logRichTextBox1.Text = reader.ReadToEnd();
                     
                     if (FollowTailCheckBox.Checked)
                     {
-                        var pos = this.textBox1.GetLineFromCharIndex(textBox1.SelectionStart);
-                        
-                        textBox1.SelectionStart = textBox1.Text.Length;
-                        textBox1.ScrollToCaret();
+                        var pos = this.logRichTextBox1.GetLineFromCharIndex(logRichTextBox1.SelectionStart);
+
+                        logRichTextBox1.SelectionStart = logRichTextBox1.Text.Length;
+                        logRichTextBox1.ScrollToCaret();
                     }
                     else
                     {
-                        var pos = this.textBox1.GetLineFromCharIndex(textBox1.SelectionStart);
+                        var pos = this.logRichTextBox1.GetLineFromCharIndex(logRichTextBox1.SelectionStart);
                         Console.WriteLine(pos);
                         //textBox1
                     }
