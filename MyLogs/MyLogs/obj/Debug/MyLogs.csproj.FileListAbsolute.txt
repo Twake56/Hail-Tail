@@ -8,3 +8,13 @@ C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.csproj.CoreCompile
 C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.exe
 C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.pdb
 C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.MainForm.resources
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\MyLogs.exe.config
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\MyLogs.exe
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\MyLogs.pdb
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.csprojAssemblyReference.cache
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.MainForm.resources
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.Properties.Resources.resources
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.csproj.GenerateResource.cache
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.csproj.CoreCompileInputs.cache
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.exe
+C:\Users\dcarr\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.pdb

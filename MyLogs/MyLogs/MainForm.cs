@@ -33,7 +33,7 @@ namespace MyLogs
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OpenFileBtn_Click(object sender, EventArgs e)
         {
             if (openFileDialog3.ShowDialog() == DialogResult.OK)
             {
@@ -98,5 +98,10 @@ namespace MyLogs
         {
            // textBox1.
         }
-    }
+
+      private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+      {
+
+      }
+   }
 }
