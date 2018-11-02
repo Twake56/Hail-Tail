@@ -45,6 +45,7 @@ namespace MyLogs
                     watch.EnableRaisingEvents = true;
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
                     textBox1.Text = reader.ReadToEnd();
+                    reader.Close();
                     FollowTailCheckBox.Checked = true;
                     textBox1.SelectionStart = textBox1.Text.Length;
                     textBox1.ScrollToCaret();
