@@ -1,0 +1,10 @@
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\bin\Debug\MyLogs.exe.config
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\bin\Debug\MyLogs.exe
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\bin\Debug\MyLogs.pdb
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.csprojAssemblyReference.cache
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.Properties.Resources.resources
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.csproj.GenerateResource.cache
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.csproj.CoreCompileInputs.cache
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.exe
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.pdb
+C:\Users\twakeman\source\repos\MyLogs\MyLogs\obj\Debug\MyLogs.MainForm.resources
