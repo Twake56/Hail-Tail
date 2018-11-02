@@ -35,33 +35,13 @@ namespace MyLogs
 
         private void OpenFileBtn_Click(object sender, EventArgs e)
         {
-            if (openFileDialog3.ShowDialog() == DialogResult.OK)
-            {
-                try {
-                    var watch = new FileSystemWatcher();
-                    watch.Path = Path.GetDirectoryName(openFileDialog3.FileName);
-                    watch.Filter = Path.GetFileName(openFileDialog3.FileName);
-                    watch.Changed += new FileSystemEventHandler(OnChanged);
-                    watch.EnableRaisingEvents = true;
-                    StreamReader reader = new StreamReader(openFileDialog3.FileName);
-                    logRichTextBox1.Text = reader.ReadToEnd();
-                    reader.Close();
-                    FollowTailCheckBox.Checked = true;
-                    logRichTextBox1.SelectionStart = logRichTextBox1.Text.Length;
-                    logRichTextBox1.ScrollToCaret();
-                }
-                catch (IOException ioe)
-                {
-                    MessageBox.Show(ioe.Message);
-                }
-                
-            }
+            
         }
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-            if (logRichTextBox1.InvokeRequired)
+            if (LogRichTextBox1.InvokeRequired)
             {
-                logRichTextBox1.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+                LogRichTextBox1.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
             }
             else
             {
@@ -70,21 +50,21 @@ namespace MyLogs
                 {
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
                     //textBox1.Text = "";
-                    logRichTextBox1.Text = reader.ReadToEnd();
-               FileLengthTB.Text = logRichTextBox1.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
+                    LogRichTextBox1.Text = reader.ReadToEnd();
+               FileLengthTB.Text = LogRichTextBox1.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
                long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
                FileSizeTB.Text = (FileSizeValue/1024) + " KB"; //Convert File size from bytes to KB
 
-               if (FollowTailCheckBox.Checked)
+               if (followTailCheckBox.Checked)
                     {
-                        var pos = this.logRichTextBox1.GetLineFromCharIndex(logRichTextBox1.SelectionStart);
+                        var pos = this.LogRichTextBox1.GetLineFromCharIndex(LogRichTextBox1.SelectionStart);
 
-                        logRichTextBox1.SelectionStart = logRichTextBox1.Text.Length;
-                        logRichTextBox1.ScrollToCaret();
+                        LogRichTextBox1.SelectionStart = LogRichTextBox1.Text.Length;
+                        LogRichTextBox1.ScrollToCaret();
                     }
                     else
                     {
-                        var pos = this.logRichTextBox1.GetLineFromCharIndex(logRichTextBox1.SelectionStart);
+                        var pos = this.LogRichTextBox1.GetLineFromCharIndex(LogRichTextBox1.SelectionStart);
                         Console.WriteLine(pos);
                         //textBox1
                     }
@@ -111,5 +91,31 @@ namespace MyLogs
       {
 
       }
-   }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog3.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var watch = new FileSystemWatcher();
+                    watch.Path = Path.GetDirectoryName(openFileDialog3.FileName);
+                    watch.Filter = Path.GetFileName(openFileDialog3.FileName);
+                    watch.Changed += new FileSystemEventHandler(OnChanged);
+                    watch.EnableRaisingEvents = true;
+                    StreamReader reader = new StreamReader(openFileDialog3.FileName);
+                    LogRichTextBox1.Text = reader.ReadToEnd();
+                    reader.Close();
+                    followTailCheckBox.Checked = true;
+                    LogRichTextBox1.SelectionStart = LogRichTextBox1.Text.Length;
+                    LogRichTextBox1.ScrollToCaret();
+                }
+                catch (IOException ioe)
+                {
+                    MessageBox.Show(ioe.Message);
+                }
+
+            }
+        }
+    }
 }
