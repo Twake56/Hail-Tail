@@ -71,7 +71,9 @@ namespace MyLogs
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
                     //textBox1.Text = "";
                     logRichTextBox1.Text = reader.ReadToEnd();
-               FileLengthTB.Text = logRichTextBox1.Lines.Length.ToString();
+               FileLengthTB.Text = logRichTextBox1.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
+               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
+               FileSizeTB.Text = (FileSizeValue/1024) + " KB"; //Convert File size from bytes to KB
 
                if (FollowTailCheckBox.Checked)
                     {
