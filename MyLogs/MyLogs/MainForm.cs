@@ -43,7 +43,11 @@ namespace MyLogs
                     watch.Filter = Path.GetFileName(openFileDialog3.FileName);
                     watch.Changed += new FileSystemEventHandler(OnChanged);
                     watch.EnableRaisingEvents = true;
-                    //textBox1.Text = System.IO.File.ReadAllText(openFileDialog3.FileName);
+                    StreamReader reader = new StreamReader(openFileDialog3.FileName);
+                    textBox1.Text = reader.ReadToEnd();
+                    FollowTailCheckBox.Checked = true;
+                    textBox1.SelectionStart = textBox1.Text.Length;
+                    textBox1.ScrollToCaret();
                 }
                 catch (IOException ioe)
                 {
@@ -70,7 +74,7 @@ namespace MyLogs
                     if (FollowTailCheckBox.Checked)
                     {
                         var pos = this.textBox1.GetLineFromCharIndex(textBox1.SelectionStart);
-                        Console.WriteLine(pos);
+                        
                         textBox1.SelectionStart = textBox1.Text.Length;
                         textBox1.ScrollToCaret();
                     }
