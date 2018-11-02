@@ -33,26 +33,28 @@
          this.OpenFileBtn = new System.Windows.Forms.Button();
          this.logRichTextBox1 = new System.Windows.Forms.RichTextBox();
          this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+         this.FileLengthTB = new System.Windows.Forms.TextBox();
          this.tableLayoutPanel3.SuspendLayout();
          this.SuspendLayout();
          // 
          // tableLayoutPanel3
          // 
          this.tableLayoutPanel3.ColumnCount = 2;
-         this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.30769F));
-         this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.69231F));
+         this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.14393F));
+         this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.85607F));
          this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
          this.tableLayoutPanel3.Controls.Add(this.logRichTextBox1, 1, 2);
          this.tableLayoutPanel3.Controls.Add(this.FollowTailCheckBox, 1, 1);
          this.tableLayoutPanel3.Controls.Add(this.OpenFileBtn, 1, 0);
+         this.tableLayoutPanel3.Controls.Add(this.FileLengthTB, 1, 3);
          this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
          this.tableLayoutPanel3.Location = new System.Drawing.Point(0, -1);
          this.tableLayoutPanel3.Name = "tableLayoutPanel3";
          this.tableLayoutPanel3.RowCount = 4;
          this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
          this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.88312F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.116883F));
          this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 363);
          this.tableLayoutPanel3.TabIndex = 0;
          this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
@@ -60,7 +62,7 @@
          // FollowTailCheckBox
          // 
          this.FollowTailCheckBox.AutoSize = true;
-         this.FollowTailCheckBox.Location = new System.Drawing.Point(101, 33);
+         this.FollowTailCheckBox.Location = new System.Drawing.Point(123, 33);
          this.FollowTailCheckBox.Name = "FollowTailCheckBox";
          this.FollowTailCheckBox.Size = new System.Drawing.Size(76, 17);
          this.FollowTailCheckBox.TabIndex = 2;
@@ -69,7 +71,7 @@
          // 
          // OpenFileBtn
          // 
-         this.OpenFileBtn.Location = new System.Drawing.Point(101, 3);
+         this.OpenFileBtn.Location = new System.Drawing.Point(123, 3);
          this.OpenFileBtn.Name = "OpenFileBtn";
          this.OpenFileBtn.Size = new System.Drawing.Size(75, 23);
          this.OpenFileBtn.TabIndex = 0;
@@ -80,16 +82,24 @@
          // logRichTextBox1
          // 
          this.logRichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.logRichTextBox1.Location = new System.Drawing.Point(101, 58);
+         this.logRichTextBox1.Location = new System.Drawing.Point(123, 58);
          this.logRichTextBox1.Name = "logRichTextBox1";
          this.logRichTextBox1.ReadOnly = true;
-         this.logRichTextBox1.Size = new System.Drawing.Size(695, 271);
+         this.logRichTextBox1.Size = new System.Drawing.Size(673, 277);
          this.logRichTextBox1.TabIndex = 4;
          this.logRichTextBox1.Text = "";
          // 
          // openFileDialog3
          // 
          this.openFileDialog3.FileName = "openFileDialog3";
+         // 
+         // FileLengthTB
+         // 
+         this.FileLengthTB.Location = new System.Drawing.Point(123, 341);
+         this.FileLengthTB.Name = "FileLengthTB";
+         this.FileLengthTB.ReadOnly = true;
+         this.FileLengthTB.Size = new System.Drawing.Size(100, 20);
+         this.FileLengthTB.TabIndex = 5;
          // 
          // MainForm
          // 
@@ -117,6 +127,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
         private System.Windows.Forms.CheckBox FollowTailCheckBox;
         private System.Windows.Forms.RichTextBox logRichTextBox1;
-    }
+      private System.Windows.Forms.TextBox FileLengthTB;
+   }
 }
 

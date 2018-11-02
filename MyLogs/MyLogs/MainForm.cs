@@ -71,8 +71,9 @@ namespace MyLogs
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
                     //textBox1.Text = "";
                     logRichTextBox1.Text = reader.ReadToEnd();
-                    
-                    if (FollowTailCheckBox.Checked)
+               FileLengthTB.Text = logRichTextBox1.Lines.Length.ToString();
+
+               if (FollowTailCheckBox.Checked)
                     {
                         var pos = this.logRichTextBox1.GetLineFromCharIndex(logRichTextBox1.SelectionStart);
 

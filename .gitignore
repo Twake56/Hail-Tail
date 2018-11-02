@@ -4,3 +4,8 @@ LogGenerator/test.log
 MyLogs/.vs/MyLogs/v15/.suo
 MyLogs/.vs/MyLogs/v15/Server/sqlite3/storage.ide-shm
 MyLogs/.vs/MyLogs/v15/Server/sqlite3/storage.ide-wal
+MyLogs/MyLogs/obj/Debug/MyLogs.pdb
+MyLogs/MyLogs/obj/Debug/MyLogs.exe
+MyLogs/MyLogs/obj/Debug/MyLogs.csproj.GenerateResource.cache
+MyLogs/MyLogs/bin/Debug/MyLogs.pdb
+MyLogs/MyLogs/bin/Debug/MyLogs.exe
