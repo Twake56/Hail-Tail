@@ -92,8 +92,8 @@
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.MainTableLayoutPanel.Size = new System.Drawing.Size(831, 390);
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.MainTableLayoutPanel.Size = new System.Drawing.Size(850, 399);
             this.MainTableLayoutPanel.TabIndex = 0;
             // 
             // menuStrip2
@@ -335,8 +335,8 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.LogRichTextBox1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 49);
@@ -349,10 +349,10 @@
             // LogRichTextBox1
             // 
             this.LogRichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogRichTextBox1.Location = new System.Drawing.Point(164, 3);
+            this.LogRichTextBox1.Location = new System.Drawing.Point(143, 3);
             this.LogRichTextBox1.Name = "LogRichTextBox1";
             this.LogRichTextBox1.ReadOnly = true;
-            this.LogRichTextBox1.Size = new System.Drawing.Size(642, 300);
+            this.LogRichTextBox1.Size = new System.Drawing.Size(663, 300);
             this.LogRichTextBox1.TabIndex = 0;
             this.LogRichTextBox1.Text = "";
             // 
@@ -379,7 +379,6 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(809, 14);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
@@ -403,7 +402,7 @@
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(831, 390);
+            this.ClientSize = new System.Drawing.Size(850, 399);
             this.Controls.Add(this.MainTableLayoutPanel);
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "MainForm";

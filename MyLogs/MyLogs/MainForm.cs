@@ -57,16 +57,8 @@ namespace MyLogs
 
                if (followTailCheckBox.Checked)
                     {
-                        var pos = this.LogRichTextBox1.GetLineFromCharIndex(LogRichTextBox1.SelectionStart);
-
                         LogRichTextBox1.SelectionStart = LogRichTextBox1.Text.Length;
                         LogRichTextBox1.ScrollToCaret();
-                    }
-                    else
-                    {
-                        var pos = this.LogRichTextBox1.GetLineFromCharIndex(LogRichTextBox1.SelectionStart);
-                        Console.WriteLine(pos);
-                        //textBox1
                     }
                     reader.Close();
                 }
