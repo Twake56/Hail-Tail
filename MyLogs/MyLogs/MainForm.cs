@@ -15,7 +15,8 @@ namespace MyLogs
     {
         public MainForm()
         {
-            InitializeComponent();
+         InitializeComponent();
+         //TabControlParent.DrawItem += new DrawItemEventHandler(TabControlParent_DrawItem);
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -37,39 +38,10 @@ namespace MyLogs
         {
             
         }
-        private void OnChanged(object source, FileSystemEventArgs e)
-        {
-            if (LogRichTextBox1.InvokeRequired)
-            {
-                LogRichTextBox1.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
-            }
-            else
-            {
-                //textBox1.Text = File.ReadAllText(openFileDialog3.FileName);
-                try
-                {
-                    StreamReader reader = new StreamReader(openFileDialog3.FileName);
-                    //textBox1.Text = "";
-                    LogRichTextBox1.Text = reader.ReadToEnd();
-               FileLengthTB.Text = LogRichTextBox1.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
-               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
-               FileSizeTB.Text = (FileSizeValue/1024) + " KB"; //Convert File size from bytes to KB
 
-               if (followTailCheckBox.Checked)
-                    {
-                        LogRichTextBox1.SelectionStart = LogRichTextBox1.Text.Length;
-                        LogRichTextBox1.ScrollToCaret();
-                    }
-                    reader.Close();
-                }
-                catch(IOException IOex)
-                {
-                    Console.WriteLine(IOex.Message);
-                }
-            }
-        }
+      
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+      private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -84,7 +56,21 @@ namespace MyLogs
 
       }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+      public string[] WriteSafeReadAllLines(String path)
+      {
+         using (var csv = new FileStream(openFileDialog3.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+         using (var sr = new StreamReader(csv))
+         {
+            List<string> file = new List<string>();
+            while (!sr.EndOfStream)
+            {
+               file.Add(sr.ReadLine());
+            }
+
+            return file.ToArray();
+         }
+      }
+      private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog3.ShowDialog() == DialogResult.OK)
             {
@@ -96,12 +82,45 @@ namespace MyLogs
                     watch.Changed += new FileSystemEventHandler(OnChanged);
                     watch.EnableRaisingEvents = true;
                     StreamReader reader = new StreamReader(openFileDialog3.FileName);
-                    LogRichTextBox1.Text = reader.ReadToEnd();
+               //richTextBox1.Text = reader.ReadToEnd();
+               //LogRichTextBox1.Text = reader.ReadToEnd();
                     reader.Close();
                     followTailCheckBox.Checked = true;
                     LogRichTextBox1.SelectionStart = LogRichTextBox1.Text.Length;
                     LogRichTextBox1.ScrollToCaret();
-                }
+
+               //Creates a new tab for a new log
+               TabPage tab = new TabPage() { Text = System.IO.Path.GetFileName(openFileDialog3.FileName) };
+               TabControlParent.TabPages.Add(tab);
+               TabControlParent.SelectedTab = tab;
+
+               //ListBox TabBoxView = new ListBox { Parent = tab, Dock = DockStyle.Fill };
+               //TabBoxView.DataSource = File.ReadAllLines(openFileDialog3.FileName);
+
+               ListView TabViewText = new ListView { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+               TabViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
+               TabViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
+               TabViewText.FullRowSelect = true;
+
+               string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
+               var ItemsCount = TabViewText.Items.Count;
+               if (ItemsCount == 0 || lines.Length < ItemsCount)
+               {
+                  TabViewText.Items.Clear();
+                  for (var linenum = 0; linenum < lines.Length; linenum++)
+                  {
+                     TabViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                  }
+               }
+
+               /*RichTextBox TabTextBox = new RichTextBox { Parent = tab, Dock = DockStyle.Fill };
+               TabTextBox.ReadOnly = true;
+               TabTextBox.LoadFile(openFileDialog3.FileName, RichTextBoxStreamType.PlainText);*/
+
+               //FileLengthTB.Text = TabBoxView.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
+               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
+               FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+            }
                 catch (IOException ioe)
                 {
                     MessageBox.Show(ioe.Message);
@@ -109,5 +128,53 @@ namespace MyLogs
 
             }
         }
-    }
+      private void OnChanged(object source, FileSystemEventArgs e)
+      {
+         if (TabViewText.InvokeRequired)
+         {
+            TabViewText.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+         }
+         else
+         {
+            //textBox1.Text = File.ReadAllText(openFileDialog3.FileName);
+            try
+            {
+               //StreamReader reader = new StreamReader(openFileDialog3.FileName);
+               string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
+               var ItemsCount = TabViewText.Items.Count;
+               if (ItemsCount == 0 || lines.Length < ItemsCount)
+               {
+                  TabViewText.Items.Clear();
+                  for (var linenum = 0; linenum < lines.Length; linenum++)
+                  {
+                     TabViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                  }
+               }
+               else
+               {
+                  //var diff = lines.Length - ItemsCount;
+                  for (var start = ItemsCount; start < lines.Length; start++)
+                  {
+                     TabViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                  }
+               }
+
+               //LogListView.Text = reader.ReadToEnd();
+               //FileLengthTB.Text = LogListView.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
+               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
+               FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+
+               if (followTailCheckBox.Checked)
+               {
+                  // LogListView.TopItemIndex = 
+               }
+
+            }
+            catch (IOException IOex)
+            {
+               Console.WriteLine(IOex.Message);
+            }
+         }
+      }
+   }
 }
