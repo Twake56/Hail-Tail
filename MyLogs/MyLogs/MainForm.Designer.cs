@@ -134,6 +134,7 @@
             this.TabControlParent.Size = new System.Drawing.Size(844, 340);
             this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.TabControlParent.TabIndex = 1;
+            this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
             // 
             // menuStrip2
             // 
@@ -394,7 +395,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(103, 26);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // copyToolStripMenuItem1

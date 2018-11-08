@@ -83,6 +83,7 @@ namespace MyLogs
                     ListViewText.ContextMenuStrip = contextMenuStrip1;
                     ListViewText.MultiSelect = true;
                ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later
+                    
                
                 //Write all lines to list view for tab
                string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
@@ -177,17 +178,29 @@ namespace MyLogs
 
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            if(e.ClickedItem.Text == "Copy")
+            {
+                copySelectedItemsToClipboard();
+            }
+           
+        }
+
+        private void copySelectedItemsToClipboard()
+        {
             ListView CurrentListView = getListViewByTab(TabControlParent.SelectedTab);
             ListView.SelectedListViewItemCollection selectedItems = CurrentListView.SelectedItems;
-            if (e.ClickedItem.Text == "Copy")
-            {
                 String text = "";
-                foreach(ListViewItem item in selectedItems)
+                foreach (ListViewItem item in selectedItems)
                 {
                     text += item.SubItems[1].Text;
                 }
                 Clipboard.SetText(text);
-            }
+        }
+
+        private void TabControlParent_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.C)
+                copySelectedItemsToClipboard();
         }
     }
 }
