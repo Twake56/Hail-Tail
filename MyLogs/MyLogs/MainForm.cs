@@ -14,10 +14,10 @@ namespace MyLogs
     public partial class MainForm : Form
     {
         public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
+
         public MainForm()
         {
          InitializeComponent();
-         //TabControlParent.DrawItem += new DrawItemEventHandler(TabControlParent_DrawItem);
         }
 
         private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
@@ -44,11 +44,12 @@ namespace MyLogs
             return file.ToArray();
          }
       }
+
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog3.ShowDialog() == DialogResult.OK)
             {
-                if(FileWatchers.ContainsKey(openFileDialog3.FileName))
+                if(FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
                 {
                     foreach(TabPage tab in TabControlParent.TabPages)
                     {
@@ -61,6 +62,7 @@ namespace MyLogs
                 }
                 try
                 {
+                    //Add a filesystem watcher to public dictionary
                     var watch = new FileSystemWatcher();
                     watch.Path = Path.GetDirectoryName(openFileDialog3.FileName);
                     watch.Filter = Path.GetFileName(openFileDialog3.FileName);
@@ -78,9 +80,9 @@ namespace MyLogs
                ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
                ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
                ListViewText.FullRowSelect = true;
-                    ListViewText.Name = openFileDialog3.FileName + "-ListView";
+               ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later
                
-
+                //Write all lines to list view for tab
                string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
                var ItemsCount = ListViewText.Items.Count;
                if (ItemsCount == 0 || lines.Length < ItemsCount)
@@ -91,10 +93,6 @@ namespace MyLogs
                      ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
                   }
                }
-
-               /*RichTextBox TabTextBox = new RichTextBox { Parent = tab, Dock = DockStyle.Fill };
-               TabTextBox.ReadOnly = true;
-               TabTextBox.LoadFile(openFileDialog3.FileName, RichTextBoxStreamType.PlainText);*/
 
                //FileLengthTB.Text = TabBoxView.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
                long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
@@ -153,7 +151,7 @@ namespace MyLogs
 
                //LogListView.Text = reader.ReadToEnd();
                //FileLengthTB.Text = LogListView.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
-               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
+               long FileSizeValue = new FileInfo(e.FullPath).Length; //Create the long for the file size value
                FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
 
                if (followTailCheckBox.Checked)
