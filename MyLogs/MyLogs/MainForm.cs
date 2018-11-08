@@ -80,6 +80,8 @@ namespace MyLogs
                ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
                ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
                ListViewText.FullRowSelect = true;
+                    ListViewText.ContextMenuStrip = contextMenuStrip1;
+                    ListViewText.MultiSelect = true;
                ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later
                
                 //Write all lines to list view for tab
@@ -166,5 +168,26 @@ namespace MyLogs
             }
          }
       }
-   }
+        private ListView getListViewByTab(TabPage tab)
+        {
+            var tmp = Controls.Find(tab.Name + "-ListView", true);
+            ListView ChildListView = tmp[0] as ListView;
+            return (ChildListView);
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ListView CurrentListView = getListViewByTab(TabControlParent.SelectedTab);
+            ListView.SelectedListViewItemCollection selectedItems = CurrentListView.SelectedItems;
+            if (e.ClickedItem.Text == "Copy")
+            {
+                String text = "";
+                foreach(ListViewItem item in selectedItems)
+                {
+                    text += item.SubItems[1].Text;
+                }
+                Clipboard.SetText(text);
+            }
+        }
+    }
 }
