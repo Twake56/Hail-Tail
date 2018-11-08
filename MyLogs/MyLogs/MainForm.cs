@@ -13,42 +13,16 @@ namespace MyLogs
 {
     public partial class MainForm : Form
     {
+        public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
         public MainForm()
         {
          InitializeComponent();
          //TabControlParent.DrawItem += new DrawItemEventHandler(TabControlParent_DrawItem);
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
         {
             
-        }
-
-        private void OpenFileBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-      
-
-      private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-           // textBox1.
         }
 
       private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -58,7 +32,7 @@ namespace MyLogs
 
       public string[] WriteSafeReadAllLines(String path)
       {
-         using (var csv = new FileStream(openFileDialog3.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+         using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
          using (var sr = new StreamReader(csv))
          {
             List<string> file = new List<string>();
@@ -74,6 +48,17 @@ namespace MyLogs
         {
             if (openFileDialog3.ShowDialog() == DialogResult.OK)
             {
+                if(FileWatchers.ContainsKey(openFileDialog3.FileName))
+                {
+                    foreach(TabPage tab in TabControlParent.TabPages)
+                    {
+                        if(openFileDialog3.FileName == tab.Name)
+                        {
+                            TabControlParent.SelectedTab = tab;
+                            return;
+                        }
+                    }
+                }
                 try
                 {
                     var watch = new FileSystemWatcher();
@@ -81,35 +66,29 @@ namespace MyLogs
                     watch.Filter = Path.GetFileName(openFileDialog3.FileName);
                     watch.Changed += new FileSystemEventHandler(OnChanged);
                     watch.EnableRaisingEvents = true;
-                    StreamReader reader = new StreamReader(openFileDialog3.FileName);
-               //richTextBox1.Text = reader.ReadToEnd();
-               //LogRichTextBox1.Text = reader.ReadToEnd();
-                    reader.Close();
+                    FileWatchers.Add(openFileDialog3.FileName, watch);
                     followTailCheckBox.Checked = true;
-                    LogRichTextBox1.SelectionStart = LogRichTextBox1.Text.Length;
-                    LogRichTextBox1.ScrollToCaret();
 
                //Creates a new tab for a new log
-               TabPage tab = new TabPage() { Text = System.IO.Path.GetFileName(openFileDialog3.FileName) };
+               TabPage tab = new TabPage() { Text = System.IO.Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName};
                TabControlParent.TabPages.Add(tab);
                TabControlParent.SelectedTab = tab;
 
-               //ListBox TabBoxView = new ListBox { Parent = tab, Dock = DockStyle.Fill };
-               //TabBoxView.DataSource = File.ReadAllLines(openFileDialog3.FileName);
-
-               ListView TabViewText = new ListView { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
-               TabViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
-               TabViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
-               TabViewText.FullRowSelect = true;
+               ListView ListViewText = new ListView { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+               ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
+               ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
+               ListViewText.FullRowSelect = true;
+                    ListViewText.Name = openFileDialog3.FileName + "-ListView";
+               
 
                string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
-               var ItemsCount = TabViewText.Items.Count;
+               var ItemsCount = ListViewText.Items.Count;
                if (ItemsCount == 0 || lines.Length < ItemsCount)
                {
-                  TabViewText.Items.Clear();
+                  ListViewText.Items.Clear();
                   for (var linenum = 0; linenum < lines.Length; linenum++)
                   {
-                     TabViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                     ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
                   }
                }
 
@@ -130,32 +109,45 @@ namespace MyLogs
         }
       private void OnChanged(object source, FileSystemEventArgs e)
       {
-         if (TabViewText.InvokeRequired)
+            TabPage EventPage = null;
+           foreach(TabPage tab in TabControlParent.TabPages)
+            {
+                if(e.FullPath == tab.Name)
+                {
+                    EventPage = tab;
+                }
+            }
+        if(EventPage == null)
+            {
+                FileWatchers.Remove(e.FullPath);
+                return;
+            }
+          
+         if (EventPage.InvokeRequired)
          {
-            TabViewText.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+                EventPage.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
          }
          else
          {
-            //textBox1.Text = File.ReadAllText(openFileDialog3.FileName);
             try
             {
-               //StreamReader reader = new StreamReader(openFileDialog3.FileName);
-               string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
-               var ItemsCount = TabViewText.Items.Count;
+               string[] lines = WriteSafeReadAllLines(e.FullPath);
+                    var tmp = Controls.Find(e.FullPath + "-ListView", true);
+                    ListView ListViewText = tmp[0] as ListView;
+               var ItemsCount = ListViewText.Items.Count;
                if (ItemsCount == 0 || lines.Length < ItemsCount)
                {
-                  TabViewText.Items.Clear();
+                  ListViewText.Items.Clear();
                   for (var linenum = 0; linenum < lines.Length; linenum++)
                   {
-                     TabViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                     ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
                   }
                }
                else
                {
-                  //var diff = lines.Length - ItemsCount;
                   for (var start = ItemsCount; start < lines.Length; start++)
                   {
-                     TabViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                     ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
                   }
                }
 
