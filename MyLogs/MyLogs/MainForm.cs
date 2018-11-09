@@ -77,13 +77,14 @@ namespace MyLogs
                     TabControlParent.TabPages.Add(tab);
                     TabControlParent.SelectedTab = tab;
 
-                    ListView ListViewText = new ListView { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+                    Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
                     ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
                     ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
                     ListViewText.FullRowSelect = true;
                     ListViewText.ContextMenuStrip = contextMenuStrip1;
                     ListViewText.MultiSelect = true;
                     ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later
+                    
 
                     
 
