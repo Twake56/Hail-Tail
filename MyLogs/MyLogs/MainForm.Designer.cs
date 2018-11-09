@@ -36,7 +36,7 @@
          this.FileLengthTB = new System.Windows.Forms.TextBox();
          this.followTailCheckBox = new System.Windows.Forms.CheckBox();
          this.TabControlParent = new System.Windows.Forms.TabControl();
-         this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+         this.PrimaryMenus = new System.Windows.Forms.MenuStrip();
          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +70,7 @@
          this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
          this.copyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
          this.tableLayoutPanel4.SuspendLayout();
-         this.menuStrip2.SuspendLayout();
+         this.PrimaryMenus.SuspendLayout();
          this.MainTableLayoutPanel.SuspendLayout();
          this.contextMenuStrip1.SuspendLayout();
          this.SuspendLayout();
@@ -137,18 +137,18 @@
          this.TabControlParent.TabIndex = 1;
          this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
          // 
-         // menuStrip2
+         // PrimaryMenus
          // 
-         this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+         this.PrimaryMenus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
-         this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-         this.menuStrip2.Name = "menuStrip2";
-         this.menuStrip2.Size = new System.Drawing.Size(850, 23);
-         this.menuStrip2.TabIndex = 0;
-         this.menuStrip2.Text = "menuStrip2";
+         this.PrimaryMenus.Location = new System.Drawing.Point(0, 0);
+         this.PrimaryMenus.Name = "PrimaryMenus";
+         this.PrimaryMenus.Size = new System.Drawing.Size(850, 23);
+         this.PrimaryMenus.TabIndex = 0;
+         this.PrimaryMenus.Text = "menuStrip2";
          // 
          // fileToolStripMenuItem
          // 
@@ -377,7 +377,7 @@
          // 
          this.MainTableLayoutPanel.ColumnCount = 1;
          this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-         this.MainTableLayoutPanel.Controls.Add(this.menuStrip2, 0, 0);
+         this.MainTableLayoutPanel.Controls.Add(this.PrimaryMenus, 0, 0);
          this.MainTableLayoutPanel.Controls.Add(this.TabControlParent, 0, 1);
          this.MainTableLayoutPanel.Controls.Add(this.tableLayoutPanel4, 0, 2);
          this.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -396,26 +396,26 @@
          this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem1});
          this.contextMenuStrip1.Name = "contextMenuStrip1";
-         this.contextMenuStrip1.Size = new System.Drawing.Size(103, 26);
+         this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
          this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
          // 
          // copyToolStripMenuItem1
          // 
          this.copyToolStripMenuItem1.Name = "copyToolStripMenuItem1";
-         this.copyToolStripMenuItem1.Size = new System.Drawing.Size(102, 22);
+         this.copyToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
          this.copyToolStripMenuItem1.Text = "Copy";
          // 
          // MainForm
          // 
          this.ClientSize = new System.Drawing.Size(850, 399);
          this.Controls.Add(this.MainTableLayoutPanel);
-         this.MainMenuStrip = this.menuStrip2;
+         this.MainMenuStrip = this.PrimaryMenus;
          this.Name = "MainForm";
          this.Text = "Timber Tail";
          this.tableLayoutPanel4.ResumeLayout(false);
          this.tableLayoutPanel4.PerformLayout();
-         this.menuStrip2.ResumeLayout(false);
-         this.menuStrip2.PerformLayout();
+         this.PrimaryMenus.ResumeLayout(false);
+         this.PrimaryMenus.PerformLayout();
          this.MainTableLayoutPanel.ResumeLayout(false);
          this.MainTableLayoutPanel.PerformLayout();
          this.contextMenuStrip1.ResumeLayout(false);
@@ -438,7 +438,7 @@
       private System.Windows.Forms.TextBox FileLengthTB;
       private System.Windows.Forms.CheckBox followTailCheckBox;
       private System.Windows.Forms.TabControl TabControlParent;
-      private System.Windows.Forms.MenuStrip menuStrip2;
+      private System.Windows.Forms.MenuStrip PrimaryMenus;
       private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
