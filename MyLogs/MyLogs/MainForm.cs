@@ -219,10 +219,11 @@ namespace MyLogs
         {
             ListView CurrentListView = getListViewByTab(TabControlParent.SelectedTab);
             ListView.SelectedListViewItemCollection selectedItems = CurrentListView.SelectedItems;
-            String text = "";
+            string text = "";
             foreach (ListViewItem item in selectedItems)
             {
-                text += item.SubItems[1].Text;
+               text += item.SubItems[1].Text;
+               text += "\n";
             }
             Clipboard.SetText(text);
         }
