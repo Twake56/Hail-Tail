@@ -216,7 +216,7 @@ namespace MyLogs
 
         }
         //Copies selections to clipboard
-        private void copySelectedItemsToClipboard()
+        /*private void copySelectedItemsToClipboard()
         {
             ListView CurrentListView = getListViewByTab(TabControlParent.SelectedTab);
             ListView.SelectedListViewItemCollection selectedItems = CurrentListView.SelectedItems;
@@ -227,9 +227,25 @@ namespace MyLogs
                text += "\n";
             }
             Clipboard.SetText(text);
-        }
+        }*/
 
-        private void TabControlParent_KeyUp(object sender, KeyEventArgs e)
+      public void copySelectedItemsToClipboard()
+      {
+         ListView CurrentListView = getListViewByTab(TabControlParent.SelectedTab);
+         ListView.SelectedListViewItemCollection selectedItems = CurrentListView.SelectedItems;
+         StringBuilder sb = new StringBuilder();
+         foreach (ListViewItem item in selectedItems)
+         {
+            ListViewItem l = item as ListViewItem;
+            if (l != null)
+               foreach (ListViewItem.ListViewSubItem sub in l.SubItems)
+                  sb.Append(sub.Text + "\t");
+            sb.AppendLine();
+         }
+         Clipboard.SetDataObject(sb.ToString());
+      }
+
+      private void TabControlParent_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.C)
                 copySelectedItemsToClipboard();
