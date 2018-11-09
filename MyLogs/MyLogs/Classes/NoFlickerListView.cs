@@ -15,7 +15,7 @@ namespace MyLogs.Classes
     {
         public ListViewNF()
         {
-            //Activate double buffering
+            //Activate double bufferin
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
 
             //Enable the OnNotifyMessage event so we get a chance to filter out 
@@ -29,6 +29,7 @@ namespace MyLogs.Classes
             if (m.Msg != 0x14)
             {
                 base.OnNotifyMessage(m);
+
             }
         }
     }
