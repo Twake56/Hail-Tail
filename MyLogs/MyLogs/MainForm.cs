@@ -14,6 +14,7 @@ namespace MyLogs
     public partial class MainForm : Form
     {
         public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
+        public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
 
         public MainForm()
         {
@@ -97,7 +98,14 @@ namespace MyLogs
                             ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
                         }
                     }
-                    ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                    try
+                    {
+                        ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                    }
+                    catch (ArgumentOutOfRangeException IndErr)
+                    {
+                        Console.WriteLine(IndErr.Message);
+                    }
 
                     //FileLengthTB.Text = TabBoxView.Lines.Length.ToString() + " lines"; //Grabs the Number of lines in a file
                     long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
@@ -110,8 +118,10 @@ namespace MyLogs
 
             }
         }
+
         private void OnChanged(object source, FileSystemEventArgs e)
         {
+            
             TabPage EventPage = null;
             foreach (TabPage tab in TabControlParent.TabPages)
             {
@@ -137,6 +147,17 @@ namespace MyLogs
                     string[] lines = WriteSafeReadAllLines(e.FullPath);
                     var tmp = Controls.Find(e.FullPath + "-ListView", true);
                     ListView ListViewText = tmp[0] as ListView;
+                    int itemIndex = ListViewText.TopItem.Index;
+                    int prevIndex = itemIndex;
+                    if (IndexKeeper.ContainsKey(e.FullPath))
+                    {
+                        prevIndex = IndexKeeper[e.FullPath];
+                    }
+
+                    if(itemIndex < prevIndex)
+                    {
+
+                    }
                     var ItemsCount = ListViewText.Items.Count;
                     if (ItemsCount == 0 || lines.Length < ItemsCount)
                     {
@@ -161,7 +182,14 @@ namespace MyLogs
 
                     if (followTailCheckBox.Checked)
                     {
-                        ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                        try
+                        {
+                            ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                        }
+                        catch (ArgumentOutOfRangeException IndErr)
+                        {
+                            Console.WriteLine(IndErr.Message);
+                        }
                     }
 
                 }
