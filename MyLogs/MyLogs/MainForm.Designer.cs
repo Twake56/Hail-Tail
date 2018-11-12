@@ -35,6 +35,7 @@
             this.FileSizeTB = new System.Windows.Forms.TextBox();
             this.FileLengthTB = new System.Windows.Forms.TextBox();
             this.followTailCheckBox = new System.Windows.Forms.CheckBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.TabControlParent = new System.Windows.Forms.TabControl();
             this.PrimaryMenus = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,10 +70,14 @@
             this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TabContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel4.SuspendLayout();
             this.PrimaryMenus.SuspendLayout();
             this.MainTableLayoutPanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.TabContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog3
@@ -81,13 +86,15 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnCount = 4;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.FileSizeTB, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.FileLengthTB, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.followTailCheckBox, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.SearchBox, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 372);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -124,8 +131,21 @@
             this.followTailCheckBox.Text = "Follow Tail";
             this.followTailCheckBox.UseVisualStyleBackColor = true;
             // 
-            // TabControlParent
+            // SearchBox
             // 
+            this.SearchBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.SearchBox.Location = new System.Drawing.Point(676, 3);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(165, 20);
+            this.SearchBox.TabIndex = 3;
+            this.SearchBox.Text = "Search";
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            this.SearchBox.Enter += new System.EventHandler(this.SearchBox_Enter);
+            this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
+            // 
+            // TabControlParent
+            //
+            this.TabControlParent.AllowDrop = true;
             this.TabControlParent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlParent.HotTrack = true;
             this.TabControlParent.Location = new System.Drawing.Point(3, 26);
@@ -135,7 +155,11 @@
             this.TabControlParent.Size = new System.Drawing.Size(844, 340);
             this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.TabControlParent.TabIndex = 1;
+            this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControlParent_DragOver);
             this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
+            this.TabControlParent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseDown);
+            this.TabControlParent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseClick);
+            this.TabControlParent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseMove);
             // 
             // PrimaryMenus
             // 
@@ -405,6 +429,27 @@
             this.copyToolStripMenuItem1.Size = new System.Drawing.Size(102, 22);
             this.copyToolStripMenuItem1.Text = "Copy";
             // 
+            // TabContextMenuStrip
+            // 
+            this.TabContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.renameTabToolStripMenuItem});
+            this.TabContextMenuStrip.Name = "TabContextMenuStrip";
+            this.TabContextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            this.TabContextMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.TabContextMenuStrip_ItemClicked);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            // 
+            // renameTabToolStripMenuItem
+            // 
+            this.renameTabToolStripMenuItem.Name = "renameTabToolStripMenuItem";
+            this.renameTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameTabToolStripMenuItem.Text = "Rename Tab";
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(850, 399);
@@ -419,6 +464,7 @@
             this.MainTableLayoutPanel.ResumeLayout(false);
             this.MainTableLayoutPanel.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.TabContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -471,6 +517,10 @@
       private System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem1;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.ContextMenuStrip TabContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem renameTabToolStripMenuItem;
     }
 }
 
