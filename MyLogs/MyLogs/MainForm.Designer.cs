@@ -144,7 +144,7 @@
             this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
             // 
             // TabControlParent
-            //
+            // 
             this.TabControlParent.AllowDrop = true;
             this.TabControlParent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControlParent.HotTrack = true;
@@ -157,8 +157,8 @@
             this.TabControlParent.TabIndex = 1;
             this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControlParent_DragOver);
             this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
-            this.TabControlParent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseDown);
             this.TabControlParent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseClick);
+            this.TabControlParent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseDown);
             this.TabControlParent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseMove);
             // 
             // PrimaryMenus
