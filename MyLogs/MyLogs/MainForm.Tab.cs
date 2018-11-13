@@ -15,7 +15,22 @@ namespace MyLogs
     public partial class MainForm
     {
         private Point DragStartPosition = Point.Empty;
-        public static TabPage SelectedTabPage = new TabPage();
+        public TabPage SelectedTabPage = new TabPage();
+        public TabPage SelectedFolder = new TabPage();
+
+
+        public TabPage GetFolderByName(string FolderName)
+        {
+
+            for (var tabnum = 0; tabnum < TabControlParent.TabPages.Count; tabnum++)
+            {
+                if (TabControlParent.TabPages[tabnum].Name == FolderName)
+                {
+                    return TabControlParent.TabPages[tabnum];
+                }
+            }
+            return null;
+        }
 
         private bool CheckForExistingTabName(string tabName)
         {
@@ -33,7 +48,7 @@ namespace MyLogs
         private void createFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string NewFolderName = "NewFolder-0";
-            while(CheckForExistingTabName(NewFolderName) == true)
+            while (CheckForExistingTabName(NewFolderName) == true)
             {
                 var StringNum = NewFolderName.Split('-')[1];
                 int Counter = Convert.ToInt32(StringNum);
@@ -41,11 +56,42 @@ namespace MyLogs
                 string NewName = "NewFolder-" + Counter.ToString() + "";
                 NewFolderName = NewName;
             }
-           
+            //Attach subtabcontrol to folder tabs
+            TabControl subTabControl = new TabControl();
+            subTabControl.Name = "SubTabControl";
+            subTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
+
+
             TabPage tab = new TabPage() { Text = NewFolderName, Name = NewFolderName, Tag = "Folder" };
+            tab.Controls.Add(subTabControl);
             TabControlParent.TabPages.Add(tab);
             TabControlParent.SelectedTab = tab;
         }
+
+       /* private TabControl GetTabControlByFolder ()
+        {
+
+        }*/
+
+
+        private void SubTab_Click(object source, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //TabControl SubTabControl = GetTabControlByFolder();
+                TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                for (int ix = 0; ix < subTabControl.TabCount; ++ix)
+                {
+                    if (subTabControl.GetTabRect(ix).Contains(e.Location))
+                    {
+                        TabContextMenuStrip.Show(this, e.Location);
+                        SelectedTabPage = subTabControl.TabPages[ix];
+                    }
+                }
+            }
+        }
+
 
 
         private void renameTabToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,35 +125,28 @@ namespace MyLogs
         {
             if (e.Button == MouseButtons.Right)
             {
-                //int MoveToIndex = 0;
-                foreach (ToolStripItem item in TabContextMenuStrip.Items)
-                {
-                    if(item.Text == "Move to Folder")
-                    {
-                       // MoveToIndex = TabContextMenuStrip.Items.IndexOf(item);
-                    }
-                }
-                //Below clears Move To directories
-                //(TabContextMenuStrip.Items[MoveToIndex] as ToolStripMenuItem).DropDownItems.Clear();
-                //Populates Move To menu
                 for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
                 {
-                    /*if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
-                    {
-                        (TabContextMenuStrip.Items[MoveToIndex] as ToolStripMenuItem).DropDownItems.Add(Text = TabControlParent.TabPages[ix].Text);
-                       
-                    }*/
-
-
                     if (TabControlParent.GetTabRect(ix).Contains(e.Location))
                     {
                         TabContextMenuStrip.Show(this, e.Location);
                         SelectedTabPage = TabControlParent.TabPages[ix];
-
                     }
-
                 }
-
+            }
+            else if(e.Button == MouseButtons.Left)
+            {
+                for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
+                {
+                    if (TabControlParent.GetTabRect(ix).Contains(e.Location))
+                    {
+                        if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
+                        {
+                            SelectedFolder = TabControlParent.TabPages[ix];
+                        }
+                        
+                    }
+                }
             }
         }
 
@@ -116,8 +155,8 @@ namespace MyLogs
         private void TabContextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             ToolStripItem clickedItem = e.ClickedItem;
-            
-            
+
+
             if (e.ClickedItem.Name == "TabToolStripMenuItem")
             {
                 RenameForm rename = new RenameForm();
@@ -134,19 +173,26 @@ namespace MyLogs
                 }
 
             }
-            else if(e.ClickedItem.Name == "moveToFolderToolStripMenuItem")
+            else if (e.ClickedItem.Name == "moveToFolderToolStripMenuItem")
             {
                 MoveToFolderForm MoveToForm = new MoveToFolderForm();
-                
+
                 for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
                 {
                     if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
                         MoveToForm.FolderListBox.Items.Add(Text = TabControlParent.TabPages[ix].Text);
                     }
-                    
+
                 }
-                    MoveToForm.ShowDialog();
+                MoveToForm.ShowDialog();
+                if (MoveToForm.DialogResult == DialogResult.OK)
+                {
+                    string selection = MoveToForm.FolderListBox.SelectedItem.ToString();
+                    TabPage folder = GetFolderByName(selection);
+                    TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
+                    subTabPageControl.TabPages.Add(SelectedTabPage);
+                }
             }
         }
 

@@ -30,19 +30,22 @@
         {
             this.fileSelectTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FolderListBox = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.fileSelectTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileSelectTableLayoutPanel
             // 
             this.fileSelectTableLayoutPanel.ColumnCount = 1;
-            this.fileSelectTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.fileSelectTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.fileSelectTableLayoutPanel.Controls.Add(this.FolderListBox, 0, 0);
+            this.fileSelectTableLayoutPanel.Controls.Add(this.button1, 0, 1);
             this.fileSelectTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileSelectTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.fileSelectTableLayoutPanel.Name = "fileSelectTableLayoutPanel";
-            this.fileSelectTableLayoutPanel.RowCount = 1;
-            this.fileSelectTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.fileSelectTableLayoutPanel.RowCount = 2;
+            this.fileSelectTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.fileSelectTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.fileSelectTableLayoutPanel.Size = new System.Drawing.Size(272, 371);
             this.fileSelectTableLayoutPanel.TabIndex = 0;
             // 
@@ -50,10 +53,20 @@
             // 
             this.FolderListBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FolderListBox.FormattingEnabled = true;
-            this.FolderListBox.Location = new System.Drawing.Point(3, 52);
+            this.FolderListBox.Location = new System.Drawing.Point(3, 17);
             this.FolderListBox.Name = "FolderListBox";
             this.FolderListBox.Size = new System.Drawing.Size(266, 316);
             this.FolderListBox.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(3, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Move To Folder";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MoveToFolderForm
             // 
@@ -72,5 +85,6 @@
 
         private System.Windows.Forms.TableLayoutPanel fileSelectTableLayoutPanel;
         public System.Windows.Forms.ListBox FolderListBox;
+        private System.Windows.Forms.Button button1;
     }
 }
