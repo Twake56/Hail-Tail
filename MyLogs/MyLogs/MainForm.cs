@@ -15,7 +15,6 @@ namespace MyLogs
     {
         public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
         public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
-        public static TabPage SelectedTabPage = new TabPage();
 
 
         public MainForm()
@@ -94,7 +93,7 @@ namespace MyLogs
                     followTailCheckBox.Checked = true;
 
                     //Creates a new tab for a new log
-                    TabPage tab = new TabPage() { Text = System.IO.Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName };
+                    TabPage tab = new TabPage() { Text = System.IO.Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName , Tag="File"};
                     TabControlParent.TabPages.Add(tab);
                     TabControlParent.SelectedTab = tab;
 

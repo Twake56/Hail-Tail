@@ -49,6 +49,12 @@
     <Compile Include="Classes\NoFlickerListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MoveToFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveToFolderForm.Designer.cs">
+      <DependentUpon>MoveToFolderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.Tab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MoveToFolderForm.resx">
+      <DependentUpon>MoveToFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

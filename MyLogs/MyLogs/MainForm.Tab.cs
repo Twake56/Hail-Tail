@@ -15,26 +15,110 @@ namespace MyLogs
     public partial class MainForm
     {
         private Point DragStartPosition = Point.Empty;
+        public static TabPage SelectedTabPage = new TabPage();
+
+        private bool CheckForExistingTabName(string tabName)
+        {
+            for (int x = 0; x < TabControlParent.TabCount; ++x)
+            {
+                if (TabControlParent.TabPages[x].Name == tabName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        private void createFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string NewFolderName = "NewFolder-0";
+            while(CheckForExistingTabName(NewFolderName) == true)
+            {
+                var StringNum = NewFolderName.Split('-')[1];
+                int Counter = Convert.ToInt32(StringNum);
+                Counter++;
+                string NewName = "NewFolder-" + Counter.ToString() + "";
+                NewFolderName = NewName;
+            }
+           
+            TabPage tab = new TabPage() { Text = NewFolderName, Name = NewFolderName, Tag = "Folder" };
+            TabControlParent.TabPages.Add(tab);
+            TabControlParent.SelectedTab = tab;
+        }
+
+
+        private void renameTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RenameForm rename = new RenameForm();
+            rename.ShowDialog();
+            if (rename.DialogResult == DialogResult.OK)
+            {
+                //TabPage tab = MainForm.SelectedTabPage;
+                if(SelectedTabPage.Tag.ToString() == "Folder" && !CheckForExistingTabName(rename.RenameTextBox.Text))
+                {
+                    SelectedTabPage.Name = rename.RenameTextBox.Text;
+                }
+                else if(SelectedTabPage.Tag.ToString() == "Folder" && CheckForExistingTabName(rename.RenameTextBox.Text))
+                {
+                    MessageBox.Show("Folder Name Already Exists.");
+                    rename.Hide();
+                    return;
+                }
+
+                SelectedTabPage.Text = rename.RenameTextBox.Text;
+                SelectedTabPage.Update();
+            }
+            else
+            {
+                rename.Hide();
+            }
+        }
+
         private void TabControlParent_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
+                //int MoveToIndex = 0;
+                foreach (ToolStripItem item in TabContextMenuStrip.Items)
+                {
+                    if(item.Text == "Move to Folder")
+                    {
+                       // MoveToIndex = TabContextMenuStrip.Items.IndexOf(item);
+                    }
+                }
+                //Below clears Move To directories
+                //(TabContextMenuStrip.Items[MoveToIndex] as ToolStripMenuItem).DropDownItems.Clear();
+                //Populates Move To menu
                 for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
                 {
+                    /*if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
+                    {
+                        (TabContextMenuStrip.Items[MoveToIndex] as ToolStripMenuItem).DropDownItems.Add(Text = TabControlParent.TabPages[ix].Text);
+                       
+                    }*/
+
+
                     if (TabControlParent.GetTabRect(ix).Contains(e.Location))
                     {
                         TabContextMenuStrip.Show(this, e.Location);
                         SelectedTabPage = TabControlParent.TabPages[ix];
-                        /*RenameForm rename = new RenameForm();
-                        rename.ShowDialog();
-                        break;*/
+
                     }
+
                 }
+
             }
         }
+
+
+
         private void TabContextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            if (e.ClickedItem.Name == "renameTabToolStripMenuItem")
+            ToolStripItem clickedItem = e.ClickedItem;
+            
+            
+            if (e.ClickedItem.Name == "TabToolStripMenuItem")
             {
                 RenameForm rename = new RenameForm();
                 rename.ShowDialog();
@@ -50,7 +134,23 @@ namespace MyLogs
                 }
 
             }
+            else if(e.ClickedItem.Name == "moveToFolderToolStripMenuItem")
+            {
+                MoveToFolderForm MoveToForm = new MoveToFolderForm();
+                
+                for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
+                {
+                    if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
+                    {
+                        MoveToForm.FolderListBox.Items.Add(Text = TabControlParent.TabPages[ix].Text);
+                    }
+                    
+                }
+                    MoveToForm.ShowDialog();
+            }
         }
+
+
         private void TabControlParent_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             DragStartPosition = new Point(e.X, e.Y);
@@ -99,6 +199,8 @@ namespace MyLogs
                 }
             }
         }
+
+
         private TabPage HoverTab()
         {
             for (int index = 0; index <= TabControlParent.TabCount - 1; index++)
