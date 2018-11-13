@@ -93,7 +93,7 @@ namespace MyLogs
                     followTailCheckBox.Checked = true;
 
                     //Creates a new tab for a new log
-                    TabPage tab = new TabPage() { Text = System.IO.Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName , Tag="File"};
+                    TabPage tab = new TabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName , Tag="File"};
                     TabControlParent.TabPages.Add(tab);
                     TabControlParent.SelectedTab = tab;
 
@@ -146,6 +146,17 @@ namespace MyLogs
             TabPage EventPage = null;
             foreach (TabPage tab in TabControlParent.TabPages)
             {
+                if(tab.Tag.ToString() == "Folder")
+                {
+                    TabControl subTabControl = (tab.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                    foreach (TabPage subTab in subTabControl.TabPages)
+                    {
+                        if (e.FullPath == subTab.Name)
+                        {
+                            EventPage = tab;
+                        }
+                    }
+                }
                 if (e.FullPath == tab.Name)
                 {
                     EventPage = tab;
