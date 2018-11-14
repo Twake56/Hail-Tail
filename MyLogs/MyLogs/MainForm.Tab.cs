@@ -187,7 +187,6 @@ namespace MyLogs
             {
                 MoveToFolderForm MoveToForm = new MoveToFolderForm();
                 string parentFolderName = SelectedTabPage.Parent.Name;
-                Console.WriteLine(parentFolderName);
                 for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
                 {                    
                     if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
@@ -202,6 +201,10 @@ namespace MyLogs
                     try
                     {
                         string selection = MoveToForm.FolderListBox.SelectedItem.ToString();
+                        if(selection.ToString() == "No Folder")
+                        {
+                            TabControlParent.TabPages.Add(SelectedTabPage);
+                        }
                         TabPage folder = GetFolderByName(selection);
                         TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
                         subTabPageControl.TabPages.Add(SelectedTabPage);

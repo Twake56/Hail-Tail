@@ -53,6 +53,8 @@
             // 
             this.FolderListBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FolderListBox.FormattingEnabled = true;
+            this.FolderListBox.Items.AddRange(new object[] {
+            "No Folder"});
             this.FolderListBox.Location = new System.Drawing.Point(3, 17);
             this.FolderListBox.Name = "FolderListBox";
             this.FolderListBox.Size = new System.Drawing.Size(266, 316);

@@ -30,3 +30,7 @@ C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.ex
 C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.pdb
 C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.RenameForm.resources
 C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.MoveToFolderForm.resources
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\MyLogs.exe.manifest
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\MyLogs.application
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.exe.manifest
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.application
