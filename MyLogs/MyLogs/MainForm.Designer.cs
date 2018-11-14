@@ -75,7 +75,7 @@
             this.renameTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveToFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel4.SuspendLayout();
             this.PrimaryMenus.SuspendLayout();
             this.MainTableLayoutPanel.SuspendLayout();
@@ -446,36 +446,36 @@
             this.renameTabToolStripMenuItem,
             this.createFolderToolStripMenuItem,
             this.moveToFolderToolStripMenuItem,
-            this.deleteFolderToolStripMenuItem});
+            this.deleteToolStripMenuItem});
             this.TabContextMenuStrip.Name = "TabContextMenuStrip";
-            this.TabContextMenuStrip.Size = new System.Drawing.Size(155, 92);
+            this.TabContextMenuStrip.Size = new System.Drawing.Size(181, 114);
             this.TabContextMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.TabContextMenuStrip_ItemClicked);
             // 
             // renameTabToolStripMenuItem
             // 
             this.renameTabToolStripMenuItem.Name = "renameTabToolStripMenuItem";
-            this.renameTabToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.renameTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.renameTabToolStripMenuItem.Text = "Rename Tab";
             this.renameTabToolStripMenuItem.Click += new System.EventHandler(this.renameTabToolStripMenuItem_Click);
             // 
             // createFolderToolStripMenuItem
             // 
             this.createFolderToolStripMenuItem.Name = "createFolderToolStripMenuItem";
-            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.createFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createFolderToolStripMenuItem.Text = "Create Folder";
             this.createFolderToolStripMenuItem.Click += new System.EventHandler(this.createFolderToolStripMenuItem_Click);
             // 
             // moveToFolderToolStripMenuItem
             // 
             this.moveToFolderToolStripMenuItem.Name = "moveToFolderToolStripMenuItem";
-            this.moveToFolderToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.moveToFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.moveToFolderToolStripMenuItem.Text = "Move to Folder";
             // 
-            // deleteFolderToolStripMenuItem
+            // deleteToolStripMenuItem
             // 
-            this.deleteFolderToolStripMenuItem.Name = "deleteFolderToolStripMenuItem";
-            this.deleteFolderToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.deleteFolderToolStripMenuItem.Text = "Delete Folder";
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // MainForm
             // 
@@ -550,7 +550,7 @@
         private System.Windows.Forms.ToolStripMenuItem createFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveToFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewFolderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 

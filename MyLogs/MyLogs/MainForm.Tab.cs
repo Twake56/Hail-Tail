@@ -69,10 +69,6 @@ namespace MyLogs
             TabControlParent.SelectedTab = tab;
         }
 
-       /* private TabControl GetTabControlByFolder ()
-        {
-
-        }*/
 
 
         private void SubTab_Click(object source, MouseEventArgs e)
@@ -80,15 +76,23 @@ namespace MyLogs
             if (e.Button == MouseButtons.Right)
             {
                 //TabControl SubTabControl = GetTabControlByFolder();
-                TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
-                for (int ix = 0; ix < subTabControl.TabCount; ++ix)
-                {
-                    if (subTabControl.GetTabRect(ix).Contains(e.Location))
+                try
+                { 
+                    TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                    for (int ix = 0; ix < subTabControl.TabCount; ++ix)
                     {
-                        TabContextMenuStrip.Show(this, e.Location);
-                        SelectedTabPage = subTabControl.TabPages[ix];
+                        if (subTabControl.GetTabRect(ix).Contains(e.Location))
+                        {
+                            TabContextMenuStrip.Show(this, e.Location);
+                            SelectedTabPage = subTabControl.TabPages[ix];
+                        }
                     }
                 }
+                catch(NullReferenceException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
             }
         }
 
@@ -131,6 +135,12 @@ namespace MyLogs
                     {
                         TabContextMenuStrip.Show(this, e.Location);
                         SelectedTabPage = TabControlParent.TabPages[ix];
+                        //SelectedFolder = null;
+                    }
+                    else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
+                    {
+                        SelectedFolder = TabControlParent.TabPages[ix];
+                        
                     }
                 }
             }
@@ -176,9 +186,10 @@ namespace MyLogs
             else if (e.ClickedItem.Name == "moveToFolderToolStripMenuItem")
             {
                 MoveToFolderForm MoveToForm = new MoveToFolderForm();
-
+                string parentFolderName = SelectedTabPage.Parent.Name;
+                Console.WriteLine(parentFolderName);
                 for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
-                {
+                {                    
                     if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
                         MoveToForm.FolderListBox.Items.Add(Text = TabControlParent.TabPages[ix].Text);
@@ -188,11 +199,36 @@ namespace MyLogs
                 MoveToForm.ShowDialog();
                 if (MoveToForm.DialogResult == DialogResult.OK)
                 {
-                    string selection = MoveToForm.FolderListBox.SelectedItem.ToString();
-                    TabPage folder = GetFolderByName(selection);
-                    TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
-                    subTabPageControl.TabPages.Add(SelectedTabPage);
+                    try
+                    {
+                        string selection = MoveToForm.FolderListBox.SelectedItem.ToString();
+                        TabPage folder = GetFolderByName(selection);
+                        TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
+                        subTabPageControl.TabPages.Add(SelectedTabPage);
+                    }
+                    catch (NullReferenceException)
+                    {
+                      //No folder selected
+                    }
                 }
+            }
+            else if (e.ClickedItem.Name == "deleteToolStripMenuItem")
+            {
+              
+                if (SelectedTabPage.Tag.ToString() == "Folder")
+                {
+                    
+                    TabControl subTabPageControl = SelectedTabPage.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
+                    foreach(TabPage tab in subTabPageControl.TabPages)
+                    {
+                        FileWatchers.Remove(tab.Name);
+                    }
+                    
+                }
+                FileWatchers.Remove(SelectedTabPage.Name);
+                TabControl tabControl = SelectedTabPage.Parent as TabControl;
+                tabControl.TabPages.Remove(SelectedTabPage);
+                
             }
         }
 

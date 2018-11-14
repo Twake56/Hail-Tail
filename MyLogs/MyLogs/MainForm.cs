@@ -148,12 +148,15 @@ namespace MyLogs
             {
                 if(tab.Tag.ToString() == "Folder")
                 {
-                    TabControl subTabControl = (tab.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
-                    foreach (TabPage subTab in subTabControl.TabPages)
+                    TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                    if (subTabControl != null)
                     {
-                        if (e.FullPath == subTab.Name)
+                        foreach (TabPage subTab in subTabControl.TabPages)
                         {
-                            EventPage = tab;
+                            if (e.FullPath == subTab.Name)
+                            {
+                                EventPage = tab;
+                            }
                         }
                     }
                 }
