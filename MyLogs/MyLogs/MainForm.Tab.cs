@@ -59,7 +59,7 @@ namespace MyLogs
             //Attach subtabcontrol to folder tabs
             TabControl subTabControl = new TabControl();
             subTabControl.Name = "SubTabControl";
-            subTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            subTabControl.Dock = DockStyle.Fill;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
 
 
@@ -135,7 +135,7 @@ namespace MyLogs
                     {
                         TabContextMenuStrip.Show(this, e.Location);
                         SelectedTabPage = TabControlParent.TabPages[ix];
-                        //SelectedFolder = null;
+                        
                     }
                     else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
@@ -201,7 +201,7 @@ namespace MyLogs
                     try
                     {
                         string selection = MoveToForm.FolderListBox.SelectedItem.ToString();
-                        if(selection.ToString() == "No Folder")
+                        if (selection.ToString() == "No Folder")
                         {
                             TabControlParent.TabPages.Add(SelectedTabPage);
                         }
@@ -209,10 +209,7 @@ namespace MyLogs
                         TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
                         subTabPageControl.TabPages.Add(SelectedTabPage);
                     }
-                    catch (NullReferenceException)
-                    {
-                      //No folder selected
-                    }
+                    catch (NullReferenceException) { } //No folder selected do nothing
                 }
             }
             else if (e.ClickedItem.Name == "deleteToolStripMenuItem")
