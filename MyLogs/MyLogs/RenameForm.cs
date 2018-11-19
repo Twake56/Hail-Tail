@@ -15,7 +15,8 @@ namespace MyLogs
         public RenameForm()
         {
             InitializeComponent();
-        }
+         RenameTextBox.Select();
+      }
 
         private void Cancel_MouseClick(object sender, MouseEventArgs e)
         {

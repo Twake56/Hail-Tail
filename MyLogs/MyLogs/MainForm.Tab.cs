@@ -169,15 +169,15 @@ namespace MyLogs
         {
             ToolStripItem clickedItem = e.ClickedItem;
 
-
             if (e.ClickedItem.Name == "TabToolStripMenuItem")
             {
                 RenameForm rename = new RenameForm();
                 rename.ShowDialog();
-                if (rename.DialogResult == DialogResult.OK)
+
+            if (rename.DialogResult == DialogResult.OK)
                 {
-                    //TabPage tab = MainForm.SelectedTabPage;
-                    SelectedTabPage.Text = rename.RenameTextBox.Text;
+
+               SelectedTabPage.Text = rename.RenameTextBox.Text;
                     SelectedTabPage.Update();
                 }
                 else
