@@ -62,6 +62,8 @@
          this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
          this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -149,6 +151,7 @@
          // TabControlParent
          // 
          this.TabControlParent.AllowDrop = true;
+         this.TabControlParent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
          this.TabControlParent.Dock = System.Windows.Forms.DockStyle.Fill;
          this.TabControlParent.HotTrack = true;
          this.TabControlParent.Location = new System.Drawing.Point(3, 26);
@@ -349,7 +352,8 @@
          // 
          this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customizeToolStripMenuItem,
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.themeToolStripMenuItem});
          this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
          this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 19);
          this.toolsToolStripMenuItem.Text = "&Tools";
@@ -365,6 +369,20 @@
          this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
          this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
          this.optionsToolStripMenuItem.Text = "&Options";
+         // 
+         // themeToolStripMenuItem
+         // 
+         this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox1});
+         this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+         this.themeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+         this.themeToolStripMenuItem.Text = "Theme";
+         // 
+         // toolStripComboBox1
+         // 
+         this.toolStripComboBox1.Name = "toolStripComboBox1";
+         this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+         this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
          // 
          // helpToolStripMenuItem
          // 
@@ -480,6 +498,7 @@
          // 
          this.ClientSize = new System.Drawing.Size(850, 399);
          this.Controls.Add(this.MainTableLayoutPanel);
+         this.ForeColor = System.Drawing.SystemColors.ControlText;
          this.MainMenuStrip = this.PrimaryMenus;
          this.Name = "MainForm";
          this.Text = "Timber Tail";
@@ -550,6 +569,8 @@
         private System.Windows.Forms.ToolStripMenuItem moveToFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-    }
+      private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
+      private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+   }
 }
 
