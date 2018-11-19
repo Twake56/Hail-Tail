@@ -56,8 +56,11 @@ namespace MyLogs
                 string NewName = "NewFolder-" + Counter.ToString() + "";
                 NewFolderName = NewName;
             }
-            //Attach subtabcontrol to folder tabs
-            TabControl subTabControl = new TabControl();
+
+         /************************
+          Attach subtabcontrol to folder tabs
+          ************************/
+         TabControl subTabControl = new TabControl();
             subTabControl.Name = "SubTabControl";
             subTabControl.Dock = DockStyle.Fill;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);

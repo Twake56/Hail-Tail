@@ -103,10 +103,7 @@ namespace MyLogs
                     ListViewText.FullRowSelect = true;
                     ListViewText.ContextMenuStrip = contextMenuStrip1;
                     ListViewText.MultiSelect = true;
-                    ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later
-                    
-
-                    
+                    ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later   
 
                     //Write all lines to list view for tab
                     string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
@@ -141,8 +138,7 @@ namespace MyLogs
         }
 
         private void OnChanged(object source, FileSystemEventArgs e)
-        {
-            
+        {            
             TabPage EventPage = null;
             foreach (TabPage tab in TabControlParent.TabPages)
             {
@@ -210,10 +206,12 @@ namespace MyLogs
                         }
                     }
 
-                    //LogListView.Text = reader.ReadToEnd();
-                    FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
-                    long FileSizeValue = new FileInfo(e.FullPath).Length; //Create the long for the file size value
-                    FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+               //Grabs the Number of lines in a file
+               FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
+               //Create the long for the file size value
+               long FileSizeValue = new FileInfo(e.FullPath).Length;
+               //Convert File size from bytes to KB
+               FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; 
 
                     if (followTailCheckBox.Checked)
                     {
@@ -233,9 +231,8 @@ namespace MyLogs
                 }
             }
         }
-
         
-
+      //Copy lines from Logs
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             if (e.ClickedItem.Text == "Copy")
@@ -245,7 +242,7 @@ namespace MyLogs
 
         }
 
-
+      //Copy lines from Logs
       public void copySelectedItemsToClipboard()
       {
          ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
