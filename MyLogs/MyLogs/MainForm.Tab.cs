@@ -63,6 +63,8 @@ namespace MyLogs
          TabControl subTabControl = new TabControl();
             subTabControl.Name = "SubTabControl";
             subTabControl.Dock = DockStyle.Fill;
+            subTabControl.ShowToolTips = true;
+         subTabControl.AllowDrop = true;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
 
 
@@ -70,7 +72,8 @@ namespace MyLogs
             tab.Controls.Add(subTabControl);
             TabControlParent.TabPages.Add(tab);
             TabControlParent.SelectedTab = tab;
-        }
+         tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
+      }
 
 
 
@@ -235,12 +238,13 @@ namespace MyLogs
             }
         }
 
-
+      /*
+       * Tab Drag and order change controls
+       */
         private void TabControlParent_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             DragStartPosition = new Point(e.X, e.Y);
         }
-
 
         private void TabControlParent_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -258,7 +262,6 @@ namespace MyLogs
             }
             DragStartPosition = Point.Empty;
         }
-
 
         private void TabControlParent_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
         {
@@ -285,7 +288,6 @@ namespace MyLogs
             }
         }
 
-
         private TabPage HoverTab()
         {
             for (int index = 0; index <= TabControlParent.TabCount - 1; index++)
@@ -296,7 +298,6 @@ namespace MyLogs
             return null;
         }
 
-
         private void SwapTabPages(TabPage tp1, TabPage tp2)
         {
             int Index1 = TabControlParent.TabPages.IndexOf(tp1);
@@ -305,7 +306,9 @@ namespace MyLogs
             TabControlParent.TabPages[Index2] = tp1;
         }
 
-
+      /*
+       * Controls for Copy and Paste
+       */ 
         private void TabControlParent_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.C)

@@ -157,6 +157,7 @@
          this.TabControlParent.Location = new System.Drawing.Point(3, 26);
          this.TabControlParent.Name = "TabControlParent";
          this.TabControlParent.SelectedIndex = 0;
+         this.TabControlParent.ShowToolTips = true;
          this.TabControlParent.Size = new System.Drawing.Size(844, 340);
          this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
          this.TabControlParent.TabIndex = 1;
@@ -168,6 +169,7 @@
          // 
          // PrimaryMenus
          // 
+         this.PrimaryMenus.BackColor = System.Drawing.SystemColors.ControlDarkDark;
          this.PrimaryMenus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -496,6 +498,7 @@
          // 
          // MainForm
          // 
+         this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
          this.ClientSize = new System.Drawing.Size(850, 399);
          this.Controls.Add(this.MainTableLayoutPanel);
          this.ForeColor = System.Drawing.SystemColors.ControlText;

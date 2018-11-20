@@ -96,6 +96,7 @@ namespace MyLogs
                     TabPage tab = new TabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName , Tag="File"};
                     TabControlParent.TabPages.Add(tab);
                     TabControlParent.SelectedTab = tab;
+                  tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
 
                     Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
                     ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
