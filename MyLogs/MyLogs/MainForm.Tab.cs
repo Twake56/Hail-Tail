@@ -102,8 +102,9 @@ namespace MyLogs
             }
         }
 
-
-
+      /******************************
+       * Section that allows for Tab renaming
+       ******************************/ 
         private void renameTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RenameForm rename = new RenameForm();
@@ -166,8 +167,9 @@ namespace MyLogs
             }
         }
 
-
-
+      /*************************
+       * Handles the Tab menu item selections
+       ***************************/ 
         private void TabContextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             ToolStripItem clickedItem = e.ClickedItem;
@@ -306,9 +308,9 @@ namespace MyLogs
             TabControlParent.TabPages[Index2] = tp1;
         }
 
-      /*
+      /**********************************
        * Controls for Copy and Paste
-       */ 
+       **********************************/
         private void TabControlParent_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.C)
@@ -316,15 +318,20 @@ namespace MyLogs
         }
 
 
-        private ListView GetListViewByTab(TabPage tab)
-        {
+      private ListView GetListViewByTab(TabPage tab)
+      {
+         if (tab != null)
+         {
             ListView ChildListView = Controls.Find(tab.Name + "-ListView", true).FirstOrDefault() as ListView;
             if (ChildListView != null)
             {
-                return ChildListView;
+               return ChildListView;
             }
             else
-                return null;
-        }
+               return null;
+         }
+         else
+            return null;
+      }
     }
 }
