@@ -22,24 +22,6 @@ namespace MyLogs
             InitializeComponent();
         }
 
-        private void SearchBox_Enter(object sender, EventArgs e)
-        {
-            if (SearchBox.Text == "Search")
-            {
-                SearchBox.Text = "";
-                SearchBox.ForeColor = Color.Black;
-            }
-        }
-
-        private void SearchBox_Leave(object sender, EventArgs e)
-        {
-            if (SearchBox.Text == "")
-            {
-                SearchBox.Text = "Search";
-                SearchBox.ForeColor = Color.Gray;
-            }
-        }
-
         private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
         {
 
@@ -134,7 +116,6 @@ namespace MyLogs
                 {
                     MessageBox.Show(ioe.Message);
                 }
-
             }
         }
 
@@ -260,32 +241,54 @@ namespace MyLogs
          Clipboard.SetDataObject(sb.ToString());
       }
 
-
+      /**********************************
+       * Handles the search functions
+       * ********************************/
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
-            ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
-            if (SearchBox.Text.Length > 0)
+         ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
+         if (CurrentListView != null)
+         {
+            foreach (ListViewItem item in CurrentListView.Items)
             {
-                //ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
-                // Call FindItemWithText with the contents of the textbox.
-                ListViewItem foundItem = CurrentListView.FindItemWithText(SearchBox.Text, false, 0, true);
-                FindItemWithText(foundItem);
+               if (item.SubItems[0].Text.ToLower() == SearchBox.Text.ToLower())
+               {
+                  CurrentListView.TopItem = item;
+                  item.BackColor = Color.LightSteelBlue;
+                  return;
+               }
+               else
+               {
+                  item.BackColor = Color.White;
+               }
             }
-        }
-
-        private void FindItemWithText(ListViewItem foundItem)
-        {
-            ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
-            if (foundItem != null && SearchBox != null)
-            {
-                CurrentListView.TopItem = foundItem;
-                foundItem.BackColor = Color.SteelBlue;
-            }
-        }
+         }
+}
 
       private void toolStripComboBox1_Click(object sender, EventArgs e)
       {
 
+      }
+
+      /************************
+       * Handle Search box Ghost Text
+       **************************/ 
+      private void SearchBox_Enter(object sender, EventArgs e)
+      {
+         if (SearchBox.Text == "Search")
+         {
+            SearchBox.Text = "";
+            SearchBox.ForeColor = Color.Black;
+         }
+      }
+
+      private void SearchBox_Leave(object sender, EventArgs e)
+      {
+         if (SearchBox.Text == "")
+         {
+            SearchBox.Text = "Search";
+            SearchBox.ForeColor = Color.Gray;
+         }
       }
    }
 }

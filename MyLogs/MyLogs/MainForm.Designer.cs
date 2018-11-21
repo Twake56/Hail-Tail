@@ -64,6 +64,7 @@
          this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+         this.highlightingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -355,7 +356,8 @@
          this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customizeToolStripMenuItem,
             this.optionsToolStripMenuItem,
-            this.themeToolStripMenuItem});
+            this.themeToolStripMenuItem,
+            this.highlightingToolStripMenuItem});
          this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
          this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 19);
          this.toolsToolStripMenuItem.Text = "&Tools";
@@ -363,13 +365,13 @@
          // customizeToolStripMenuItem
          // 
          this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-         this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+         this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
          this.customizeToolStripMenuItem.Text = "&Customize";
          // 
          // optionsToolStripMenuItem
          // 
          this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-         this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+         this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
          this.optionsToolStripMenuItem.Text = "&Options";
          // 
          // themeToolStripMenuItem
@@ -377,7 +379,7 @@
          this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBox1});
          this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-         this.themeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+         this.themeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
          this.themeToolStripMenuItem.Text = "Theme";
          // 
          // toolStripComboBox1
@@ -385,6 +387,12 @@
          this.toolStripComboBox1.Name = "toolStripComboBox1";
          this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
          this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
+         // 
+         // highlightingToolStripMenuItem
+         // 
+         this.highlightingToolStripMenuItem.Name = "highlightingToolStripMenuItem";
+         this.highlightingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+         this.highlightingToolStripMenuItem.Text = "Highlighting";
          // 
          // helpToolStripMenuItem
          // 
@@ -574,6 +582,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
       private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+      private System.Windows.Forms.ToolStripMenuItem highlightingToolStripMenuItem;
    }
 }
 
