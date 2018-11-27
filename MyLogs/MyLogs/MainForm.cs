@@ -11,218 +11,218 @@ using System.Windows.Forms;
 
 namespace MyLogs
 {
-    public partial class MainForm : Form
-    {
-        public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
-        public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
+   public partial class MainForm : Form
+   {
+      public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
+      public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
 
 
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+      public MainForm()
+      {
+         InitializeComponent();
+      }
 
-        private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
-        {
+      private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
+      {
 
-        }
+      }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
+      private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+      {
 
-        }
+      }
 
-        public string[] WriteSafeReadAllLines(String path)
-        {
-            using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(csv))
+      public string[] WriteSafeReadAllLines(String path)
+      {
+         using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+         using (var sr = new StreamReader(csv))
+         {
+            List<string> file = new List<string>();
+            while (!sr.EndOfStream)
             {
-                List<string> file = new List<string>();
-                while (!sr.EndOfStream)
-                {
-                    file.Add(sr.ReadLine());
-                }
-
-                return file.ToArray();
-            }
-        }
-
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog3.ShowDialog() == DialogResult.OK)
-            {
-                if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
-                {
-                    foreach (TabPage tab in TabControlParent.TabPages)
-                    {
-                        if (openFileDialog3.FileName == tab.Name)
-                        {
-                            TabControlParent.SelectedTab = tab;
-                            return;
-                        }
-                    }
-                }
-                try
-                {
-                    //Add a filesystem watcher to public dictionary
-                    var watch = new FileSystemWatcher();
-                    watch.Path = Path.GetDirectoryName(openFileDialog3.FileName);
-                    watch.Filter = Path.GetFileName(openFileDialog3.FileName);
-                    watch.Changed += new FileSystemEventHandler(OnChanged);
-                    watch.EnableRaisingEvents = true;
-                    FileWatchers.Add(openFileDialog3.FileName, watch);
-                    followTailCheckBox.Checked = true;
-
-                    //Creates a new tab for a new log
-                    TabPage tab = new TabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName , Tag="File"};
-                    TabControlParent.TabPages.Add(tab);
-                    TabControlParent.SelectedTab = tab;
-                  tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
-
-                    Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
-                    ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
-                    ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
-                    ListViewText.FullRowSelect = true;
-                    ListViewText.ContextMenuStrip = contextMenuStrip1;
-                    ListViewText.MultiSelect = true;
-                    ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later   
-
-                    //Write all lines to list view for tab
-                    string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
-                    var ItemsCount = ListViewText.Items.Count;
-                    if (ItemsCount == 0 || lines.Length < ItemsCount)
-                    {
-                        ListViewText.Items.Clear();
-                        for (var linenum = 0; linenum < lines.Length; linenum++)
-                        {
-                            ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                        }
-                    }
-                    try
-                    {
-                        ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
-                    }
-                    catch (ArgumentOutOfRangeException IndErr)
-                    {
-                        Console.WriteLine(IndErr.Message);
-                    }
-
-                    FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
-                    long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
-                    FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
-                }
-                catch (IOException ioe)
-                {
-                    MessageBox.Show(ioe.Message);
-                }
-            }
-        }
-
-        private void OnChanged(object source, FileSystemEventArgs e)
-        {            
-            TabPage EventPage = null;
-            foreach (TabPage tab in TabControlParent.TabPages)
-            {
-                if(tab.Tag.ToString() == "Folder")
-                {
-                    TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
-                    if (subTabControl != null)
-                    {
-                        foreach (TabPage subTab in subTabControl.TabPages)
-                        {
-                            if (e.FullPath == subTab.Name)
-                            {
-                                EventPage = tab;
-                            }
-                        }
-                    }
-                }
-                if (e.FullPath == tab.Name)
-                {
-                    EventPage = tab;
-                }
-            }
-            if (EventPage == null)
-            {
-                FileWatchers.Remove(e.FullPath);
-                return;
+               file.Add(sr.ReadLine());
             }
 
-            if (EventPage.InvokeRequired)
+            return file.ToArray();
+         }
+      }
+
+
+      private void openToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         if (openFileDialog3.ShowDialog() == DialogResult.OK)
+         {
+            if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
             {
-                EventPage.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+               foreach (TabPage tab in TabControlParent.TabPages)
+               {
+                  if (openFileDialog3.FileName == tab.Name)
+                  {
+                     TabControlParent.SelectedTab = tab;
+                     return;
+                  }
+               }
             }
-            else
+            try
             {
-                try
-                {
-                    string[] lines = WriteSafeReadAllLines(e.FullPath);
-                    var tmp = Controls.Find(e.FullPath + "-ListView", true);
-                    ListView ListViewText = tmp[0] as ListView;
-                    int itemIndex = ListViewText.TopItem.Index;
-                    int prevIndex = itemIndex;
-                    if (IndexKeeper.ContainsKey(e.FullPath))
-                    {
-                        prevIndex = IndexKeeper[e.FullPath];
-                    }
+               //Add a filesystem watcher to public dictionary
+               var watch = new FileSystemWatcher();
+               watch.Path = Path.GetDirectoryName(openFileDialog3.FileName);
+               watch.Filter = Path.GetFileName(openFileDialog3.FileName);
+               watch.Changed += new FileSystemEventHandler(OnChanged);
+               watch.EnableRaisingEvents = true;
+               FileWatchers.Add(openFileDialog3.FileName, watch);
+               followTailCheckBox.Checked = true;
 
-                    if(itemIndex < prevIndex)
-                    {
+               //Creates a new tab for a new log
+               TabPage tab = new TabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName, Tag = "File" };
+               TabControlParent.TabPages.Add(tab);
+               TabControlParent.SelectedTab = tab;
+               tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
 
-                    }
-                    var ItemsCount = ListViewText.Items.Count;
-                    if (ItemsCount == 0 || lines.Length < ItemsCount)
-                    {
-                        ListViewText.Items.Clear();
-                        for (var linenum = 0; linenum < lines.Length; linenum++)
-                        {
-                            ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                        }
-                    }
-                    else
-                    {
-                        for (var start = ItemsCount; start < lines.Length; start++)
-                        {
-                            ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
-                        }
-                    }
+               Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+               ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
+               ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
+               ListViewText.FullRowSelect = true;
+               ListViewText.ContextMenuStrip = contextMenuStrip1;
+               ListViewText.MultiSelect = true;
+               ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later   
+
+               //Write all lines to list view for tab
+               string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
+               var ItemsCount = ListViewText.Items.Count;
+               if (ItemsCount == 0 || lines.Length < ItemsCount)
+               {
+                  ListViewText.Items.Clear();
+                  for (var linenum = 0; linenum < lines.Length; linenum++)
+                  {
+                     ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                  }
+               }
+               try
+               {
+                  ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+               }
+               catch (ArgumentOutOfRangeException IndErr)
+               {
+                  Console.WriteLine(IndErr.Message);
+               }
+
+               FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
+               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
+               FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+            }
+            catch (IOException ioe)
+            {
+               MessageBox.Show(ioe.Message);
+            }
+         }
+      }
+
+      private void OnChanged(object source, FileSystemEventArgs e)
+      {
+         TabPage EventPage = null;
+         foreach (TabPage tab in TabControlParent.TabPages)
+         {
+            if (tab.Tag.ToString() == "Folder")
+            {
+               TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+               if (subTabControl != null)
+               {
+                  foreach (TabPage subTab in subTabControl.TabPages)
+                  {
+                     if (e.FullPath == subTab.Name)
+                     {
+                        EventPage = tab;
+                     }
+                  }
+               }
+            }
+            if (e.FullPath == tab.Name)
+            {
+               EventPage = tab;
+            }
+         }
+         if (EventPage == null)
+         {
+            FileWatchers.Remove(e.FullPath);
+            return;
+         }
+
+         if (EventPage.InvokeRequired)
+         {
+            EventPage.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+         }
+         else
+         {
+            try
+            {
+               string[] lines = WriteSafeReadAllLines(e.FullPath);
+               var tmp = Controls.Find(e.FullPath + "-ListView", true);
+               ListView ListViewText = tmp[0] as ListView;
+               int itemIndex = ListViewText.TopItem.Index;
+               int prevIndex = itemIndex;
+               if (IndexKeeper.ContainsKey(e.FullPath))
+               {
+                  prevIndex = IndexKeeper[e.FullPath];
+               }
+
+               if (itemIndex < prevIndex)
+               {
+
+               }
+               var ItemsCount = ListViewText.Items.Count;
+               if (ItemsCount == 0 || lines.Length < ItemsCount)
+               {
+                  ListViewText.Items.Clear();
+                  for (var linenum = 0; linenum < lines.Length; linenum++)
+                  {
+                     ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                  }
+               }
+               else
+               {
+                  for (var start = ItemsCount; start < lines.Length; start++)
+                  {
+                     ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                  }
+               }
 
                //Grabs the Number of lines in a file
                FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
                //Create the long for the file size value
                long FileSizeValue = new FileInfo(e.FullPath).Length;
                //Convert File size from bytes to KB
-               FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; 
+               FileSizeTB.Text = (FileSizeValue / 1024) + " KB";
 
-                    if (followTailCheckBox.Checked)
-                    {
-                        try
-                        {
-                            ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
-                        }
-                        catch (ArgumentOutOfRangeException IndErr)
-                        {
-                            Console.WriteLine(IndErr.Message);
-                        }
-                    }
-                }
-                catch (IOException IOex)
-                {
-                    Console.WriteLine(IOex.Message);
-                }
+               if (followTailCheckBox.Checked)
+               {
+                  try
+                  {
+                     ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                  }
+                  catch (ArgumentOutOfRangeException IndErr)
+                  {
+                     Console.WriteLine(IndErr.Message);
+                  }
+               }
             }
-        }
-        
-      //Copy lines from Logs
-        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            if (e.ClickedItem.Text == "Copy")
+            catch (IOException IOex)
             {
-                copySelectedItemsToClipboard();
+               Console.WriteLine(IOex.Message);
             }
+         }
+      }
 
-        }
+      //Copy lines from Logs
+      private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+      {
+         if (e.ClickedItem.Text == "Copy")
+         {
+            copySelectedItemsToClipboard();
+         }
+
+      }
 
       //Copy lines from Logs
       public void copySelectedItemsToClipboard()
@@ -244,46 +244,83 @@ namespace MyLogs
       /**********************************
        * Handles the search functions
        * ********************************/
-        private void SearchBox_TextChanged(object sender, EventArgs e)
-        {
+      private void SearchBox_EnterDown(object sender, KeyEventArgs e)
+      {
          ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
 
-         if (SearchBox.Text == string.Empty)
+         if (e.KeyCode == Keys.Enter)
          {
-            CurrentListView.BackColor = Color.White;
-            return;
-         }
 
-         if (SearchBox.Text != string.Empty)
-         {
-            if (CurrentListView != null)
+            if (SearchBox.Text == string.Empty)
             {
-               foreach (ListViewItem item in CurrentListView.Items)
+               CurrentListView.BackColor = Color.White;
+               foreach (ListViewItem items in CurrentListView.Items)
                {
-                  if (SearchBox.Text.Length > 0)
+                  items.BackColor = SystemColors.Window;
+                  items.ForeColor = SystemColors.WindowText;
+               }
+            }
+
+            if (CurrentListView.Items.Count > 0)
+            {
+               // Focus the list view
+               //CurrentListView.Focus();
+               // Clear currently selected items
+               CurrentListView.SelectedItems.Clear();
+               int i = 0;
+               ListViewItem found;
+               do
+               {
+                  // Recursively find all instances of the given text, starting from zero
+                  found = CurrentListView.FindItemWithText(SearchBox.Text.ToString().ToLower(), true, i, true);
+                  if (found != null)
                   {
-                     if (item.SubItems[1].ToString().Contains(SearchBox.Text.ToLower()))
-                     {
-                        CurrentListView.TopItem = item;
-                        item.BackColor = Color.LightSteelBlue;
+                     // Select found item
+                     found.Selected = true;
+                     found.BackColor = Color.SteelBlue;
+                     // Next search starts from the next element in the list view
+                     i = found.Index + 1;
+                  }
+                  else
+                  {
+                     // Otherwise, stop
+                     i = CurrentListView.Items.Count;
+                  }
+               } while (i < CurrentListView.Items.Count);
+            }
+            // If nothing found, show message
+            if (CurrentListView.SelectedItems.Count == 0)
+            {
+               MessageBox.Show("Value could not be found.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-                     }
-                     else if (item.SubItems[0].ToString().Contains(SearchBox.Text.ToLower()))
+            /*if (SearchBox.Text != string.Empty)
+            {
+               if (CurrentListView != null)
+               {
+                  foreach (ListViewItem item in CurrentListView.Items)
+                  {
+                     if (SearchBox.Text.Length > 0)
                      {
-                        CurrentListView.TopItem = item;
-                        item.BackColor = Color.AliceBlue;
-
-                     }
-                     else
-                     {
-                        CurrentListView.BackColor = Color.White;
-                        item.BackColor = Color.White;
+                        if (item.ToString().Contains(SearchBox.Text.ToString().ToLower()))
+                        {
+                           item.BackColor = Color.LightSteelBlue;
+                        }
+                        else if (item.SubItems[1].ToString().Contains(SearchBox.Text.ToString().ToLower()))
+                        {
+                           item.BackColor = Color.DodgerBlue;
+                        }
+                        else
+                        {
+                           CurrentListView.BackColor = Color.White;
+                           item.BackColor = Color.White;
+                        }
                      }
                   }
                }
-            }
+            }*/
          }
-}
+      }
 
       private void toolStripComboBox1_Click(object sender, EventArgs e)
       {
@@ -292,7 +329,7 @@ namespace MyLogs
 
       /************************
        * Handle Search box Ghost Text
-       **************************/ 
+       **************************/
       private void SearchBox_Enter(object sender, EventArgs e)
       {
          if (SearchBox.Text == "Search")
@@ -308,6 +345,13 @@ namespace MyLogs
          {
             SearchBox.Text = "Search";
             SearchBox.ForeColor = Color.Gray;
+            ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
+            CurrentListView.BackColor = Color.White;
+            foreach (ListViewItem items in CurrentListView.Items)
+            {
+               items.BackColor = SystemColors.Window;
+               items.ForeColor = SystemColors.WindowText;
+            }
          }
       }
    }
