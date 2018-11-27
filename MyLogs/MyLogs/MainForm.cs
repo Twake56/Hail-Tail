@@ -247,19 +247,39 @@ namespace MyLogs
         private void SearchBox_TextChanged(object sender, EventArgs e)
         {
          ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
-         if (CurrentListView != null)
+
+         if (SearchBox.Text == string.Empty)
          {
-            foreach (ListViewItem item in CurrentListView.Items)
+            CurrentListView.BackColor = Color.White;
+            return;
+         }
+
+         if (SearchBox.Text != string.Empty)
+         {
+            if (CurrentListView != null)
             {
-               if (item.SubItems[0].Text.ToLower() == SearchBox.Text.ToLower())
+               foreach (ListViewItem item in CurrentListView.Items)
                {
-                  CurrentListView.TopItem = item;
-                  item.BackColor = Color.LightSteelBlue;
-                  return;
-               }
-               else
-               {
-                  item.BackColor = Color.White;
+                  if (SearchBox.Text.Length > 0)
+                  {
+                     if (item.SubItems[1].ToString().Contains(SearchBox.Text.ToLower()))
+                     {
+                        CurrentListView.TopItem = item;
+                        item.BackColor = Color.LightSteelBlue;
+
+                     }
+                     else if (item.SubItems[0].ToString().Contains(SearchBox.Text.ToLower()))
+                     {
+                        CurrentListView.TopItem = item;
+                        item.BackColor = Color.AliceBlue;
+
+                     }
+                     else
+                     {
+                        CurrentListView.BackColor = Color.White;
+                        item.BackColor = Color.White;
+                     }
+                  }
                }
             }
          }
