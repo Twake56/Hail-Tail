@@ -68,14 +68,19 @@ namespace MyLogs
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
 
 
-            TabPage tab = new TabPage() { Text = NewFolderName, Name = NewFolderName, Tag = "Folder" };
+            Classes.LogTabPage tab = new Classes.LogTabPage() { Text = NewFolderName, Name = NewFolderName, Tag = "Folder", PositionIndex = CountParentTabs() + 1, IsFolder = true };
             tab.Controls.Add(subTabControl);
             TabControlParent.TabPages.Add(tab);
             TabControlParent.SelectedTab = tab;
          tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
       }
 
-
+        private int CountParentTabs ()
+        {
+            int TabCount = TabControlParent.TabPages.Count;
+            return TabCount;
+            
+        }
 
         private void SubTab_Click(object source, MouseEventArgs e)
         {

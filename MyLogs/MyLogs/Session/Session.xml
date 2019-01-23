@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SESSION>
+  <Files>
+    <RootFile1 Position="0" Name="QA APP" Path="\\Some\Path\.txt" IsTailFollowed="1" IsFolder="0" />
+    <RootFile2 Name="UAT something" Postion="2" Path="\\Other\Path\.log" IsTailFollowed="0" IsFolder="0" />
+  </Files>
+  <Folders>
+    <Folder1 Name="QA" Position="1" IsFolder="1">
+      <SubFile1 Position="0" IsChild="1" TailFollowed="1" Path="\\sdf\dfs" IsFolder="0" Name="Billing" />
+    </Folder1>
+    <Folder2 Name="UAT" Position="3" IsFolder="1" />
+  </Folders>
+</SESSION>

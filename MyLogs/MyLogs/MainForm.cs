@@ -75,7 +75,7 @@ namespace MyLogs
                followTailCheckBox.Checked = true;
 
                //Creates a new tab for a new log
-               TabPage tab = new TabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName, Tag = "File" };
+               Classes.LogTabPage tab = new Classes.LogTabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName, Tag = "File", TailFollowed = true, PositionIndex = CountParentTabs() + 1 };
                TabControlParent.TabPages.Add(tab);
                TabControlParent.SelectedTab = tab;
                tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
@@ -354,5 +354,10 @@ namespace MyLogs
             }
          }
       }
-   }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveCurrentSession();
+        }
+    }
 }
