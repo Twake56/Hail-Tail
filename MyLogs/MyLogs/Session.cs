@@ -48,8 +48,49 @@ namespace MyLogs
                     }
                 }
             }
-            SessionXML.Save("C:/Users/twakeman/Desktop/test.xml");
+            SessionXML.Save("./Session/Session.xml");
         }
 
+        private void LoadLastSession()
+        {
+            if(TabControlParent.TabPages.Count > 0)
+            {
+                TabControlParent.TabPages.Clear();
+                FileWatchers.Clear();
+            }
+            try
+            {
+                XDocument LastSession = XDocument.Load(@"./Session/Session.xml");
+                XElement files = LastSession.Root.Elements("Files").First();
+                for(var i = 0; i < files.Elements().Count(); i++)
+                {
+                    XElement element = files.Elements().ToList()[i];
+                    int index = -1;
+                    Int32.TryParse(element.Attribute("Position").Value, out index);
+                    CreateParentTabPageAtIndex(element.Attribute("Path").Value, index);
+                }
+
+                XElement folders = LastSession.Root.Elements("Folders").First();
+                for (var f = 0; f < folders.Elements().Count(); f++)
+                {
+                    XElement element = folders.Elements().ToList()[f];
+                    int index = -1;
+                    Int32.TryParse(element.Attribute("Position").Value, out index);
+                    CreateFolder(element.Attribute("Name").Value, index);
+
+                    for (var fi = 0; fi < folders.Elements().ToList()[f].Elements().Count(); fi++)
+                    {
+                        int subIndex = -1;
+                        Int32.TryParse(folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Position").Value, out subIndex);
+                        CreateParentTabPageAtIndex(folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Path").Value, subIndex, parentName: element.Attribute("Name").Value);
+                    }
+                }
+            }
+            catch(IOException err)
+            {
+                MessageBox.Show(err.Message);
+                return;
+            }
+        }
     }
 }

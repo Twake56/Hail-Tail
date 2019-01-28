@@ -56,24 +56,28 @@ namespace MyLogs
                 string NewName = "NewFolder-" + Counter.ToString() + "";
                 NewFolderName = NewName;
             }
+            CreateFolder(name: NewFolderName, index: null);
+        }
 
-         /************************
-          Attach subtabcontrol to folder tabs
-          ************************/
-         TabControl subTabControl = new TabControl();
+        private void CreateFolder(string name, int? index)
+        {
+            /************************
+             Attach subtabcontrol to folder tabs
+             ************************/
+            TabControl subTabControl = new TabControl();
             subTabControl.Name = "SubTabControl";
             subTabControl.Dock = DockStyle.Fill;
             subTabControl.ShowToolTips = true;
-         subTabControl.AllowDrop = true;
+            subTabControl.AllowDrop = true;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
 
-
-            Classes.LogTabPage tab = new Classes.LogTabPage() { Text = NewFolderName, Name = NewFolderName, Tag = "Folder", PositionIndex = CountParentTabs() + 1, IsFolder = true };
+            int tabPosition = index ?? CountParentTabs() + 1;
+            Classes.LogTabPage tab = new Classes.LogTabPage() { Text = name, Name = name, Tag = "Folder", PositionIndex = tabPosition, IsFolder = true };
             tab.Controls.Add(subTabControl);
             TabControlParent.TabPages.Add(tab);
             TabControlParent.SelectedTab = tab;
-         tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
-      }
+            tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
+        }
 
         private int CountParentTabs ()
         {

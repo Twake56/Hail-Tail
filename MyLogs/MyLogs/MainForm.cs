@@ -50,75 +50,91 @@ namespace MyLogs
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         if (openFileDialog3.ShowDialog() == DialogResult.OK)
-         {
-            if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
+            if (openFileDialog3.ShowDialog() == DialogResult.OK)
             {
-               foreach (TabPage tab in TabControlParent.TabPages)
-               {
-                  if (openFileDialog3.FileName == tab.Name)
-                  {
-                     TabControlParent.SelectedTab = tab;
-                     return;
-                  }
-               }
-            }
+                if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
+                {
+                    foreach (TabPage tab in TabControlParent.TabPages)
+                    {
+                        if (openFileDialog3.FileName == tab.Name)
+                        {
+                            TabControlParent.SelectedTab = tab;
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    CreateParentTabPageAtIndex(path: openFileDialog3.FileName, index: null);
+                }
+            }  
+      }
+
+        private void CreateParentTabPageAtIndex(string path, int? index, string parentName = null)
+        {
             try
             {
-               //Add a filesystem watcher to public dictionary
-               var watch = new FileSystemWatcher();
-               watch.Path = Path.GetDirectoryName(openFileDialog3.FileName);
-               watch.Filter = Path.GetFileName(openFileDialog3.FileName);
-               watch.Changed += new FileSystemEventHandler(OnChanged);
-               watch.EnableRaisingEvents = true;
-               FileWatchers.Add(openFileDialog3.FileName, watch);
-               followTailCheckBox.Checked = true;
+                //Add a filesystem watcher to public dictionary
+                var watch = new FileSystemWatcher();
+                watch.Path = Path.GetDirectoryName(path);
+                watch.Filter = Path.GetFileName(path);
+                watch.Changed += new FileSystemEventHandler(OnChanged);
+                watch.EnableRaisingEvents = true;
+                FileWatchers.Add(path, watch);
+                followTailCheckBox.Checked = true;
 
-               //Creates a new tab for a new log
-               Classes.LogTabPage tab = new Classes.LogTabPage() { Text = Path.GetFileName(openFileDialog3.FileName), Name = openFileDialog3.FileName, Tag = "File", TailFollowed = true, PositionIndex = CountParentTabs() + 1 };
-               TabControlParent.TabPages.Add(tab);
-               TabControlParent.SelectedTab = tab;
-               tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
+                int tabPosition = index ?? CountParentTabs() + 1;
+                //Creates a new tab for a new log
+                Classes.LogTabPage tab = new Classes.LogTabPage() { Text = Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition };
+                TabControlParent.TabPages.Add(tab);
+                TabControlParent.SelectedTab = tab;
+                tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
 
-               Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
-               ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
-               ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
-               ListViewText.FullRowSelect = true;
-               ListViewText.ContextMenuStrip = contextMenuStrip1;
-               ListViewText.MultiSelect = true;
-               ListViewText.Name = openFileDialog3.FileName + "-ListView";//used to find listview later   
+                Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+                ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
+                ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
+                ListViewText.FullRowSelect = true;
+                ListViewText.ContextMenuStrip = contextMenuStrip1;
+                ListViewText.MultiSelect = true;
+                ListViewText.Name = path + "-ListView";//used to find listview later   
 
-               //Write all lines to list view for tab
-               string[] lines = WriteSafeReadAllLines(openFileDialog3.FileName);
-               var ItemsCount = ListViewText.Items.Count;
-               if (ItemsCount == 0 || lines.Length < ItemsCount)
-               {
-                  ListViewText.Items.Clear();
-                  for (var linenum = 0; linenum < lines.Length; linenum++)
-                  {
-                     ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                  }
-               }
-               try
-               {
-                  ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
-               }
-               catch (ArgumentOutOfRangeException IndErr)
-               {
-                  Console.WriteLine(IndErr.Message);
-               }
+                //Write all lines to list view for tab
+                string[] lines = WriteSafeReadAllLines(path);
+                var ItemsCount = ListViewText.Items.Count;
+                if (ItemsCount == 0 || lines.Length < ItemsCount)
+                {
+                    ListViewText.Items.Clear();
+                    for (var linenum = 0; linenum < lines.Length; linenum++)
+                    {
+                        ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                    }
+                }
+                try
+                {
+                    ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                }
+                catch (ArgumentOutOfRangeException IndErr)
+                {
+                    Console.WriteLine(IndErr.Message);
+                }
 
-               FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
-               long FileSizeValue = new FileInfo(openFileDialog3.FileName).Length; //Create the long for the file size value
-               FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+                FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
+                long FileSizeValue = new FileInfo(path).Length; //Create the long for the file size value
+                FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+
+                if(!String.IsNullOrWhiteSpace(parentName))
+                {
+                    TabPage folder = GetFolderByName(parentName);
+                    TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
+                    subTabPageControl.TabPages.Add(tab);
+                }
             }
             catch (IOException ioe)
             {
-               MessageBox.Show(ioe.Message);
+                MessageBox.Show(ioe.Message);
             }
-         }
-      }
-
+        
+    }
       private void OnChanged(object source, FileSystemEventArgs e)
       {
          TabPage EventPage = null;
@@ -153,8 +169,6 @@ namespace MyLogs
          {
             EventPage.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
          }
-         else
-         {
             try
             {
                string[] lines = WriteSafeReadAllLines(e.FullPath);
@@ -211,7 +225,7 @@ namespace MyLogs
             {
                Console.WriteLine(IOex.Message);
             }
-         }
+         
       }
 
       //Copy lines from Logs
@@ -358,6 +372,16 @@ namespace MyLogs
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveCurrentSession();
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadLastSessionMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadLastSession();
         }
     }
 }
