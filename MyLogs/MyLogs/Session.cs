@@ -48,7 +48,7 @@ namespace MyLogs
                     }
                 }
             }
-            SessionXML.Save("./Session/Session.xml");
+            SessionXML.Save("../Session/Session.xml");
         }
 
         private void LoadLastSession()
@@ -56,11 +56,11 @@ namespace MyLogs
             if(TabControlParent.TabPages.Count > 0)
             {
                 TabControlParent.TabPages.Clear();
-                FileWatchers.Clear();
+                //FileWatchers.Clear();
             }
             try
             {
-                XDocument LastSession = XDocument.Load(@"./Session/Session.xml");
+                XDocument LastSession = XDocument.Load(@"../Session/Session.xml");
                 XElement files = LastSession.Root.Elements("Files").First();
                 for(var i = 0; i < files.Elements().Count(); i++)
                 {

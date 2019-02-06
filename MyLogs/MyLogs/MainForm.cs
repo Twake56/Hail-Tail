@@ -13,7 +13,7 @@ namespace MyLogs
 {
    public partial class MainForm : Form
    {
-      public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
+      //public Dictionary<String, FileSystemWatcher> FileWatchers = new Dictionary<string, FileSystemWatcher>();
       public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
 
 
@@ -32,41 +32,42 @@ namespace MyLogs
 
       }
 
-      public string[] WriteSafeReadAllLines(String path)
-      {
-         using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-         using (var sr = new StreamReader(csv))
-         {
-            List<string> file = new List<string>();
-            while (!sr.EndOfStream)
+        public string[] WriteSafeReadAllLines(String path)
+        {
+            using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var sr = new StreamReader(csv))
             {
-               file.Add(sr.ReadLine());
+                List<string> file = new List<string>();
+                while (!sr.EndOfStream)
+                {
+                    file.Add(sr.ReadLine());
+                }
+
+                return file.ToArray();
             }
-
-            return file.ToArray();
-         }
-      }
+        }
 
 
-      private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
             if (openFileDialog3.ShowDialog() == DialogResult.OK)
             {
-                if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
-                {
-                    foreach (TabPage tab in TabControlParent.TabPages)
-                    {
-                        if (openFileDialog3.FileName == tab.Name)
-                        {
-                            TabControlParent.SelectedTab = tab;
-                            return;
-                        }
-                    }
-                }
-                else
-                {
-                    CreateParentTabPageAtIndex(path: openFileDialog3.FileName, index: null);
-                }
+                CreateParentTabPageAtIndex(path: openFileDialog3.FileName, index: null);
+                /* if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
+                 {
+                     foreach (TabPage tab in TabControlParent.TabPages)
+                     {
+                         if (openFileDialog3.FileName == tab.Name)
+                         {
+                             TabControlParent.SelectedTab = tab;
+                             return;
+                         }
+                     }
+                 }
+                 else
+                 {
+
+                 }*/
             }  
       }
 
@@ -75,20 +76,16 @@ namespace MyLogs
             try
             {
                 //Add a filesystem watcher to public dictionary
-                var watch = new FileSystemWatcher();
-                watch.Path = Path.GetDirectoryName(path);
-                watch.Filter = Path.GetFileName(path);
-                watch.Changed += new FileSystemEventHandler(OnChanged);
-                watch.EnableRaisingEvents = true;
-                FileWatchers.Add(path, watch);
-                followTailCheckBox.Checked = true;
+                //path = path.Replace('\\', '/');
+                
 
                 int tabPosition = index ?? CountParentTabs() + 1;
                 //Creates a new tab for a new log
                 Classes.LogTabPage tab = new Classes.LogTabPage() { Text = Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition };
+                tab.SetWatcher(path);
                 TabControlParent.TabPages.Add(tab);
                 TabControlParent.SelectedTab = tab;
-                tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
+                //tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
 
                 Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
                 ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
@@ -122,7 +119,7 @@ namespace MyLogs
                 long FileSizeValue = new FileInfo(path).Length; //Create the long for the file size value
                 FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
 
-                if(!String.IsNullOrWhiteSpace(parentName))
+                if (!String.IsNullOrWhiteSpace(parentName))
                 {
                     TabPage folder = GetFolderByName(parentName);
                     TabControl subTabPageControl = folder.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
@@ -133,9 +130,9 @@ namespace MyLogs
             {
                 MessageBox.Show(ioe.Message);
             }
-        
-    }
-      private void OnChanged(object source, FileSystemEventArgs e)
+
+        }
+        private void OnChanged(object source, FileSystemEventArgs e)
       {
          TabPage EventPage = null;
          foreach (TabPage tab in TabControlParent.TabPages)
@@ -159,16 +156,18 @@ namespace MyLogs
                EventPage = tab;
             }
          }
-         if (EventPage == null)
+         /*if (EventPage == null)
          {
             FileWatchers.Remove(e.FullPath);
             return;
-         }
+         }*/
 
          if (EventPage.InvokeRequired)
          {
             EventPage.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
          }
+         else
+         {
             try
             {
                string[] lines = WriteSafeReadAllLines(e.FullPath);
@@ -225,7 +224,7 @@ namespace MyLogs
             {
                Console.WriteLine(IOex.Message);
             }
-         
+         }
       }
 
       //Copy lines from Logs
