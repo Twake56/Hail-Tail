@@ -88,12 +88,14 @@ namespace MyLogs
                 //tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
 
                 Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+    
                 ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
                 ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
                 ListViewText.FullRowSelect = true;
                 ListViewText.ContextMenuStrip = contextMenuStrip1;
                 ListViewText.MultiSelect = true;
-                ListViewText.Name = path + "-ListView";//used to find listview later   
+                ListViewText.Name = "ListViewText";//used to find listview later
+                
 
                 //Write all lines to list view for tab
                 string[] lines = WriteSafeReadAllLines(path);

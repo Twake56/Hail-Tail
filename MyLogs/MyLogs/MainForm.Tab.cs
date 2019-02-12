@@ -236,13 +236,8 @@ namespace MyLogs
                 {
                     
                     TabControl subTabPageControl = SelectedTabPage.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
-                    //foreach(TabPage tab in subTabPageControl.TabPages)
-                    //{
-                       // FileWatchers.Remove(tab.Name);
-                    //}
                     
                 }
-                //FileWatchers.Remove(SelectedTabPage.Name);
                 Console.WriteLine(SelectedTabPage.Name);
                 TabControl tabControl = SelectedTabPage.Parent as TabControl;
                 tabControl.TabPages.Remove(SelectedTabPage);

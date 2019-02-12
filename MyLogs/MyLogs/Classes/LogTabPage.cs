@@ -17,10 +17,12 @@ namespace MyLogs.Classes
         public string ParentFolderName { get; set; } = null;
         public string FilePath { get; set; } = null;
         public FileSystemWatcher watcher = null;
+        public ListViewNF ListView { get; set; } = null;
+        public int TopVisibleIndex { get; set; } = 0;
+
 
         public void SetWatcher(string path)
         {
-            Console.WriteLine("setting Watcher");
             var watch = new FileSystemWatcher();
             watch.Path = Path.GetDirectoryName(path);
             watch.Filter = Path.GetFileName(path);
@@ -30,10 +32,17 @@ namespace MyLogs.Classes
                                  | NotifyFilters.Size;
             watch.EnableRaisingEvents = true;
             this.watcher = watch;
-            //followTailCheckBox.Checked = true;
+            
         }
         
-        public string[] WriteSafeReadAllLines(String path)
+        private void SetLastVisibleItem()
+        {
+            ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+            ListViewItem FirstVisible = listView.TopItem;
+            this.TopVisibleIndex = FirstVisible.Index;
+        }
+
+        private string[] WriteSafeReadAllLines(String path)
         {
             using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             using (var sr = new StreamReader(csv))
@@ -49,6 +58,7 @@ namespace MyLogs.Classes
         }
         private void OnChanged(object source, FileSystemEventArgs e)
         {
+           
             //TabPage EventPage = null;
             TabControl TabControlParent = this.Parent as TabControl;
             /*foreach (TabPage tab in TabControlParent.TabPages)
@@ -81,20 +91,12 @@ namespace MyLogs.Classes
             {
                 try
                 {
+                    SetLastVisibleItem();
                     string[] lines = WriteSafeReadAllLines(e.FullPath);
-                    var tmp = Controls.Find(e.FullPath + "-ListView", true);
-                    ListView ListViewText = tmp[0] as ListView;
+                    var ListViewControl = this.Controls.Find("ListViewText", true);
+                    ListView ListViewText = ListViewControl[0] as ListView;
                     int itemIndex = ListViewText.TopItem.Index;
                     int prevIndex = itemIndex;
-                    /*if (IndexKeeper.ContainsKey(e.FullPath))
-                    {
-                        prevIndex = IndexKeeper[e.FullPath];
-                    }
-
-                    if (itemIndex < prevIndex)
-                    {
-
-                    }*/
                     var ItemsCount = ListViewText.Items.Count;
                     if (ItemsCount == 0 || lines.Length < ItemsCount)
                     {
