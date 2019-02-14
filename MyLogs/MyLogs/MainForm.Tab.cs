@@ -15,8 +15,8 @@ namespace MyLogs
     public partial class MainForm
     {
         private Point DragStartPosition = Point.Empty;
-        public TabPage SelectedTabPage = new TabPage();
-        public TabPage SelectedFolder = new TabPage();
+        private Classes.LogTabPage SelectedTabPage = new Classes.LogTabPage();
+        private Classes.LogTabPage SelectedFolder = new Classes.LogTabPage();
 
 
         public TabPage GetFolderByName(string FolderName)
@@ -30,6 +30,20 @@ namespace MyLogs
                 }
             }
             return null;
+        }
+
+        private void TabViewChange()
+        {
+            if(SelectedTabPage.TailFollowed )
+            {
+                followTailCheckBox.Checked = true;
+            }
+            else
+            {
+                followTailCheckBox.Checked = false;
+                SelectedTabPage.ScrollToIndex();
+                
+            }
         }
 
         private bool CheckForExistingTabName(string tabName)
@@ -77,6 +91,8 @@ namespace MyLogs
             TabControlParent.TabPages.Add(tab);
             TabControlParent.SelectedTab = tab;
             tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
+            SelectedTabPage = tab;
+            TabViewChange();
         }
 
         private int CountParentTabs ()
@@ -99,7 +115,8 @@ namespace MyLogs
                         if (subTabControl.GetTabRect(ix).Contains(e.Location))
                         {
                             TabContextMenuStrip.Show(this, e.Location);
-                            SelectedTabPage = subTabControl.TabPages[ix];
+                            SelectedTabPage = subTabControl.TabPages[ix] as Classes.LogTabPage;
+                            TabViewChange();
                         }
                     }
                 }
@@ -120,7 +137,6 @@ namespace MyLogs
             rename.ShowDialog();
             if (rename.DialogResult == DialogResult.OK)
             {
-                //TabPage tab = MainForm.SelectedTabPage;
                 if(SelectedTabPage.Tag.ToString() == "Folder" && !CheckForExistingTabName(rename.RenameTextBox.Text))
                 {
                     SelectedTabPage.Name = rename.RenameTextBox.Text;
@@ -150,13 +166,13 @@ namespace MyLogs
                     if (TabControlParent.GetTabRect(ix).Contains(e.Location))
                     {
                         TabContextMenuStrip.Show(this, e.Location);
-                        SelectedTabPage = TabControlParent.TabPages[ix];
-                        
+                        SelectedTabPage = TabControlParent.TabPages[ix] as Classes.LogTabPage;
+                        TabViewChange();
                     }
                     else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
-                        SelectedFolder = TabControlParent.TabPages[ix];
-                        
+                        SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
+                        TabViewChange();
                     }
                 }
             }
@@ -168,7 +184,8 @@ namespace MyLogs
                     {
                         if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                         {
-                            SelectedFolder = TabControlParent.TabPages[ix];
+                            SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
+                            TabViewChange();
                         }
                         
                     }

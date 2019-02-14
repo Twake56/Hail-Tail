@@ -137,6 +137,7 @@
             this.followTailCheckBox.TabIndex = 2;
             this.followTailCheckBox.Text = "Follow Tail";
             this.followTailCheckBox.UseVisualStyleBackColor = true;
+            this.followTailCheckBox.Click += new System.EventHandler(this.followTailCheckBox_Click);
             // 
             // SearchBox
             // 
@@ -548,7 +549,7 @@
       private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
       private System.Windows.Forms.TextBox FileSizeTB;
       private System.Windows.Forms.TextBox FileLengthTB;
-      private System.Windows.Forms.CheckBox followTailCheckBox;
+      public System.Windows.Forms.CheckBox followTailCheckBox;
       public System.Windows.Forms.TabControl TabControlParent;
       private System.Windows.Forms.MenuStrip PrimaryMenus;
       private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

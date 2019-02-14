@@ -20,7 +20,6 @@ namespace MyLogs.Classes
         public ListViewNF ListView { get; set; } = null;
         public int TopVisibleIndex { get; set; } = 0;
 
-
         public void SetWatcher(string path)
         {
             var watch = new FileSystemWatcher();
@@ -34,8 +33,18 @@ namespace MyLogs.Classes
             this.watcher = watch;
             
         }
-        
-        private void SetLastVisibleItem()
+
+        public void TabClicked(object sender, EventArgs e)
+        {
+ 
+        }
+        public void ScrollToIndex ()
+        {
+            ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+            listView.EnsureVisible(TopVisibleIndex);
+        }
+
+        public void SetLastVisibleItem()
         {
             ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
             ListViewItem FirstVisible = listView.TopItem;
@@ -58,30 +67,7 @@ namespace MyLogs.Classes
         }
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-           
-            //TabPage EventPage = null;
             TabControl TabControlParent = this.Parent as TabControl;
-            /*foreach (TabPage tab in TabControlParent.TabPages)
-            {
-                if (tab.Tag.ToString() == "Folder")
-                {
-                    TabControl subTabControl = (.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
-                    if (subTabControl != null)
-                    {
-                        foreach (TabPage subTab in subTabControl.TabPages)
-                        {
-                            if (e.FullPath == subTab.Name)
-                            {
-                                EventPage = tab;
-                            }
-                        }
-                    }
-                }
-                if (e.FullPath == tab.Name)
-                {
-                    EventPage = tab;
-                }
-            }*/
 
             if (this.InvokeRequired)
             {
@@ -121,7 +107,7 @@ namespace MyLogs.Classes
                     //Convert File size from bytes to KB
                     //FileSizeTB.Text = (FileSizeValue / 1024) + " KB";
 
-                    /*if (followTailCheckBox.Checked)
+                    if (TailFollowed)
                     {
                         try
                         {
@@ -131,7 +117,7 @@ namespace MyLogs.Classes
                         {
                             Console.WriteLine(IndErr.Message);
                         }
-                    }*/
+                    }
                 }
                 catch (IOException IOex)
                 {

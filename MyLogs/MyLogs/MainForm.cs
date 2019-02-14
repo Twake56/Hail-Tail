@@ -95,7 +95,8 @@ namespace MyLogs
                 ListViewText.ContextMenuStrip = contextMenuStrip1;
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
-                
+                SelectedTabPage = tab;
+                TabViewChange();
 
                 //Write all lines to list view for tab
                 string[] lines = WriteSafeReadAllLines(path);
@@ -134,100 +135,6 @@ namespace MyLogs
             }
 
         }
-        private void OnChanged(object source, FileSystemEventArgs e)
-      {
-         TabPage EventPage = null;
-         foreach (TabPage tab in TabControlParent.TabPages)
-         {
-            if (tab.Tag.ToString() == "Folder")
-            {
-               TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
-               if (subTabControl != null)
-               {
-                  foreach (TabPage subTab in subTabControl.TabPages)
-                  {
-                     if (e.FullPath == subTab.Name)
-                     {
-                        EventPage = tab;
-                     }
-                  }
-               }
-            }
-            if (e.FullPath == tab.Name)
-            {
-               EventPage = tab;
-            }
-         }
-         /*if (EventPage == null)
-         {
-            FileWatchers.Remove(e.FullPath);
-            return;
-         }*/
-
-         if (EventPage.InvokeRequired)
-         {
-            EventPage.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
-         }
-         else
-         {
-            try
-            {
-               string[] lines = WriteSafeReadAllLines(e.FullPath);
-               var tmp = Controls.Find(e.FullPath + "-ListView", true);
-               ListView ListViewText = tmp[0] as ListView;
-               int itemIndex = ListViewText.TopItem.Index;
-               int prevIndex = itemIndex;
-               if (IndexKeeper.ContainsKey(e.FullPath))
-               {
-                  prevIndex = IndexKeeper[e.FullPath];
-               }
-
-               if (itemIndex < prevIndex)
-               {
-
-               }
-               var ItemsCount = ListViewText.Items.Count;
-               if (ItemsCount == 0 || lines.Length < ItemsCount)
-               {
-                  ListViewText.Items.Clear();
-                  for (var linenum = 0; linenum < lines.Length; linenum++)
-                  {
-                     ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                  }
-               }
-               else
-               {
-                  for (var start = ItemsCount; start < lines.Length; start++)
-                  {
-                     ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
-                  }
-               }
-
-               //Grabs the Number of lines in a file
-               FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
-               //Create the long for the file size value
-               long FileSizeValue = new FileInfo(e.FullPath).Length;
-               //Convert File size from bytes to KB
-               FileSizeTB.Text = (FileSizeValue / 1024) + " KB";
-
-               if (followTailCheckBox.Checked)
-               {
-                  try
-                  {
-                     ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
-                  }
-                  catch (ArgumentOutOfRangeException IndErr)
-                  {
-                     Console.WriteLine(IndErr.Message);
-                  }
-               }
-            }
-            catch (IOException IOex)
-            {
-               Console.WriteLine(IOex.Message);
-            }
-         }
-      }
 
       //Copy lines from Logs
       private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -383,6 +290,19 @@ namespace MyLogs
         private void LoadLastSessionMenuItem_Click(object sender, EventArgs e)
         {
             LoadLastSession();
+        }
+
+        private void followTailCheckBox_Click(object sender, EventArgs e)
+        {
+            if(followTailCheckBox.Checked)
+            {
+                SelectedTabPage.TailFollowed = true;
+            }
+            else
+            {
+                SelectedTabPage.TailFollowed = false;
+                SelectedTabPage.SetLastVisibleItem();
+            }
         }
     }
 }
