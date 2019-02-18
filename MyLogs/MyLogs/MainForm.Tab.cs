@@ -26,22 +26,22 @@ namespace MyLogs
             {
                 if (TabControlParent.TabPages[tabnum].Name == FolderName)
                 {
-                    return TabControlParent.TabPages[tabnum];
+                    return TabControlParent.TabPages[tabnum] as Classes.LogTabPage;
                 }
             }
             return null;
         }
 
-        private void TabViewChange()
+        private void TabViewChange(Classes.LogTabPage logTabPage)
         {
-            if(SelectedTabPage.TailFollowed )
+            if(logTabPage.TailFollowed )
             {
                 followTailCheckBox.Checked = true;
             }
             else
             {
                 followTailCheckBox.Checked = false;
-                SelectedTabPage.ScrollToIndex();
+                logTabPage.ScrollToIndex();
                 
             }
         }
@@ -84,6 +84,7 @@ namespace MyLogs
             subTabControl.ShowToolTips = true;
             subTabControl.AllowDrop = true;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
+            subTabControl.SelectedIndexChanged += new EventHandler(TabControl_SelectedIndexChanged);
 
             int tabPosition = index ?? CountParentTabs() + 1;
             Classes.LogTabPage tab = new Classes.LogTabPage() { Text = name, Name = name, Tag = "Folder", PositionIndex = tabPosition, IsFolder = true };
@@ -92,7 +93,7 @@ namespace MyLogs
             TabControlParent.SelectedTab = tab;
             tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
             SelectedTabPage = tab;
-            TabViewChange();
+            TabViewChange(tab);
         }
 
         private int CountParentTabs ()
@@ -116,7 +117,7 @@ namespace MyLogs
                         {
                             TabContextMenuStrip.Show(this, e.Location);
                             SelectedTabPage = subTabControl.TabPages[ix] as Classes.LogTabPage;
-                            TabViewChange();
+                            TabViewChange(subTabControl.TabPages[ix] as Classes.LogTabPage);
                         }
                     }
                 }
@@ -167,12 +168,12 @@ namespace MyLogs
                     {
                         TabContextMenuStrip.Show(this, e.Location);
                         SelectedTabPage = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                        TabViewChange();
+                        TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                     }
                     else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
                         SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                        TabViewChange();
+                        TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                     }
                 }
             }
@@ -185,7 +186,7 @@ namespace MyLogs
                         if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                         {
                             SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                            TabViewChange();
+                            TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                         }
                         
                     }

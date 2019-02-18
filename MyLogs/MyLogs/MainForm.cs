@@ -96,7 +96,7 @@ namespace MyLogs
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
                 SelectedTabPage = tab;
-                TabViewChange();
+                TabViewChange(tab);
 
                 //Write all lines to list view for tab
                 string[] lines = WriteSafeReadAllLines(path);
@@ -296,13 +296,38 @@ namespace MyLogs
         {
             if(followTailCheckBox.Checked)
             {
-                SelectedTabPage.TailFollowed = true;
+                if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+                {
+                    TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
+                    (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = true;
+                }
+                else
+                {
+                    (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = true;
+                }
             }
             else
             {
-                SelectedTabPage.TailFollowed = false;
-                SelectedTabPage.SetLastVisibleItem();
+                if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+                {
+                    TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
+                    (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = false;
+                    (subTabControl.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
+                }
+            
+                else
+                {
+                    (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = false;
+                    (TabControlParent.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
+                }
             }
         }
+
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TabViewChange((sender as TabControl).SelectedTab as Classes.LogTabPage);
+        }
+
+
     }
 }

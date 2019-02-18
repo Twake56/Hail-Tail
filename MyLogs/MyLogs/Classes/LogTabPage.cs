@@ -20,6 +20,10 @@ namespace MyLogs.Classes
         public ListViewNF ListView { get; set; } = null;
         public int TopVisibleIndex { get; set; } = 0;
 
+        public void InitializeComponent()
+        {
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabClicked);
+        }
         public void SetWatcher(string path)
         {
             var watch = new FileSystemWatcher();
@@ -40,8 +44,13 @@ namespace MyLogs.Classes
         }
         public void ScrollToIndex ()
         {
-            ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
-            listView.EnsureVisible(TopVisibleIndex);
+            try
+            {
+                ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+                listView.EnsureVisible(TopVisibleIndex);
+            }
+            catch(IndexOutOfRangeException)
+            {}//Caught folder ignore
         }
 
         public void SetLastVisibleItem()

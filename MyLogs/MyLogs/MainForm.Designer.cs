@@ -164,6 +164,7 @@
             this.TabControlParent.Size = new System.Drawing.Size(844, 340);
             this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.TabControlParent.TabIndex = 1;
+            this.TabControlParent.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
             this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControlParent_DragOver);
             this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
             this.TabControlParent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseClick);
