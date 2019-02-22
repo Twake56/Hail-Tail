@@ -21,7 +21,7 @@ namespace MyLogs
                 {
                     SessionXML.Root.Elements("Files").First().Add(new XElement(Path.GetFileName(logTabPage.Name),
                                                                     new XAttribute("Position", i),
-                                                                    new XAttribute("Name", Path.GetFileName(logTabPage.Name)),
+                                                                    new XAttribute("Name", logTabPage.Text),
                                                                     new XAttribute("Path", logTabPage.Name),
                                                                     new XAttribute("IsTailFollowed", logTabPage.TailFollowed),
                                                                     new XAttribute("IsFolder", logTabPage.IsFolder)
@@ -67,7 +67,7 @@ namespace MyLogs
                     XElement element = files.Elements().ToList()[i];
                     int index = -1;
                     Int32.TryParse(element.Attribute("Position").Value, out index);
-                    CreateParentTabPageAtIndex(element.Attribute("Path").Value, index);
+                    CreateParentTabPageAtIndex(element.Attribute("Path").Value, index, text:element.Attribute("Name").Value);
                 }
 
                 XElement folders = LastSession.Root.Elements("Folders").First();
@@ -85,12 +85,47 @@ namespace MyLogs
                         CreateParentTabPageAtIndex(folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Path").Value, subIndex, parentName: element.Attribute("Name").Value);
                     }
                 }
+                SetIndexes();
             }
             catch(IOException err)
             {
                 MessageBox.Show(err.Message);
                 return;
             }
+        }
+
+        private void SetIndexes()
+        {
+            for(var i = 0; i < TabControlParent.TabPages.Count; i++)
+            {
+                foreach(Classes.LogTabPage tabPage in TabControlParent.TabPages)
+                {
+                    if(i == tabPage.PositionIndex)
+                    {
+                        Classes.LogTabPage page1 = TabControlParent.TabPages[i] as Classes.LogTabPage;
+                        Classes.LogTabPage page2 = tabPage;
+                        SwapTabPages(TabControlParent, page1, page2);
+                    }
+                }
+
+                if ((TabControlParent.TabPages[i] as Classes.LogTabPage).IsFolder)
+                {
+                    TabControl subTabControl = (TabControlParent.TabPages[i] as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
+                    for (var k = 0; k < subTabControl.TabPages.Count; k++)
+                    {
+                        foreach (Classes.LogTabPage tabPage in subTabControl.TabPages)
+                        {
+                            if (k == tabPage.PositionIndex)
+                            {
+                                Classes.LogTabPage page1 = subTabControl.TabPages[k] as Classes.LogTabPage;
+                                Classes.LogTabPage page2 = tabPage;
+                                SwapTabPages(subTabControl, page1, page2);
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

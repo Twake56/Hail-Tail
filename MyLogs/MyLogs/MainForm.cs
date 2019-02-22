@@ -71,17 +71,17 @@ namespace MyLogs
             }  
       }
 
-        private void CreateParentTabPageAtIndex(string path, int? index, string parentName = null)
+        private void CreateParentTabPageAtIndex(string path, int? index, string parentName = null, string text = null)
         {
             try
             {
                 //Add a filesystem watcher to public dictionary
                 //path = path.Replace('\\', '/');
                 
-
+                
                 int tabPosition = index ?? CountParentTabs() + 1;
                 //Creates a new tab for a new log
-                Classes.LogTabPage tab = new Classes.LogTabPage() { Text = Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition };
+                Classes.LogTabPage tab = new Classes.LogTabPage() { Text = text ?? Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition };
                 tab.SetWatcher(path);
                 TabControlParent.TabPages.Add(tab);
                 TabControlParent.SelectedTab = tab;
@@ -325,13 +325,20 @@ namespace MyLogs
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedTab = (sender as TabControl).SelectedTab as Classes.LogTabPage;
-            if(selectedTab.IsFolder && (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).TabCount > 0)
+            try
             {
+                var selectedTab = (sender as TabControl).SelectedTab as Classes.LogTabPage;
+                if (selectedTab.IsFolder && (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).TabCount > 0)
+                {
 
-                selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
+                    selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
+                }
+                TabViewChange(selectedTab);
             }
-            TabViewChange(selectedTab);
+            catch(NullReferenceException err)
+            {
+                Console.WriteLine(err.Message);
+            }
         }
 
 

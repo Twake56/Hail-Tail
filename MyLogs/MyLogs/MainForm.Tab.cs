@@ -193,7 +193,7 @@ namespace MyLogs
                         if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                         {
                             SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                            TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
+                           // TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                         }
                         
                     }
@@ -273,12 +273,12 @@ namespace MyLogs
       /*
        * Tab Drag and order change controls
        */
-        private void TabControlParent_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void TabControlParent_MouseDown(object sender, MouseEventArgs e)
         {
             DragStartPosition = new Point(e.X, e.Y);
         }
 
-        private void TabControlParent_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void TabControlParent_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
 
@@ -295,17 +295,17 @@ namespace MyLogs
             DragStartPosition = Point.Empty;
         }
 
-        private void TabControlParent_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
+        private void TabControlParent_DragOver(object sender, DragEventArgs e)
         {
-            TabPage hover_Tab = HoverTab();
+            Classes.LogTabPage hover_Tab = HoverTab();
             if (hover_Tab == null)
                 e.Effect = DragDropEffects.None;
             else
             {
-                if (e.Data.GetDataPresent(typeof(TabPage)))
+                if (e.Data.GetDataPresent(typeof(Classes.LogTabPage)))
                 {
                     e.Effect = DragDropEffects.Move;
-                    TabPage drag_tab = (TabPage)e.Data.GetData(typeof(TabPage));
+                    Classes.LogTabPage drag_tab = (Classes.LogTabPage)e.Data.GetData(typeof(Classes.LogTabPage));
 
                     if (hover_Tab == drag_tab) return;
 
@@ -313,29 +313,32 @@ namespace MyLogs
                     TabRect.Inflate(-3, -3);
                     if (TabRect.Contains(TabControlParent.PointToClient(new Point(e.X, e.Y))))
                     {
-                        SwapTabPages(drag_tab, hover_Tab);
+                        SwapTabPages(TabControlParent, drag_tab, hover_Tab);
                         TabControlParent.SelectedTab = drag_tab;
                     }
                 }
             }
         }
 
-        private TabPage HoverTab()
+        private Classes.LogTabPage HoverTab()
         {
             for (int index = 0; index <= TabControlParent.TabCount - 1; index++)
             {
                 if (TabControlParent.GetTabRect(index).Contains(TabControlParent.PointToClient(Cursor.Position)))
-                    return TabControlParent.TabPages[index];
+                    return TabControlParent.TabPages[index] as Classes.LogTabPage;
             }
             return null;
         }
 
-        private void SwapTabPages(TabPage tp1, TabPage tp2)
+        private void SwapTabPages(TabControl tabControl, Classes.LogTabPage tp1, Classes.LogTabPage tp2)
         {
-            int Index1 = TabControlParent.TabPages.IndexOf(tp1);
-            int Index2 = TabControlParent.TabPages.IndexOf(tp2);
-            TabControlParent.TabPages[Index1] = tp2;
-            TabControlParent.TabPages[Index2] = tp1;
+            int Index1 = tabControl.TabPages.IndexOf(tp1);
+            int Index2 = tabControl.TabPages.IndexOf(tp2);
+            tabControl.TabPages[Index1] = tp2;
+            tabControl.TabPages[Index2] = tp1;
+            int tp1Temp = tp1.PositionIndex;
+            tp1.PositionIndex = tp2.PositionIndex;
+            tp2.PositionIndex = tp1Temp;
         }
 
       /**********************************
