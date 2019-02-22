@@ -92,9 +92,9 @@ namespace MyLogs
             subTabControl.AllowDrop = true;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
             subTabControl.SelectedIndexChanged += new EventHandler(TabControl_SelectedIndexChanged);
-            subTabControl.DragOver += new DragEventHandler(TabControlParent_DragOver);
+            subTabControl.DragOver += new DragEventHandler(TabControl_DragOver);
             subTabControl.MouseDown += new MouseEventHandler(TabControl_MouseDown);
-            subTabControl.MouseMove += new MouseEventHandler(TabControlParent_MouseMove);
+            subTabControl.MouseMove += new MouseEventHandler(TabControl_MouseMove);
 
 
             int tabPosition = index ?? CountParentTabs() + 1;
@@ -282,7 +282,7 @@ namespace MyLogs
             DragStartPosition = new Point(e.X, e.Y);
         }
 
-        private void TabControlParent_MouseMove(object sender, MouseEventArgs e)
+        private void TabControl_MouseMove(object sender, MouseEventArgs e)
         {
             TabControl tabControl = (sender as TabControl);
             if (e.Button != MouseButtons.Left) return;
@@ -300,33 +300,7 @@ namespace MyLogs
             DragStartPosition = Point.Empty;
         }
 
-        /*private void TabControlParent_DragOver(object sender, DragEventArgs e)
-        {
-            TabControl tabControl = sender as TabControl;
-            Classes.LogTabPage hover_Tab = HoverTab(tabControl);
-            if (hover_Tab == null)
-                e.Effect = DragDropEffects.None;
-            else
-            {
-                if (e.Data.GetDataPresent(typeof(Classes.LogTabPage)))
-                {
-                    e.Effect = DragDropEffects.Move;
-                    Classes.LogTabPage drag_tab = (Classes.LogTabPage)e.Data.GetData(typeof(Classes.LogTabPage));
-
-                    if (hover_Tab == drag_tab) return;
-
-                    Rectangle TabRect = TabControlParent.GetTabRect(TabControlParent.TabPages.IndexOf(hover_Tab));
-                    TabRect.Inflate(-3, -3);
-                    if (TabRect.Contains(TabControlParent.PointToClient(new Point(e.X, e.Y))))
-                    {
-                        SwapTabPages(TabControlParent, drag_tab, hover_Tab);
-                        TabControlParent.SelectedTab = drag_tab;
-                    }
-                }
-            }
-        }*/
-
-        private void TabControlParent_DragOver(object sender, DragEventArgs e)
+        private void TabControl_DragOver(object sender, DragEventArgs e)
         {
             TabControl tabControl = sender as TabControl;
             Classes.LogTabPage hover_Tab = HoverTab(tabControl);

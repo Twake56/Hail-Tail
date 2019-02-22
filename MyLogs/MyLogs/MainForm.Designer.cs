@@ -165,11 +165,11 @@
             this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.TabControlParent.TabIndex = 1;
             this.TabControlParent.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
-            this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControlParent_DragOver);
+            this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControl_DragOver);
             this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
             this.TabControlParent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseClick);
             this.TabControlParent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControl_MouseDown);
-            this.TabControlParent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseMove);
+            this.TabControlParent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabControl_MouseMove);
             // 
             // PrimaryMenus
             // 
