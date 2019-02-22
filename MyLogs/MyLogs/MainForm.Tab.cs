@@ -34,15 +34,22 @@ namespace MyLogs
 
         private void TabViewChange(Classes.LogTabPage logTabPage)
         {
-            if(logTabPage.TailFollowed )
+            try
             {
-                followTailCheckBox.Checked = true;
+                if (logTabPage.TailFollowed)
+                {
+                    followTailCheckBox.Checked = true;
+                }
+                else
+                {
+                    followTailCheckBox.Checked = false;
+                    logTabPage.ScrollToIndex();
+
+                }
             }
-            else
+            catch(NullReferenceException E)
             {
-                followTailCheckBox.Checked = false;
-                logTabPage.ScrollToIndex();
-                
+                Console.WriteLine(E.Message);
             }
         }
 
@@ -117,7 +124,7 @@ namespace MyLogs
                         {
                             TabContextMenuStrip.Show(this, e.Location);
                             SelectedTabPage = subTabControl.TabPages[ix] as Classes.LogTabPage;
-                            TabViewChange(subTabControl.TabPages[ix] as Classes.LogTabPage);
+                            //TabViewChange(subTabControl.TabPages[ix] as Classes.LogTabPage);
                         }
                     }
                 }
@@ -168,12 +175,12 @@ namespace MyLogs
                     {
                         TabContextMenuStrip.Show(this, e.Location);
                         SelectedTabPage = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                        TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
+                   //     TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                     }
                     else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
                         SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                        TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
+                        //TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                     }
                 }
             }
@@ -340,12 +347,14 @@ namespace MyLogs
                 copySelectedItemsToClipboard();
         }
 
-
+        /****
+         * TODO: NEEDS UPDATING
+         *****/
       private ListView GetListViewByTab(TabPage tab)
       {
          if (tab != null)
          {
-            ListView ChildListView = Controls.Find(tab.Name + "-ListView", true).FirstOrDefault() as ListView;
+            ListView ChildListView = Controls.Find(tab.Name + "TabListView", true).FirstOrDefault() as ListView;
             if (ChildListView != null)
             {
                return ChildListView;

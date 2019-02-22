@@ -325,7 +325,13 @@ namespace MyLogs
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TabViewChange((sender as TabControl).SelectedTab as Classes.LogTabPage);
+            var selectedTab = (sender as TabControl).SelectedTab as Classes.LogTabPage;
+            if(selectedTab.IsFolder && (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).TabCount > 0)
+            {
+
+                selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
+            }
+            TabViewChange(selectedTab);
         }
 
 
