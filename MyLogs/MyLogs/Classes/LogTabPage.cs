@@ -55,9 +55,16 @@ namespace MyLogs.Classes
 
         public void SetLastVisibleItem()
         {
-            ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
-            ListViewItem FirstVisible = listView.TopItem;
-            this.TopVisibleIndex = FirstVisible.Index;
+            try
+            {
+                ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+                ListViewItem FirstVisible = listView.TopItem;
+                this.TopVisibleIndex = FirstVisible.Index;
+            }
+            catch(IndexOutOfRangeException err)
+            {
+                Console.WriteLine(err.Message);
+            }
         }
 
         private string[] WriteSafeReadAllLines(String path)
