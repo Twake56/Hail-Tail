@@ -22,17 +22,7 @@ namespace MyLogs
          InitializeComponent();
       }
 
-      private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
-      {
-
-      }
-
-      private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-      {
-
-      }
-
-        public string[] WriteSafeReadAllLines(String path)
+        public string[] WriteSafeReadAllLines(string path)
         {
             using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             using (var sr = new StreamReader(csv))
@@ -50,24 +40,17 @@ namespace MyLogs
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
-            if (openFileDialog3.ShowDialog() == DialogResult.OK)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                CreateParentTabPageAtIndex(path: openFileDialog3.FileName, index: null);
-                /* if (FileWatchers.ContainsKey(openFileDialog3.FileName))//If file selected is already open, switch to tab and do no more
-                 {
-                     foreach (TabPage tab in TabControlParent.TabPages)
-                     {
-                         if (openFileDialog3.FileName == tab.Name)
-                         {
-                             TabControlParent.SelectedTab = tab;
-                             return;
-                         }
-                     }
-                 }
-                 else
-                 {
-
-                 }*/
+                foreach (TabPage tab in TabControlParent.TabPages)
+                {
+                    if (openFileDialog.FileName == tab.Name)
+                    {
+                        TabControlParent.SelectedTab = tab;
+                        return;
+                    }
+                }
+                CreateParentTabPageAtIndex(path: openFileDialog.FileName, index: null);
             }  
       }
 
@@ -75,17 +58,12 @@ namespace MyLogs
         {
             try
             {
-                //Add a filesystem watcher to public dictionary
-                //path = path.Replace('\\', '/');
-                
-                
                 int tabPosition = index ?? CountParentTabs() + 1;
                 //Creates a new tab for a new log
                 Classes.LogTabPage tab = new Classes.LogTabPage() { Text = text ?? Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition };
                 tab.SetWatcher(path);
                 TabControlParent.TabPages.Add(tab);
                 TabControlParent.SelectedTab = tab;
-                //tab.ToolTipText = "TabIndex = " + (TabControlParent.TabPages.IndexOf(tab).ToString());
 
                 Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
     
@@ -314,7 +292,6 @@ namespace MyLogs
                     (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = false;
                     (subTabControl.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
                 }
-            
                 else
                 {
                     (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = false;
@@ -330,7 +307,6 @@ namespace MyLogs
                 var selectedTab = (sender as TabControl).SelectedTab as Classes.LogTabPage;
                 if (selectedTab.IsFolder && (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).TabCount > 0)
                 {
-
                     selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
                 }
                 TabViewChange(selectedTab);

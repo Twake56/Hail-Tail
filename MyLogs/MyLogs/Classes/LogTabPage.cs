@@ -3,8 +3,9 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace MyLogs.Classes
 {
@@ -14,15 +15,34 @@ namespace MyLogs.Classes
         public bool IsFolder { get; set; } = false;
         public bool IsChild { get; set; } = false;
         public int PositionIndex { get; set; } = 0;
-        public string ParentFolderName { get; set; } = null;
         public string FilePath { get; set; } = null;
         public FileSystemWatcher watcher = null;
         public ListViewNF ListView { get; set; } = null;
         public int TopVisibleIndex { get; set; } = 0;
+        private Thread thread;
+        private bool shouldStopThread = false;
 
-        public void InitializeComponent()
+
+        public LogTabPage()
         {
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabClicked);
+            this.thread = new Thread(new ThreadStart(this.ThreadProc));
+            this.thread.IsBackground = true;
+            this.thread.Start();
+        }
+        public void ThreadProc()
+        {
+            while (!this.shouldStopThread)
+            {
+                try
+                {
+                    Thread.Sleep(200);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
+            this.thread.Abort();
         }
         public void SetWatcher(string path)
         {
@@ -35,13 +55,9 @@ namespace MyLogs.Classes
                                  | NotifyFilters.Size;
             watch.EnableRaisingEvents = true;
             this.watcher = watch;
-            
+            Console.WriteLine(this.thread.Name);
         }
 
-        public void TabClicked(object sender, EventArgs e)
-        {
- 
-        }
         public void ScrollToIndex ()
         {
             try
@@ -83,15 +99,16 @@ namespace MyLogs.Classes
         }
         private void OnChanged(object source, FileSystemEventArgs e)
         {
+            BackgroundWorker worker = new BackgroundWorker();
             TabControl TabControlParent = this.Parent as TabControl;
-
+           
             if (this.InvokeRequired)
             {
                 this.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
             }
             else
             {
-                try
+               try
                 {
                     SetLastVisibleItem();
                     string[] lines = WriteSafeReadAllLines(e.FullPath);
@@ -140,6 +157,7 @@ namespace MyLogs.Classes
                     Console.WriteLine(IOex.Message);
                 }
             }
+            
         }
     }
 }

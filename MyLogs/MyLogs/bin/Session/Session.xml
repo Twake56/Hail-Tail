@@ -2,9 +2,20 @@
 <Session>
   <Files />
   <Folders>
-    <NewFolder-0 Name="NewFolder-0" Position="0" IsFolder="true">
-      <BillingService.QA.log Position="0" Name="BillingService.QA.log" Path="\\ltsrvdev03\logs\Billing\BillingService.QA.log" IsTailFollowed="true" IsFolder="false" />
-      <Accurence.QualityAssist.Service.LTSRVDEV03.QA.log Position="1" Name="Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\QualityAssistLogsQA\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
-    </NewFolder-0>
+    <QA Name="QA" Position="0" IsFolder="true">
+      <Accurence.QualityAssist.Service.LTSRVDEV03.QA.log Position="0" Name="Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\QualityAssistLogsQA\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
+      <Accurence.QualityAssist.MessageConsumer.Service.Accurence.log Position="1" Name="Accurence.QualityAssist.MessageConsumer.Service.Accurence.log" Path="\\ltsrvdev03\logs\DWConsumer\Accurence\Accurence.QualityAssist.MessageConsumer.Service.Accurence.log" IsTailFollowed="true" IsFolder="false" />
+      <BillingService.QA.log Position="2" Name="BillingService.QA.log" Path="\\ltsrvdev03\logs\Billing\BillingService.QA.log" IsTailFollowed="true" IsFolder="false" />
+      <GeocodingService.LTSRVDEV03.QA.log Position="3" Name="GeocodingService.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\GeocodingService\GeocodingService.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
+    </QA>
+    <Other Name="Other" Position="1" IsFolder="true">
+      <Accurence.QualityAssist.Service.LTSRVDEV03.QA.log Position="0" Name="Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\QualityAssistLogs\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
+      <Accurence.QualityAssist.MessageRouter.Deployment.log Position="1" Name="Accurence.QualityAssist.MessageRouter.Deployment.log" Path="\\ltsrvdev03\logs\MessageRouterService\Accurence.QualityAssist.MessageRouter.Deployment.log" IsTailFollowed="true" IsFolder="false" />
+    </Other>
+    <MessageConsumers Name="MessageConsumers" Position="2" IsFolder="true">
+      <Accurence.QualityAssist.MessageConsumer.Service.NationWide.log Position="0" Name="Accurence.QualityAssist.MessageConsumer.Service.NationWide.log" Path="\\ltsrvdev03\logs\DWConsumer\NationWide\Accurence.QualityAssist.MessageConsumer.Service.NationWide.log" IsTailFollowed="true" IsFolder="false" />
+      <Accurence.QualityAssist.MessageConsumer.Service.MetLife.log Position="1" Name="Accurence.QualityAssist.MessageConsumer.Service.MetLife.log" Path="\\ltsrvdev03\logs\DWConsumer\MetLife\Accurence.QualityAssist.MessageConsumer.Service.MetLife.log" IsTailFollowed="true" IsFolder="false" />
+      <Accurence.QualityAssist.MessageConsumer.Service.LMS.log Position="2" Name="Accurence.QualityAssist.MessageConsumer.Service.LMS.log" Path="\\ltsrvdev03\logs\DWConsumer\LMS\Accurence.QualityAssist.MessageConsumer.Service.LMS.log" IsTailFollowed="true" IsFolder="false" />
+    </MessageConsumers>
   </Folders>
 </Session>

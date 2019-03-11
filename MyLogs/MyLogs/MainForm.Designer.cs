@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.FileSizeTB = new System.Windows.Forms.TextBox();
             this.FileLengthTB = new System.Windows.Forms.TextBox();
@@ -87,9 +87,9 @@
             this.TabContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // openFileDialog3
+            // openFileDialog
             // 
-            this.openFileDialog3.FileName = "openFileDialog3";
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // tableLayoutPanel4
             // 
@@ -546,7 +546,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
       private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
       private System.Windows.Forms.TextBox FileSizeTB;
       private System.Windows.Forms.TextBox FileLengthTB;
