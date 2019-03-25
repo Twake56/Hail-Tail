@@ -44,6 +44,7 @@ namespace MyLogs.Classes
             }
             this.thread.Abort();
         }
+
         public void SetWatcher(string path)
         {
             var watch = new FileSystemWatcher();
@@ -77,9 +78,16 @@ namespace MyLogs.Classes
                 ListViewItem FirstVisible = listView.TopItem;
                 this.TopVisibleIndex = FirstVisible.Index;
             }
-            catch(IndexOutOfRangeException err)
+            catch(Exception err)
             {
-                Console.WriteLine(err.Message);
+                if (err is NullReferenceException || err is IndexOutOfRangeException)
+                {
+                    Console.WriteLine(err.Message);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
 
@@ -97,9 +105,9 @@ namespace MyLogs.Classes
                 return file.ToArray();
             }
         }
+
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-            BackgroundWorker worker = new BackgroundWorker();
             TabControl TabControlParent = this.Parent as TabControl;
            
             if (this.InvokeRequired)
@@ -117,7 +125,7 @@ namespace MyLogs.Classes
                     int itemIndex = ListViewText.TopItem.Index;
                     int prevIndex = itemIndex;
                     var ItemsCount = ListViewText.Items.Count;
-                    if (ItemsCount == 0 || lines.Length < ItemsCount)
+                    /*if (ItemsCount == 0 || lines.Length < ItemsCount)
                     {
                         ListViewText.Items.Clear();
                         for (var linenum = 0; linenum < lines.Length; linenum++)
@@ -131,7 +139,7 @@ namespace MyLogs.Classes
                         {
                             ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
                         }
-                    }
+                    }*/
 
                     //Grabs the Number of lines in a file
                     //FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
