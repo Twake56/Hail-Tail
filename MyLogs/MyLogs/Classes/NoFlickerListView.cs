@@ -13,6 +13,9 @@ namespace MyLogs.Classes
 {
     class ListViewNF : System.Windows.Forms.ListView
     {
+        public string[] cache { get; set; } = {};
+        public int firstItem { get; set; } = 0;
+        public int lastItem { get; set; } = 0;
         public ListViewNF()
         {
             //Activate double bufferin

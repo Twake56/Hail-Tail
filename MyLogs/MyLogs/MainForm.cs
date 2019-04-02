@@ -72,25 +72,28 @@ namespace MyLogs
                 ListViewText.ContextMenuStrip = contextMenuStrip1;
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
-                ListViewText.RetrieveVirtualItem += new RetrieveVirtualItemEventHandler(LV_RetrieveVirtualItem);
+                //ListViewText.RetrieveVirtualItem += new RetrieveVirtualItemEventHandler(LV_RetrieveVirtualItem);
+                //ListViewText.CacheVirtualItems += new CacheVirtualItemsEventHandler(LV_CacheVirtualItem);
                 
                 SelectedTabPage = tab;
                 TabViewChange(tab);
-                string[] lines = WriteSafeReadAllLines(path);
-                ListViewText.VirtualListSize = lines.Length;
-                ListViewText.VirtualMode = true;
+                //FileSystemEventArgs args = new FileSystemEventArgs(Directory = Path.GetDirectoryName(tab.Name),Path = tab.Name, Name = tab.Name);
+                tab.InitialLoad(tab.Name);
+               // string[] lines = WriteSafeReadAllLines(path);
+                //ListViewText.VirtualListSize = lines.Length;
+                //ListViewText.VirtualMode = true;
                 //Write all lines to list view for tab
                
 
-                var ItemsCount = ListViewText.Items.Count;
+               /* var ItemsCount = ListViewText.Items.Count;
                 if (ItemsCount == 0 || lines.Length < ItemsCount)
                 {
-                    //ListViewText.VirtualListSize = lines.Length + 1;
-                    /*ListViewText.Items.Clear();
+                   
+                    ListViewText.Items.Clear();
                     for (var linenum = 0; linenum < lines.Length; linenum++)
                     {
                         ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                    }*/
+                    }
                 }
                 try
                 {
@@ -99,7 +102,7 @@ namespace MyLogs
                 catch (ArgumentOutOfRangeException IndErr)
                 {
                     Console.WriteLine(IndErr.Message);
-                }
+                }*/
 
                 FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
                 long FileSizeValue = new FileInfo(path).Length; //Create the long for the file size value
@@ -117,6 +120,24 @@ namespace MyLogs
                 MessageBox.Show(ioe.Message);
             }
 
+        }
+
+        private void LV_CacheVirtualItem(object sender, CacheVirtualItemsEventArgs e)
+        {
+            Classes.ListViewNF listView = sender as Classes.ListViewNF;
+            if (listView.cache != null && e.StartIndex >= listView.firstItem && e.EndIndex <= listView.firstItem + listView.cache.Length)
+            {
+                //Dont rebuild cache
+                return;
+            }
+            if( e.EndIndex > listView.lastItem)
+            {
+                listView.firstItem = e.StartIndex;
+                for(var i = listView.cache.Length; i < e.EndIndex; i++)
+                {
+
+                }
+            }
         }
 
         private void LV_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)

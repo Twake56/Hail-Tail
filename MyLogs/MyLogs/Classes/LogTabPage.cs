@@ -21,6 +21,8 @@ namespace MyLogs.Classes
         public int TopVisibleIndex { get; set; } = 0;
         private Thread thread;
         private bool shouldStopThread = false;
+        private bool isLoaded { get; set; } = false;
+        BackgroundWorker worker = new BackgroundWorker();
 
 
         public LogTabPage()
@@ -28,6 +30,7 @@ namespace MyLogs.Classes
             this.thread = new Thread(new ThreadStart(this.ThreadProc));
             this.thread.IsBackground = true;
             this.thread.Start();
+            InitializeWorker();
         }
         public void ThreadProc()
         {
@@ -43,6 +46,12 @@ namespace MyLogs.Classes
                 }
             }
             this.thread.Abort();
+        }
+
+        private void InitializeWorker()
+        {
+            worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_Complete);
         }
 
         public void SetWatcher(string path)
@@ -106,8 +115,63 @@ namespace MyLogs.Classes
             }
         }
 
+        private void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            TabControl TabControlParent = this.Parent as TabControl;
+
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate { worker_DoWork(sender, e); });
+            }
+            else
+            {
+                try
+                {
+                    string path = this.Name;
+                    string[] lines = WriteSafeReadAllLines(path);
+                    var ListViewControl = this.Controls.Find("ListViewText", true);
+                    ListView ListViewText = ListViewControl[0] as ListView;
+                    var ItemsCount = ListViewText.Items.Count;
+                    if (ItemsCount == 0 || lines.Length < ItemsCount)
+                    {
+                        ListViewText.Items.Clear();
+                        for (var linenum = 0; linenum < lines.Length; linenum++)
+                        {
+                            ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
+                        }
+                    }
+                    else
+                    {
+                        for (var start = ItemsCount; start < lines.Length; start++)
+                        {
+                            ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                        }
+                    }
+                }
+                catch (IOException IOex)
+                {
+                    Console.WriteLine(IOex.Message);
+                }
+            }
+        }
+
+        private void worker_Complete(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.isLoaded = true;
+        }
+
+        public void InitialLoad(string path)
+        {
+            worker.RunWorkerAsync();
+            
+        }
+
         private void OnChanged(object source, FileSystemEventArgs e)
         {
+            while (!isLoaded)
+            {
+                Thread.Sleep(200);
+            }
             TabControl TabControlParent = this.Parent as TabControl;
            
             if (this.InvokeRequired)
@@ -122,16 +186,17 @@ namespace MyLogs.Classes
                     string[] lines = WriteSafeReadAllLines(e.FullPath);
                     var ListViewControl = this.Controls.Find("ListViewText", true);
                     ListView ListViewText = ListViewControl[0] as ListView;
-                    int itemIndex = ListViewText.TopItem.Index;
-                    int prevIndex = itemIndex;
+                    
+                    
+                    ///////// ListViewText.VirtualListSize = lines.Length;
+                    // int itemIndex = ListViewText.TopItem.Index;
+                    //int prevIndex = itemIndex;
                     var ItemsCount = ListViewText.Items.Count;
-                    /*if (ItemsCount == 0 || lines.Length < ItemsCount)
+
+                    if (ItemsCount == 0 || lines.Length < ItemsCount)
                     {
                         ListViewText.Items.Clear();
-                        for (var linenum = 0; linenum < lines.Length; linenum++)
-                        {
-                            ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                        }
+                        this.InitialLoad(e.FullPath);
                     }
                     else
                     {
@@ -139,7 +204,7 @@ namespace MyLogs.Classes
                         {
                             ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
                         }
-                    }*/
+                    }
 
                     //Grabs the Number of lines in a file
                     //FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";

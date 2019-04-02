@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyLogs.exe" size="48576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyLogs.exe" size="50624">
       <assemblyIdentity name="MyLogs" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TglNRaS0Uj2ccQAQYn/bbI6G7iFzSe3lBI4p3WbenFA=</dsig:DigestValue>
+        <dsig:DigestValue>iZEa//5MVxRKktPTHl1dSjhVFCCMMkjB+LMk6nOhBtc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
