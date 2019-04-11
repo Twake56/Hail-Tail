@@ -145,6 +145,7 @@ namespace MyLogs
        ******************************/ 
         private void renameTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             RenameForm rename = new RenameForm();
             rename.ShowDialog();
             if (rename.DialogResult == DialogResult.OK)

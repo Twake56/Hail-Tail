@@ -23,10 +23,12 @@ namespace MyLogs.Classes
         private bool shouldStopThread = false;
         private bool isLoaded { get; set; } = false;
         BackgroundWorker worker = new BackgroundWorker();
-
+        private string tempFileName { get; set; } = null;
+        private DateTime fileRefreshedAt { get; set; } = DateTime.Now;
 
         public LogTabPage()
         {
+            this.tempFileName = Path.GetFileName(Path.GetTempFileName());
             this.thread = new Thread(new ThreadStart(this.ThreadProc));
             this.thread.IsBackground = true;
             this.thread.Start();
@@ -60,9 +62,7 @@ namespace MyLogs.Classes
             watch.Path = Path.GetDirectoryName(path);
             watch.Filter = Path.GetFileName(path);
             watch.Changed += new FileSystemEventHandler(OnChanged);
-            watch.NotifyFilter = NotifyFilters.LastAccess
-                                 | NotifyFilters.LastWrite
-                                 | NotifyFilters.Size;
+            watch.NotifyFilter = NotifyFilters.Size;
             watch.EnableRaisingEvents = true;
             this.watcher = watch;
             Console.WriteLine(this.thread.Name);
@@ -102,8 +102,16 @@ namespace MyLogs.Classes
 
         private string[] WriteSafeReadAllLines(String path)
         {
-            using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(csv))
+
+            // maybetry copying files;
+            if(DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
+            {
+                Thread.Sleep(3000);
+            }
+            string tempPath = "../TempFiles/" + tempFileName;
+            File.Copy(path, tempPath, true);
+            using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var sr = new StreamReader(fs))
             {
                 List<string> file = new List<string>();
                 while (!sr.EndOfStream)
@@ -132,20 +140,29 @@ namespace MyLogs.Classes
                     var ListViewControl = this.Controls.Find("ListViewText", true);
                     ListView ListViewText = ListViewControl[0] as ListView;
                     var ItemsCount = ListViewText.Items.Count;
+                    ListViewItem[] itemArray = new ListViewItem[lines.Length];
+                    for(var i = 0; i < lines.Length; i++)
+                    {
+                        ListViewItem item = new ListViewItem((i + 1).ToString());
+                        item.SubItems.Add(lines[i]);
+                        itemArray[i] = item;
+                    }
                     if (ItemsCount == 0 || lines.Length < ItemsCount)
                     {
                         ListViewText.Items.Clear();
-                        for (var linenum = 0; linenum < lines.Length; linenum++)
+                        ListViewText.Items.AddRange(itemArray);
+                        /*for (var linenum = 0; linenum < lines.Length; linenum++)
                         {
                             ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                        }
+                        }*/
                     }
                     else
                     {
-                        for (var start = ItemsCount; start < lines.Length; start++)
+                        ListViewText.Items.AddRange(itemArray);
+                        /*for (var start = ItemsCount; start < lines.Length; start++)
                         {
                             ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
-                        }
+                        }*/
                     }
                 }
                 catch (IOException IOex)
@@ -160,7 +177,7 @@ namespace MyLogs.Classes
             this.isLoaded = true;
         }
 
-        public void InitialLoad(string path)
+        public void InitialLoad()
         {
             worker.RunWorkerAsync();
             
@@ -168,7 +185,7 @@ namespace MyLogs.Classes
 
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-            while (!isLoaded)
+            while (!isLoaded) // Wait till worker completes
             {
                 Thread.Sleep(200);
             }
@@ -188,15 +205,14 @@ namespace MyLogs.Classes
                     ListView ListViewText = ListViewControl[0] as ListView;
                     
                     
-                    ///////// ListViewText.VirtualListSize = lines.Length;
-                    // int itemIndex = ListViewText.TopItem.Index;
-                    //int prevIndex = itemIndex;
                     var ItemsCount = ListViewText.Items.Count;
 
                     if (ItemsCount == 0 || lines.Length < ItemsCount)
                     {
+                        // If logs reset or issue occurs, clear listview and reload async
                         ListViewText.Items.Clear();
-                        this.InitialLoad(e.FullPath);
+                        this.isLoaded = false;
+                        this.InitialLoad();
                     }
                     else
                     {

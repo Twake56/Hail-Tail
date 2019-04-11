@@ -525,6 +525,7 @@
             this.MainMenuStrip = this.PrimaryMenus;
             this.Name = "MainForm";
             this.Text = "Timber Tail";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.PrimaryMenus.ResumeLayout(false);

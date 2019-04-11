@@ -24,7 +24,9 @@ namespace MyLogs.Classes
             //Enable the OnNotifyMessage event so we get a chance to filter out 
             // Windows messages before they get to the form's WndProc
             this.SetStyle(ControlStyles.EnableNotifyMessage, true);
+            
         }
+
 
         protected override void OnNotifyMessage(Message m)
         {

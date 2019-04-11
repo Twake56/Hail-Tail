@@ -21,22 +21,6 @@ namespace MyLogs
             InitializeComponent();
         }
 
-        public string[] WriteSafeReadAllLines(string path)
-        {
-            using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(csv))
-            {
-                List<string> file = new List<string>();
-                while (!sr.EndOfStream)
-                {
-                    file.Add(sr.ReadLine());
-                }
-
-                return file.ToArray();
-            }
-        }
-
-
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -72,37 +56,11 @@ namespace MyLogs
                 ListViewText.ContextMenuStrip = contextMenuStrip1;
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
-                //ListViewText.RetrieveVirtualItem += new RetrieveVirtualItemEventHandler(LV_RetrieveVirtualItem);
-                //ListViewText.CacheVirtualItems += new CacheVirtualItemsEventHandler(LV_CacheVirtualItem);
                 
                 SelectedTabPage = tab;
                 TabViewChange(tab);
                 //FileSystemEventArgs args = new FileSystemEventArgs(Directory = Path.GetDirectoryName(tab.Name),Path = tab.Name, Name = tab.Name);
-                tab.InitialLoad(tab.Name);
-               // string[] lines = WriteSafeReadAllLines(path);
-                //ListViewText.VirtualListSize = lines.Length;
-                //ListViewText.VirtualMode = true;
-                //Write all lines to list view for tab
-               
-
-               /* var ItemsCount = ListViewText.Items.Count;
-                if (ItemsCount == 0 || lines.Length < ItemsCount)
-                {
-                   
-                    ListViewText.Items.Clear();
-                    for (var linenum = 0; linenum < lines.Length; linenum++)
-                    {
-                        ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                    }
-                }
-                try
-                {
-                    ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
-                }
-                catch (ArgumentOutOfRangeException IndErr)
-                {
-                    Console.WriteLine(IndErr.Message);
-                }*/
+                tab.InitialLoad();
 
                 FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
                 long FileSizeValue = new FileInfo(path).Length; //Create the long for the file size value
@@ -120,52 +78,6 @@ namespace MyLogs
                 MessageBox.Show(ioe.Message);
             }
 
-        }
-
-        private void LV_CacheVirtualItem(object sender, CacheVirtualItemsEventArgs e)
-        {
-            Classes.ListViewNF listView = sender as Classes.ListViewNF;
-            if (listView.cache != null && e.StartIndex >= listView.firstItem && e.EndIndex <= listView.firstItem + listView.cache.Length)
-            {
-                //Dont rebuild cache
-                return;
-            }
-            if( e.EndIndex > listView.lastItem)
-            {
-                listView.firstItem = e.StartIndex;
-                for(var i = listView.cache.Length; i < e.EndIndex; i++)
-                {
-
-                }
-            }
-        }
-
-        private void LV_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
-        {
-            Classes.ListViewNF listView = sender as Classes.ListViewNF;
-            // var acc = listView.Items[0];
-            // hand out new item
-            e.Item = new ListViewItem((e.ItemIndex + 1).ToString());
-            Classes.LogTabPage tab = (sender as Classes.ListViewNF).Parent as Classes.LogTabPage;
-            string path = tab.Name;
-            string line = WriteSafeGetLine(path, e.ItemIndex);
-            e.Item.SubItems.Add(line);
-
-        }
-
-        public string WriteSafeGetLine(string path, int index)
-        {
-            using (var csv = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(csv))
-            {
-                List<string> file = new List<string>();
-                while (!sr.EndOfStream)
-                {
-                    file.Add(sr.ReadLine());
-                }
-
-                return file.ToArray()[index];
-            }
         }
 
         //Copy lines from Logs
@@ -371,6 +283,13 @@ namespace MyLogs
             }
         }
 
-
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           DirectoryInfo tempDir = new DirectoryInfo("../TempFiles/");
+            foreach (FileInfo file in tempDir.GetFiles())
+            {
+                file.Delete();
+            }
+        }
     }
 }
