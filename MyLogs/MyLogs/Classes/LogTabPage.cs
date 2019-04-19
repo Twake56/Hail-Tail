@@ -33,6 +33,7 @@ namespace MyLogs.Classes
             this.thread.IsBackground = true;
             this.thread.Start();
             InitializeWorker();
+           //this.VerticalScroll.Value += new MouseEventHandler(MouseScroll);
         }
         public void ThreadProc()
         {
@@ -56,6 +57,11 @@ namespace MyLogs.Classes
             worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_Complete);
         }
 
+        public void MouseScroll(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine(this.VerticalScroll.Value);
+        }
+
         public void SetWatcher(string path)
         {
             var watch = new FileSystemWatcher();
@@ -74,10 +80,13 @@ namespace MyLogs.Classes
             {
                 ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
                 listView.EnsureVisible(TopVisibleIndex);
+                
             }
             catch(IndexOutOfRangeException)
             {}//Caught folder ignore
         }
+
+
 
         public void SetLastVisibleItem()
         {
@@ -100,10 +109,8 @@ namespace MyLogs.Classes
             }
         }
 
-        private string[] WriteSafeReadAllLines(String path)
+        private string[] ReadLines(String path)
         {
-
-            // maybetry copying files;
             if(DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
             {
                 Thread.Sleep(3000);
@@ -136,9 +143,10 @@ namespace MyLogs.Classes
                 try
                 {
                     string path = this.Name;
-                    string[] lines = WriteSafeReadAllLines(path);
+                    string[] lines = ReadLines(path);
                     var ListViewControl = this.Controls.Find("ListViewText", true);
-                    ListView ListViewText = ListViewControl[0] as ListView;
+                    ListViewNF ListViewText = ListViewControl[0] as ListViewNF;
+                    
                     var ItemsCount = ListViewText.Items.Count;
                     ListViewItem[] itemArray = new ListViewItem[lines.Length];
                     for(var i = 0; i < lines.Length; i++)
@@ -151,18 +159,10 @@ namespace MyLogs.Classes
                     {
                         ListViewText.Items.Clear();
                         ListViewText.Items.AddRange(itemArray);
-                        /*for (var linenum = 0; linenum < lines.Length; linenum++)
-                        {
-                            ListViewText.Items.Add((linenum + 1).ToString()).SubItems.Add(lines[linenum]);
-                        }*/
                     }
                     else
                     {
                         ListViewText.Items.AddRange(itemArray);
-                        /*for (var start = ItemsCount; start < lines.Length; start++)
-                        {
-                            ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
-                        }*/
                     }
                 }
                 catch (IOException IOex)
@@ -185,6 +185,7 @@ namespace MyLogs.Classes
 
         private void OnChanged(object source, FileSystemEventArgs e)
         {
+            
             while (!isLoaded) // Wait till worker completes
             {
                 Thread.Sleep(200);
@@ -200,11 +201,12 @@ namespace MyLogs.Classes
                try
                 {
                     SetLastVisibleItem();
-                    string[] lines = WriteSafeReadAllLines(e.FullPath);
+                    string[] lines = ReadLines(e.FullPath);
                     var ListViewControl = this.Controls.Find("ListViewText", true);
                     ListView ListViewText = ListViewControl[0] as ListView;
                     
-                    
+
+
                     var ItemsCount = ListViewText.Items.Count;
 
                     if (ItemsCount == 0 || lines.Length < ItemsCount)

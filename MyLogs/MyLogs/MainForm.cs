@@ -37,6 +37,16 @@ namespace MyLogs
             }
         }
 
+        public void ScrolledToBottom(object sender)
+        {
+            StartFollowingTail();
+        }
+
+        public void ScrolledFromBottom(object sender)
+        {
+            StopFollowingTail();
+        }
+
         private void CreateParentTabPageAtIndex(string path, int? index, string parentName = null, string text = null)
         {
             try
@@ -57,6 +67,11 @@ namespace MyLogs
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
                 
+
+                // ListViewText.Scrollable = false;
+                //VScrollBar scrollBar = new VScrollBar {Parent = ListViewText, Dock = DockStyle.Right, Visible = true, Width = 20};
+
+
                 SelectedTabPage = tab;
                 TabViewChange(tab);
                 //FileSystemEventArgs args = new FileSystemEventArgs(Directory = Path.GetDirectoryName(tab.Name),Path = tab.Name, Name = tab.Name);
@@ -240,30 +255,42 @@ namespace MyLogs
         {
             if (followTailCheckBox.Checked)
             {
-                if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
-                {
-                    TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
-                    (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = true;
-                }
-                else
-                {
-                    (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = true;
-                }
+                StartFollowingTail();
             }
             else
             {
-                if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
-                {
-                    TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
-                    (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = false;
-                    (subTabControl.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
-                }
-                else
-                {
-                    (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = false;
-                    (TabControlParent.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
-                }
+                StopFollowingTail();
             }
+        }
+
+        private void StartFollowingTail()
+        {
+            if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+            {
+                TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
+                (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = true;
+            }
+            else
+            {
+                (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = true;
+            }
+            followTailCheckBox.Checked = true;
+        }
+
+        private void StopFollowingTail()
+        {
+            if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+            {
+                TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
+                (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = false;
+                (subTabControl.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
+            }
+            else
+            {
+                (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = false;
+                (TabControlParent.SelectedTab as Classes.LogTabPage).SetLastVisibleItem();
+            }
+            followTailCheckBox.Checked = false;
         }
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
