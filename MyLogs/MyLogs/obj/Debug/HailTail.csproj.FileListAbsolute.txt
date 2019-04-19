@@ -1,0 +1,16 @@
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\HailTail.exe.config
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\HailTail.exe.manifest
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\HailTail.application
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\HailTail.exe
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\bin\Debug\HailTail.pdb
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.csprojAssemblyReference.cache
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.MoveToFolderForm.resources
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.MainForm.resources
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.Properties.Resources.resources
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\MyLogs.RenameForm.resources
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.csproj.GenerateResource.cache
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.csproj.CoreCompileInputs.cache
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.exe.manifest
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.application
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.exe
+C:\Users\twakeman\Documents\GitHub\Timber-Tail\MyLogs\MyLogs\obj\Debug\HailTail.pdb

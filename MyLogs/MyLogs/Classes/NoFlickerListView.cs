@@ -71,19 +71,18 @@ namespace MyLogs.Classes
             }
         
         }
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        static extern int GetScrollPos(IntPtr hWnd, int nBar);
+
         protected override void WndProc(ref Message m)
 
         {
             base.WndProc(ref m);
             if (m.Msg == 0x115)//WM_VSCROLL
             {
-                OnScroll(new ScrollEventArgs((ScrollEventType)(m.WParam.ToInt32() & 0xffff), GetScrollPos(this.Handle, 1)));
+                OnScroll(new ScrollEventArgs((ScrollEventType)(m.WParam.ToInt32() & 0xffff), 0));
             }
             else if(m.Msg == 0x020A)//WM_MOUSEWHEEL
             {
-                OnScroll(new ScrollEventArgs((ScrollEventType)(m.WParam.ToInt32() & 0xffff), GetScrollPos(this.Handle, 1)));
+                OnScroll(new ScrollEventArgs((ScrollEventType)(m.WParam.ToInt32() & 0xffff), 0));
             }
         }
 
