@@ -312,11 +312,16 @@ namespace MyLogs
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+
            DirectoryInfo tempDir = new DirectoryInfo("../TempFiles/");
-            foreach (FileInfo file in tempDir.GetFiles())
+            if (tempDir.GetFiles().Any())
             {
-                file.Delete();
+                foreach (FileInfo file in tempDir.GetFiles())
+                {
+                    file.Delete();
+                }
             }
+            
         }
     }
 }

@@ -524,7 +524,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.PrimaryMenus;
             this.Name = "MainForm";
-            this.Text = "Timber Tail";
+            this.Text = "Hail Tail";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();

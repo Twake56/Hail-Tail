@@ -28,7 +28,7 @@ namespace MyLogs.Classes
 
         public LogTabPage()
         {
-            this.tempFileName = Path.GetFileName(Path.GetTempFileName());
+            this.tempFileName = Path.GetRandomFileName() + ".tmp";
             this.thread = new Thread(new ThreadStart(this.ThreadProc));
             this.thread.IsBackground = true;
             this.thread.Start();
