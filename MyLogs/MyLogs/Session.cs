@@ -40,7 +40,7 @@ namespace MyLogs
                         Classes.LogTabPage subLogTabPage = subTabControl.TabPages[ik] as Classes.LogTabPage;
                         SessionXML.Root.Elements("Folders").First().Elements(logTabPage.Name).First().Add(new XElement(Path.GetFileName(subLogTabPage.Name).ToString(),
                                                                     new XAttribute("Position", ik),
-                                                                    new XAttribute("Name", Path.GetFileName(subLogTabPage.Name).ToString()),
+                                                                    new XAttribute("Name", subLogTabPage.Text.ToString()),
                                                                     new XAttribute("Path", subLogTabPage.Name.ToString()),
                                                                     new XAttribute("IsTailFollowed", subLogTabPage.TailFollowed),
                                                                     new XAttribute("IsFolder", subLogTabPage.IsFolder)
@@ -51,16 +51,15 @@ namespace MyLogs
             SessionXML.Save("../Session/Session.xml");
         }
 
-        private void LoadLastSession()
+        private void LoadSession(string path)
         {
             if(TabControlParent.TabPages.Count > 0)
             {
                 TabControlParent.TabPages.Clear();
-                //FileWatchers.Clear();
             }
             try
             {
-                XDocument LastSession = XDocument.Load(@"../Session/Session.xml");
+                XDocument LastSession = XDocument.Load(path ?? @"../Session/Session.xml");
                 XElement files = LastSession.Root.Elements("Files").First();
                 for(var i = 0; i < files.Elements().Count(); i++)
                 {
@@ -82,7 +81,7 @@ namespace MyLogs
                     {
                         int subIndex = -1;
                         Int32.TryParse(folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Position").Value, out subIndex);
-                        CreateParentTabPageAtIndex(folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Path").Value, subIndex, parentName: element.Attribute("Name").Value);
+                        CreateParentTabPageAtIndex(folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Path").Value, subIndex, parentName: element.Attribute("Name").Value, text: folders.Elements().ToList()[f].Elements().ToList()[fi].Attribute("Name").Value);
                     }
                 }
                 SetIndexes();

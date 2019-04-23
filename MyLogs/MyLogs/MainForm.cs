@@ -19,6 +19,12 @@ namespace MyLogs
         public MainForm()
         {
             InitializeComponent();
+            ImageList iconList = new ImageList();
+
+            iconList.Images.Add("doc", Image.FromFile(@"../Icons/document-icon.png"));
+            iconList.Images.Add("folder", Image.FromFile(@".../Icons/folder-icon.png"));
+            iconList.Images.Add("x", Image.FromFile(@".../Icons/x-icon.png"));
+            TabControlParent.ImageList = iconList;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,12 +59,13 @@ namespace MyLogs
             {
                 int tabPosition = index ?? CountParentTabs() + 1;
                 //Creates a new tab for a new log
-                Classes.LogTabPage tab = new Classes.LogTabPage() { Text = text ?? Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition };
+                Classes.LogTabPage tab = new Classes.LogTabPage() { Text = text ?? Path.GetFileName(path), Name = path, Tag = "File", TailFollowed = true, PositionIndex = tabPosition, ImageIndex = 0 };
+                
                 tab.SetWatcher(path);
                 TabControlParent.TabPages.Add(tab);
                 TabControlParent.SelectedTab = tab;
-
-                Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details };
+                
+                Classes.ListViewNF ListViewText = new Classes.ListViewNF { Parent = tab, Dock = DockStyle.Fill, View = View.Details, };
 
                 ListViewText.Columns.Add("Line", 50, HorizontalAlignment.Left);
                 ListViewText.Columns.Add("Text", 1000, HorizontalAlignment.Left);
@@ -248,7 +255,7 @@ namespace MyLogs
 
         private void LoadLastSessionMenuItem_Click(object sender, EventArgs e)
         {
-            LoadLastSession();
+            LoadSession(null);
         }
 
         private void followTailCheckBox_Click(object sender, EventArgs e)

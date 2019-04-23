@@ -31,8 +31,7 @@ namespace MyLogs.Classes
         public event ScrollEventHandler Scroll;
         protected virtual void OnScroll(ScrollEventArgs e)
         {
-            ScrollEventHandler handler = this.Scroll;
-            if (handler != null) handler(this, e);
+            this.Scroll?.Invoke(this, e);
         }
 
         public void Scrolled(object sender, ScrollEventArgs e)

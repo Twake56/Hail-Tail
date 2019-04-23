@@ -85,11 +85,18 @@ namespace MyLogs
             /************************
              Attach subtabcontrol to folder tabs
              ************************/
+            ImageList iconList = new ImageList();
+
+            iconList.Images.Add("doc", Image.FromFile(@"../Icons/document-icon.png"));
+            iconList.Images.Add("folder", Image.FromFile(@".../Icons/folder-icon.png"));
+            iconList.Images.Add("x", Image.FromFile(@".../Icons/x-icon.png"));
+            
             TabControl subTabControl = new TabControl();
             subTabControl.Name = "SubTabControl";
             subTabControl.Dock = DockStyle.Fill;
             subTabControl.ShowToolTips = true;
             subTabControl.AllowDrop = true;
+            subTabControl.ImageList = iconList;
             subTabControl.MouseClick += new MouseEventHandler(SubTab_Click);
             subTabControl.SelectedIndexChanged += new EventHandler(TabControl_SelectedIndexChanged);
             subTabControl.DragOver += new DragEventHandler(TabControl_DragOver);
@@ -98,11 +105,10 @@ namespace MyLogs
 
 
             int tabPosition = index ?? CountParentTabs() + 1;
-            Classes.LogTabPage tab = new Classes.LogTabPage() { Text = name, Name = name, Tag = "Folder", PositionIndex = tabPosition, IsFolder = true };
+            Classes.LogTabPage tab = new Classes.LogTabPage() { Text = name, Name = name, Tag = "Folder", PositionIndex = tabPosition, IsFolder = true , ImageIndex = 1};
             tab.Controls.Add(subTabControl);
             TabControlParent.TabPages.Add(tab);
             TabControlParent.SelectedTab = tab;
-            tab.ToolTipText = "TabIndex = " + (subTabControl.TabPages.IndexOf(tab).ToString());
             SelectedTabPage = tab;
             TabViewChange(tab);
         }

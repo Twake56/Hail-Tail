@@ -3,7 +3,7 @@
   <Files />
   <Folders>
     <QA Name="QA" Position="0" IsFolder="true">
-      <Accurence.QualityAssist.Service.LTSRVDEV03.QA.log Position="0" Name="Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\QualityAssistLogsQA\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
+      <Accurence.QualityAssist.Service.LTSRVDEV03.QA.log Position="0" Name="QAQA" Path="\\ltsrvdev03\logs\QualityAssistLogsQA\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
       <BillingService.QA.log Position="1" Name="BillingService.QA.log" Path="\\ltsrvdev03\logs\Billing\BillingService.QA.log" IsTailFollowed="true" IsFolder="false" />
       <GeocodingService.LTSRVDEV03.QA.log Position="2" Name="GeocodingService.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\GeocodingService\GeocodingService.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
     </QA>

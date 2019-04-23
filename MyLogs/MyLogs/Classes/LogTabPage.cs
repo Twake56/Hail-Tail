@@ -33,7 +33,6 @@ namespace MyLogs.Classes
             this.thread.IsBackground = true;
             this.thread.Start();
             InitializeWorker();
-           //this.VerticalScroll.Value += new MouseEventHandler(MouseScroll);
         }
         public void ThreadProc()
         {
