@@ -85,8 +85,8 @@ namespace MyLogs
                 tab.InitialLoad();
 
                 FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file
-                long FileSizeValue = new FileInfo(path).Length; //Create the long for the file size value
-                FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
+               // long FileSizeValue = new FileInfo(path).Length; //Create the long for the file size value
+               // FileSizeTB.Text = (FileSizeValue / 1024) + " KB"; //Convert File size from bytes to KB
 
                 if (!String.IsNullOrWhiteSpace(parentName))
                 {
@@ -97,8 +97,9 @@ namespace MyLogs
             }
             catch (IOException ioe)
             {
-                MessageBox.Show(ioe.Message);
+                Console.WriteLine(ioe.Message);
             }
+
 
         }
 

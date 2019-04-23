@@ -63,6 +63,11 @@ namespace MyLogs.Classes
 
         public void SetWatcher(string path)
         {
+
+            if (!File.Exists(path))
+            {
+                return;
+            }
             var watch = new FileSystemWatcher();
             watch.Path = Path.GetDirectoryName(path);
             watch.Filter = Path.GetFileName(path);
@@ -110,23 +115,29 @@ namespace MyLogs.Classes
 
         private string[] ReadLines(String path)
         {
+            if (!File.Exists(path))
+            {
+                return null;
+            }
             if(DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
             {
                 Thread.Sleep(3000);
             }
-            string tempPath = "../TempFiles/" + tempFileName;
-            File.Copy(path, tempPath, true);
-            using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(fs))
-            {
-                List<string> file = new List<string>();
-                while (!sr.EndOfStream)
-                {
-                    file.Add(sr.ReadLine());
-                }
 
-                return file.ToArray();
-            }
+                string tempPath = "../TempFiles/" + tempFileName;
+                File.Copy(path, tempPath, true);
+                using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var sr = new StreamReader(fs))
+                {
+                    List<string> file = new List<string>();
+                    while (!sr.EndOfStream)
+                    {
+                        file.Add(sr.ReadLine());
+                    }
+
+                    return file.ToArray();
+                }
+            
         }
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
@@ -143,6 +154,11 @@ namespace MyLogs.Classes
                 {
                     string path = this.Name;
                     string[] lines = ReadLines(path);
+                    if (lines == null)
+                    {
+                        this.ImageIndex= 2;
+                        return;  
+                    }
                     var ListViewControl = this.Controls.Find("ListViewText", true);
                     ListViewNF ListViewText = ListViewControl[0] as ListViewNF;
                     
@@ -200,6 +216,11 @@ namespace MyLogs.Classes
                try
                 {
                     SetLastVisibleItem();
+
+                    if (!File.Exists(e.FullPath))
+                    {
+                        return;
+                    }
                     string[] lines = ReadLines(e.FullPath);
                     var ListViewControl = this.Controls.Find("ListViewText", true);
                     ListView ListViewText = ListViewControl[0] as ListView;
