@@ -73,15 +73,9 @@ namespace MyLogs
                 ListViewText.ContextMenuStrip = contextMenuStrip1;
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
-                
-
-                // ListViewText.Scrollable = false;
-                //VScrollBar scrollBar = new VScrollBar {Parent = ListViewText, Dock = DockStyle.Right, Visible = true, Width = 20};
-
 
                 SelectedTabPage = tab;
                 TabViewChange(tab);
-                //FileSystemEventArgs args = new FileSystemEventArgs(Directory = Path.GetDirectoryName(tab.Name),Path = tab.Name, Name = tab.Name);
                 tab.InitialLoad();
 
                 FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines"; //Grabs the Number of lines in a file

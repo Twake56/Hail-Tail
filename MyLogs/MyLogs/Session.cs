@@ -19,7 +19,7 @@ namespace MyLogs
                 Classes.LogTabPage logTabPage = TabControlParent.TabPages[i] as Classes.LogTabPage;
                 if (!logTabPage.IsFolder)//File
                 {
-                    SessionXML.Root.Elements("Files").First().Add(new XElement(Path.GetFileName(logTabPage.Name),
+                    SessionXML.Root.Elements("Files").First().Add(new XElement("File",
                                                                     new XAttribute("Position", i),
                                                                     new XAttribute("Name", logTabPage.Text),
                                                                     new XAttribute("Path", logTabPage.Name),
@@ -29,7 +29,7 @@ namespace MyLogs
                 }
                 else //Folder
                 {
-                    SessionXML.Root.Elements("Folders").First().Add(new XElement(logTabPage.Name,
+                    SessionXML.Root.Elements("Folders").First().Add(new XElement("Folder",
                                                                         new XAttribute("Name", logTabPage.Name.ToString()),
                                                                         new XAttribute("Position", i),
                                                                         new XAttribute("IsFolder", logTabPage.IsFolder)
@@ -38,7 +38,7 @@ namespace MyLogs
                     for (var ik = 0; ik < subTabControl.TabPages.Count; ik++)
                     {
                         Classes.LogTabPage subLogTabPage = subTabControl.TabPages[ik] as Classes.LogTabPage;
-                        SessionXML.Root.Elements("Folders").First().Elements(logTabPage.Name).First().Add(new XElement(Path.GetFileName(subLogTabPage.Name).ToString(),
+                        SessionXML.Root.Elements("Folders").First().Elements().Where(f => f.Attribute("Name").Value.ToString() == logTabPage.Name.ToString()).First().Add(new XElement("File",
                                                                     new XAttribute("Position", ik),
                                                                     new XAttribute("Name", subLogTabPage.Text.ToString()),
                                                                     new XAttribute("Path", subLogTabPage.Name.ToString()),
