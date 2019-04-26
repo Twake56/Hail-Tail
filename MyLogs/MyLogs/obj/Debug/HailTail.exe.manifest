@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HailTail.exe" size="53184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HailTail.exe" size="52672">
       <assemblyIdentity name="HailTail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GE2V+9WBhctqR9FZsdLFYkiVo8FJicv5SePwSQuF438=</dsig:DigestValue>
+        <dsig:DigestValue>gJuRJpElMx7QvdeCtUeDWcSKe/FP1jtaqBrEyRcRVjQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
