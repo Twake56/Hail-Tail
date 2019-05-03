@@ -1,2 +1,0 @@
-2019-05-01 16:01:42,897 [64 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
-2019-05-01 16:01:42,913 [64 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
