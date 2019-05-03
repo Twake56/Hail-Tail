@@ -87,9 +87,9 @@ namespace MyLogs
              ************************/
             ImageList iconList = new ImageList();
 
-            iconList.Images.Add("doc", Image.FromFile(@"../Icons/document-icon.png"));
-            iconList.Images.Add("folder", Image.FromFile(@".../Icons/folder-icon.png"));
-            iconList.Images.Add("x", Image.FromFile(@".../Icons/x-icon.png"));
+            iconList.Images.Add("doc", Image.FromFile(@"./Assets/Icons/document-icon.png"));
+            iconList.Images.Add("folder", Image.FromFile(@"./Assets/Icons/folder-icon.png"));
+            iconList.Images.Add("x", Image.FromFile(@"./Assets/Icons/x-icon.png"));
             
             TabControl subTabControl = new TabControl();
             subTabControl.Name = "SubTabControl";

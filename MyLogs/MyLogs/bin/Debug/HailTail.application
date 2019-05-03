@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="HailTail.exe.manifest" size="3458">
+    <dependentAssembly dependencyType="install" codebase="HailTail.exe.manifest" size="5516">
       <assemblyIdentity name="HailTail.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Cfnf5UjA7XDDTK4Cvlda2SJu6Pdxwg4K+BiHC4Aj6/c=</dsig:DigestValue>
+        <dsig:DigestValue>EtYJqKI3WUrX0MKgsmhTMMxDKkowa56XdQ2wuTTRonk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

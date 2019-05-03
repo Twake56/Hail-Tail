@@ -20,10 +20,10 @@ namespace MyLogs
         {
             InitializeComponent();
             ImageList iconList = new ImageList();
-
-            iconList.Images.Add("doc", Image.FromFile(@"../Icons/document-icon.png"));
-            iconList.Images.Add("folder", Image.FromFile(@".../Icons/folder-icon.png"));
-            iconList.Images.Add("x", Image.FromFile(@".../Icons/x-icon.png"));
+            Console.WriteLine(Path.GetFullPath(@"../"));
+            iconList.Images.Add("doc", Image.FromFile(@"./Assets/Icons/document-icon.png"));
+            iconList.Images.Add("folder", Image.FromFile(@"./Assets/Icons/folder-icon.png"));
+            iconList.Images.Add("x", Image.FromFile(@"./Assets/Icons/x-icon.png"));
             TabControlParent.ImageList = iconList;
         }
 
@@ -271,10 +271,12 @@ namespace MyLogs
             {
                 TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
                 (subTabControl.SelectedTab as Classes.LogTabPage).TailFollowed = true;
+                (subTabControl.SelectedTab as Classes.LogTabPage).ScrollToBottom();
             }
             else
             {
                 (TabControlParent.SelectedTab as Classes.LogTabPage).TailFollowed = true;
+                (TabControlParent.SelectedTab as Classes.LogTabPage).ScrollToBottom();
             }
             followTailCheckBox.Checked = true;
         }
@@ -315,7 +317,7 @@ namespace MyLogs
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-           DirectoryInfo tempDir = new DirectoryInfo("../TempFiles/");
+           DirectoryInfo tempDir = new DirectoryInfo("./Assets/TempFiles/");
             if (tempDir.GetFiles().Any())
             {
                 foreach (FileInfo file in tempDir.GetFiles())

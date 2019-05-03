@@ -42,17 +42,62 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HailTail.exe" size="52672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HailTail.exe" size="53184">
       <assemblyIdentity name="HailTail" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gJuRJpElMx7QvdeCtUeDWcSKe/FP1jtaqBrEyRcRVjQ=</dsig:DigestValue>
+        <dsig:DigestValue>Pb0H8bAD4IFcczQ0HBmsFWpDP1wtF4OzrxhRhfJU1CQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Assets\Icons\document-icon.png" size="3441">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ahyCwPkiKiiLAlcszyCLNR+nKYK2fPxu4/vTb1L4vJ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\Icons\folder-icon.png" size="14511">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>O1BdnmLY4fNzNsEUng4NILrxkQE6QG8EkdyUP+qx/Co=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\Icons\x-icon.png" size="692">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qDJ1mQi1E40wWThA25OiFsTKD0mnBksdd2ORxcIxLgc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\Session\Session.xml" size="4029" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0rpRGqr1UOJ1bpwNIMUrEgC+LpL/WUi/024TlPlYWa4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Assets\TempFiles\PlaceHolder.txt" size="3">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="HailTail.exe.config" size="189">
     <hash>
       <dsig:Transforms>

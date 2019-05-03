@@ -90,7 +90,19 @@ namespace MyLogs.Classes
             {}//Caught folder ignore
         }
 
-
+        public void ScrollToBottom()
+        {
+            var ListViewControl = this.Controls.Find("ListViewText", true);
+            ListView ListViewText = ListViewControl[0] as ListView;
+            try
+            {
+                ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+            }
+            catch (ArgumentOutOfRangeException IndErr)
+            {
+                Console.WriteLine(IndErr.Message);
+            }
+        }
 
         public void SetLastVisibleItem()
         {
@@ -124,7 +136,7 @@ namespace MyLogs.Classes
                 Thread.Sleep(3000);
             }
 
-                string tempPath = "../TempFiles/" + tempFileName;
+                string tempPath = "./Assets/TempFiles/" + tempFileName;
                 File.Copy(path, tempPath, true);
                 using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 using (var sr = new StreamReader(fs))
@@ -253,14 +265,7 @@ namespace MyLogs.Classes
 
                     if (TailFollowed)
                     {
-                        try
-                        {
-                            ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
-                        }
-                        catch (ArgumentOutOfRangeException IndErr)
-                        {
-                            Console.WriteLine(IndErr.Message);
-                        }
+                        ScrollToBottom();
                     }
                 }
                 catch (IOException IOex)

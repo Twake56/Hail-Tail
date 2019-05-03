@@ -30,3 +30,8 @@ C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\obj\Debug\HailTail.ex
 C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\obj\Debug\HailTail.application
 C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\obj\Debug\HailTail.exe
 C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\obj\Debug\HailTail.pdb
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Icons\document-icon.png
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Icons\folder-icon.png
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Icons\x-icon.png
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Session\Session.xml
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\TempFiles\PlaceHolder.txt

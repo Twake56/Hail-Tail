@@ -48,7 +48,9 @@ namespace MyLogs
                     }
                 }
             }
-            SessionXML.Save("../Session/Session.xml");
+            if (!Directory.Exists(@"./Assets/Session/"))
+                Directory.CreateDirectory(@"./Assets/Session/");
+            SessionXML.Save("./Assets/Session/Session.xml");
         }
 
         private void LoadSession(string path)
@@ -59,7 +61,7 @@ namespace MyLogs
             }
             try
             {
-                XDocument LastSession = XDocument.Load(path ?? @"../Session/Session.xml");
+                XDocument LastSession = XDocument.Load(path ?? @"./Assets/Session/Session.xml");
                 XElement files = LastSession.Root.Elements("Files").First();
                 for(var i = 0; i < files.Elements().Count(); i++)
                 {

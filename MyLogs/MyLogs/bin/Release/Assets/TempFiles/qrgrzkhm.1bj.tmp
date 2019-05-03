@@ -1,0 +1,981 @@
+2019-05-01 09:07:20,426 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:07:20,426 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 8.90.51 for run 39533 bot 8
+2019-05-01 09:07:20,473 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 8.90.51 for run 39533 bot 8 botconfig 50540 saved with assignment count 0
+2019-05-01 09:07:20,473 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65224.
+2019-05-01 09:07:20,473 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 8 because another existed.
+2019-05-01 09:07:20,488 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.QCompanyQuantityConfigAssignments[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65726.
+2019-05-01 09:07:20,488 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally required bot configuration
+2019-05-01 09:07:20,488 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:07:20,488 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:07:20,488 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:07:20,488 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.61.14 for run 39533 bot 9
+2019-05-01 09:07:20,520 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.61.14 for run 39533 bot 9 botconfig 50541 saved with assignment count 1
+2019-05-01 09:07:20,520 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:07:20,520 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.89.43 for run 39533 bot 9
+2019-05-01 09:07:20,535 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.89.43 for run 39533 bot 9 botconfig 50542 saved with assignment count 0
+2019-05-01 09:07:20,551 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.QCompanyQuantityConfigAssignments[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65726.
+2019-05-01 09:07:20,551 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:07:20,551 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:07:20,551 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 45487.
+2019-05-01 09:07:20,551 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking quantity bot configuration
+2019-05-01 09:07:20,551 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:07:20,567 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:07:20,567 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 54 - TEST_8000001_RFG/Removal
+2019-05-01 09:07:20,567 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 53 - TEST_8000001_TEX
+2019-05-01 09:07:20,567 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 45487.
+2019-05-01 09:07:20,567 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:07:20,567 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:07:20,567 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Salvage.SalvageBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'QCompanyConfig.Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 70968.
+2019-05-01 09:07:20,567 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking salvage bot configuration
+2019-05-01 09:07:20,582 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no salvage bot configuration update
+2019-05-01 09:07:20,582 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigSalvage - 4.76 for run 39533 for price list 362
+2019-05-01 09:07:20,613 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigSalvage - 4.76 for run 39533 for price list 362 saved
+2019-05-01 09:07:20,613 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report data imported.
+2019-05-01 09:07:20,613 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
+2019-05-01 09:07:20,613 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
+2019-05-01 09:08:08,194 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - Message received.
+2019-05-01 09:08:08,210 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing report data
+2019-05-01 09:08:08,226 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist LautrivWareDB.EFCoreModel.Models.QQualityRun object: Could not find member 'TotalBotLineItemValue' on object of type 'QQualityRunCalculation'. Path 'QProjectExport.QQualityRunCalculations[0].TotalBotLineItemValue', line 1, position 88399.
+2019-05-01 09:08:08,226 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Estimate
+2019-05-01 09:08:08,226 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - updating previous project exports - JobId = 77214 Claim Number = 3.6PLV123
+2019-05-01 09:08:08,241 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report estimate - 3.6PLV123
+2019-05-01 09:08:08,257 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report estimate - 3.6PLV123 saved
+2019-05-01 09:08:08,257 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report Estimate imported
+2019-05-01 09:08:08,257 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Export
+2019-05-01 09:08:08,257 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - report Export imported
+2019-05-01 09:08:08,257 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report export - 3.6PLV123
+2019-05-01 09:08:08,304 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report export - 3.6PLV123 saved
+2019-05-01 09:08:08,304 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Disallowed result
+2019-05-01 09:08:08,304 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving disallowed result - cat:DRY sel:5/8 act:&
+2019-05-01 09:08:08,335 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - disallowed result - cat:DRY sel:5/8 act:& saved
+2019-05-01 09:08:08,335 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Disallowed result imported
+2019-05-01 09:08:08,335 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Required result
+2019-05-01 09:08:08,335 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional required result - cat:WTR sel:MUCK- act:-
+2019-05-01 09:08:08,351 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional required result - cat:WTR sel:MUCK- act:- saved
+2019-05-01 09:08:08,351 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Required result imported
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951066
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951066: 0
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951066: 0
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951066: 0
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951066
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951066: $0
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951066: $0
+2019-05-01 09:08:08,351 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951066: $0
+2019-05-01 09:08:08,351 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:RFG sel:220 act:-
+2019-05-01 09:08:08,382 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:RFG sel:220 act:- saved
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951067
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951067: 0
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951067: 0
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951067: 0
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951067
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951067: $0
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951067: $0
+2019-05-01 09:08:08,382 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951067: $0
+2019-05-01 09:08:08,382 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:RFG sel:220 act:+
+2019-05-01 09:08:08,398 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:RFG sel:220 act:+ saved
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951068
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951068: 0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951068: 0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951068: 0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951068
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951068: $0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951068: $0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951068: $0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:SCF sel:BSW act:+
+2019-05-01 09:08:08,398 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:SCF sel:BSW act:+ saved
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951069
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951069: 0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951069: 0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951069: 0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951069
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951069: $2180
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951069: $0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951069: $0
+2019-05-01 09:08:08,398 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:&
+2019-05-01 09:08:08,444 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:& saved
+2019-05-01 09:08:08,444 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - GetItemSeverityForConditionallyRequired CompanyId=76, CRDC ID=3920, RBT=All, Severity=, Severity Divider=1
+2019-05-01 09:08:08,444 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow -  calculated null
+2019-05-01 09:08:08,444 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:WTR sel:MUCK- act:-
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:WTR sel:MUCK- act:- saved
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking dynamic derived fact configuration
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:08:08,507 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 44 for run 39536
+2019-05-01 09:08:08,554 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 44 for run 39536 saved with Id - 33904
+2019-05-01 09:08:08,554 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 50 for run 39536
+2019-05-01 09:08:08,585 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 50 for run 39536 saved with Id - 33905
+2019-05-01 09:08:08,585 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 72 for run 39536
+2019-05-01 09:08:08,632 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 72 for run 39536 saved with Id - 33906
+2019-05-01 09:08:08,632 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 73 for run 39536
+2019-05-01 09:08:08,648 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 73 for run 39536 saved with Id - 33907
+2019-05-01 09:08:08,648 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 74 for run 39536
+2019-05-01 09:08:08,679 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 74 for run 39536 saved with Id - 33908
+2019-05-01 09:08:08,679 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 75 for run 39536
+2019-05-01 09:08:08,741 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 75 for run 39536 saved with Id - 33909
+2019-05-01 09:08:08,741 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 76 for run 39536
+2019-05-01 09:08:08,819 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 76 for run 39536 saved with Id - 33910
+2019-05-01 09:08:08,819 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.AllowedOnP.AllowedOnPBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'AllowedOandPConfigs[0].Company.QCompanyDisallowedAssignments[1].QDisallowedConfig.ConfigPush.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 57229.
+2019-05-01 09:08:08,819 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking allowedonp bot configuration
+2019-05-01 09:08:08,819 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no allowedonp bot configuration update
+2019-05-01 09:08:08,819 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 66, 
+2019-05-01 09:08:08,819 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 10.76 for run 39536 bot 10
+2019-05-01 09:08:08,866 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 10.76 for run 39536 bot 10 botconfig 50543 saved with assignment count 0
+2019-05-01 09:08:08,866 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 10 because another existed.
+2019-05-01 09:08:08,866 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.OpeningClosing.OpeningClosingStatementBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'OpeningStatementText[0].Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 67453.
+2019-05-01 09:08:08,866 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking opening closing bot configuration
+2019-05-01 09:08:08,866 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:08:08,882 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:08:08,882 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:08:08,882 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39536 bot 6
+2019-05-01 09:08:08,913 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39536 bot 6 botconfig 50544 saved with assignment count 0
+2019-05-01 09:08:08,913 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:08:08,913 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39536 bot 6
+2019-05-01 09:08:08,944 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39536 bot 6 botconfig 50545 saved with assignment count 0
+2019-05-01 09:08:08,944 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 6 because another existed.
+2019-05-01 09:08:08,944 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 65, 
+2019-05-01 09:08:08,944 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 5.76 for run 39536 bot 5
+2019-05-01 09:08:08,960 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 5.76 for run 39536 bot 5 botconfig 50546 saved with assignment count 0
+2019-05-01 09:08:08,960 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 5 because another existed.
+2019-05-01 09:08:08,976 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.QCompanyDisallowedAssignments[1].QDisallowedConfig.ConfigPush.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 58311.
+2019-05-01 09:08:08,976 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking disallowed bot configuration
+2019-05-01 09:08:08,976 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:08:08,976 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:08:08,976 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:08:08,976 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:08:08,976 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.15.37 for run 39536 bot 7
+2019-05-01 09:08:09,007 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.15.37 for run 39536 bot 7 botconfig 50547 saved with assignment count 0
+2019-05-01 09:08:09,007 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:08:09,007 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.54.14 for run 39536 bot 7
+2019-05-01 09:08:09,054 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.54.14 for run 39536 bot 7 botconfig 50548 saved with assignment count 0
+2019-05-01 09:08:09,054 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:08:09,054 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.179.14 for run 39536 bot 7
+2019-05-01 09:08:09,085 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.179.14 for run 39536 bot 7 botconfig 50549 saved with assignment count 1
+2019-05-01 09:08:09,085 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.QCompanyDisallowedAssignments[1].QDisallowedConfig.ConfigPush.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 58311.
+2019-05-01 09:08:09,085 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:08:09,085 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:08:09,085 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:08:09,101 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65231.
+2019-05-01 09:08:09,101 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally disallowed bot configuration
+2019-05-01 09:08:09,101 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally disallowed bot configuration update
+2019-05-01 09:08:09,101 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:08:09,101 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 8.90.51 for run 39536 bot 8
+2019-05-01 09:08:09,132 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 8.90.51 for run 39536 bot 8 botconfig 50550 saved with assignment count 0
+2019-05-01 09:08:09,132 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65231.
+2019-05-01 09:08:09,148 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 8 because another existed.
+2019-05-01 09:08:09,148 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.QCompanyQuantityConfigAssignments[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65726.
+2019-05-01 09:08:09,148 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally required bot configuration
+2019-05-01 09:08:09,148 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:08:09,148 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:08:09,148 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:08:09,148 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.61.14 for run 39536 bot 9
+2019-05-01 09:08:09,163 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.61.14 for run 39536 bot 9 botconfig 50551 saved with assignment count 1
+2019-05-01 09:08:09,163 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:08:09,163 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.89.43 for run 39536 bot 9
+2019-05-01 09:08:09,179 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.89.43 for run 39536 bot 9 botconfig 50552 saved with assignment count 0
+2019-05-01 09:08:09,179 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.QCompanyQuantityConfigAssignments[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65726.
+2019-05-01 09:08:09,179 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:08:09,179 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:08:09,194 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 45487.
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking quantity bot configuration
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 54 - TEST_8000001_RFG/Removal
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 53 - TEST_8000001_TEX
+2019-05-01 09:08:09,194 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 45487.
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:08:09,194 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:08:09,194 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Salvage.SalvageBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'QCompanyConfig.Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 70975.
+2019-05-01 09:08:09,210 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking salvage bot configuration
+2019-05-01 09:08:09,210 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no salvage bot configuration update
+2019-05-01 09:08:09,210 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigSalvage - 4.76 for run 39536 for price list 362
+2019-05-01 09:08:09,241 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigSalvage - 4.76 for run 39536 for price list 362 saved
+2019-05-01 09:08:09,241 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report data imported.
+2019-05-01 09:08:09,241 [74 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
+2019-05-01 09:08:09,241 [74 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
+2019-05-01 09:27:37,481 [74 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - Message received.
+2019-05-01 09:27:37,481 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing report data
+2019-05-01 09:27:37,512 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist LautrivWareDB.EFCoreModel.Models.QQualityRun object: Could not find member 'TotalBotLineItemValue' on object of type 'QQualityRunCalculation'. Path 'QProjectExport.QQualityRunCalculations[0].TotalBotLineItemValue', line 1, position 107210.
+2019-05-01 09:27:37,512 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Estimate
+2019-05-01 09:27:37,528 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - updating previous project exports - JobId = 77318 Claim Number = FirinSomeBots123
+2019-05-01 09:27:37,528 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report estimate - FirinSomeBots123
+2019-05-01 09:27:37,590 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report estimate - FirinSomeBots123 saved
+2019-05-01 09:27:37,590 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report Estimate imported
+2019-05-01 09:27:37,590 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Export
+2019-05-01 09:27:37,590 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - report Export imported
+2019-05-01 09:27:37,590 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report export - FirinSomeBots123
+2019-05-01 09:27:37,637 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report export - FirinSomeBots123 saved
+2019-05-01 09:27:37,637 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Disallowed result
+2019-05-01 09:27:37,637 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving disallowed result - cat:WTR sel:DRYN4 act:-
+2019-05-01 09:27:37,700 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - disallowed result - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 09:27:37,700 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Disallowed result imported
+2019-05-01 09:27:37,700 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Disallowed result
+2019-05-01 09:27:37,700 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional disallowed result - cat:DRY sel:TEX- act:+
+2019-05-01 09:27:38,168 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional disallowed result - cat:DRY sel:TEX- act:+ saved
+2019-05-01 09:27:38,168 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Disallowed result imported
+2019-05-01 09:27:38,168 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Required result
+2019-05-01 09:27:38,168 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional required result - cat:PNT sel:SHOE act:+
+2019-05-01 09:27:38,215 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional required result - cat:PNT sel:SHOE act:+ saved
+2019-05-01 09:27:38,215 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Required result imported
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951103
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951103: 0
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951103: 0
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951103: 0
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951103
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951103: $150
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951103: $0
+2019-05-01 09:27:38,215 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951103: $0
+2019-05-01 09:27:38,215 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:WTR sel:DRYN4 act:-
+2019-05-01 09:27:38,262 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951104
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951104: 0
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951104: 0
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951104: 0
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951104
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951104: $0
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951104: $0
+2019-05-01 09:27:38,262 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951104: $0
+2019-05-01 09:27:38,262 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:AC act:+
+2019-05-01 09:27:38,309 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:AC act:+ saved
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951105
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951105: 0
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951105: 0
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951105: 0
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951105
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951105: $0
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951105: $0
+2019-05-01 09:27:38,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951105: $0
+2019-05-01 09:27:38,309 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DMO sel:DCHUT act:-
+2019-05-01 09:27:38,372 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DMO sel:DCHUT act:- saved
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951106
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951106: 0
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951106: 0
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951106: 0
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951106
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951106: $0
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951106: $0
+2019-05-01 09:27:38,403 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951106: $0
+2019-05-01 09:27:38,403 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:TEX- act:+
+2019-05-01 09:27:38,434 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:TEX- act:+ saved
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951107
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951107: 0
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951107: 0
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951107: 0
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951107
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951107: $0
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951107: $0
+2019-05-01 09:27:38,434 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951107: $0
+2019-05-01 09:27:38,434 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:TEX act:+
+2019-05-01 09:27:38,465 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:TEX act:+ saved
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951108
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951108: 0
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951108: 0
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951108: 0
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951108
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951108: $0
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951108: $0
+2019-05-01 09:27:38,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951108: $0
+2019-05-01 09:27:38,465 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:FNC sel:SHOE act:&
+2019-05-01 09:27:38,512 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:FNC sel:SHOE act:& saved
+2019-05-01 09:27:38,512 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - GetItemSeverityForConditionallyRequired CompanyId=76, CRDC ID=3921, RBT=All, Severity=, Severity Divider=1
+2019-05-01 09:27:38,512 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow -  calculated null
+2019-05-01 09:27:38,512 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:SHOE act:+
+2019-05-01 09:27:38,575 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:SHOE act:+ saved
+2019-05-01 09:27:38,575 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:&
+2019-05-01 09:27:38,606 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:& saved
+2019-05-01 09:27:38,606 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:&
+2019-05-01 09:27:38,669 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:& saved
+2019-05-01 09:27:38,669 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:+
+2019-05-01 09:27:38,731 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:+ saved
+2019-05-01 09:27:38,731 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:+
+2019-05-01 09:27:38,747 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:+ saved
+2019-05-01 09:27:38,747 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:3/8M act:&
+2019-05-01 09:27:38,762 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:3/8M act:& saved
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking dynamic derived fact configuration
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:27:38,778 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 44 for run 39549
+2019-05-01 09:27:38,809 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 44 for run 39549 saved with Id - 33911
+2019-05-01 09:27:38,809 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 50 for run 39549
+2019-05-01 09:27:38,825 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 50 for run 39549 saved with Id - 33912
+2019-05-01 09:27:38,825 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 72 for run 39549
+2019-05-01 09:27:38,934 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 72 for run 39549 saved with Id - 33913
+2019-05-01 09:27:38,934 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 73 for run 39549
+2019-05-01 09:27:38,997 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 73 for run 39549 saved with Id - 33914
+2019-05-01 09:27:38,997 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 74 for run 39549
+2019-05-01 09:27:39,090 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 74 for run 39549 saved with Id - 33915
+2019-05-01 09:27:39,090 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 75 for run 39549
+2019-05-01 09:27:39,262 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 75 for run 39549 saved with Id - 33916
+2019-05-01 09:27:39,262 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 76 for run 39549
+2019-05-01 09:27:39,387 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 76 for run 39549 saved with Id - 33917
+2019-05-01 09:27:39,465 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.AllowedOnP.AllowedOnPBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'AllowedOandPConfigs[0].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 30053.
+2019-05-01 09:27:39,465 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking allowedonp bot configuration
+2019-05-01 09:27:39,465 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no allowedonp bot configuration update
+2019-05-01 09:27:39,465 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 66, 
+2019-05-01 09:27:39,465 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 10.76 for run 39549 bot 10
+2019-05-01 09:27:39,653 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 10.76 for run 39549 bot 10 botconfig 50553 saved with assignment count 0
+2019-05-01 09:27:39,653 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 10 because another existed.
+2019-05-01 09:27:39,653 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.OpeningClosing.OpeningClosingStatementBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'OpeningStatementText[0].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 87319.
+2019-05-01 09:27:39,653 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking opening closing bot configuration
+2019-05-01 09:27:39,653 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:27:39,653 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:27:39,653 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:27:39,653 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39549 bot 6
+2019-05-01 09:27:39,965 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39549 bot 6 botconfig 50554 saved with assignment count 0
+2019-05-01 09:27:39,965 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:27:39,965 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39549 bot 6
+2019-05-01 09:27:39,997 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39549 bot 6 botconfig 50555 saved with assignment count 0
+2019-05-01 09:27:39,997 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 6 because another existed.
+2019-05-01 09:27:39,997 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 65, 
+2019-05-01 09:27:39,997 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 5.76 for run 39549 bot 5
+2019-05-01 09:27:40,044 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 5.76 for run 39549 bot 5 botconfig 50556 saved with assignment count 0
+2019-05-01 09:27:40,044 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 5 because another existed.
+2019-05-01 09:27:40,059 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 34120.
+2019-05-01 09:27:40,059 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking disallowed bot configuration
+2019-05-01 09:27:40,059 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:27:40,059 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:27:40,059 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:27:40,059 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,059 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.15.37 for run 39549 bot 7
+2019-05-01 09:27:40,090 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.15.37 for run 39549 bot 7 botconfig 50557 saved with assignment count 0
+2019-05-01 09:27:40,090 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,090 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.54.14 for run 39549 bot 7
+2019-05-01 09:27:40,137 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.54.14 for run 39549 bot 7 botconfig 50558 saved with assignment count 1
+2019-05-01 09:27:40,137 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,137 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.179.14 for run 39549 bot 7
+2019-05-01 09:27:40,184 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.179.14 for run 39549 bot 7 botconfig 50559 saved with assignment count 0
+2019-05-01 09:27:40,184 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 34120.
+2019-05-01 09:27:40,184 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:27:40,184 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:27:40,184 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:27:40,184 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 53665.
+2019-05-01 09:27:40,200 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally disallowed bot configuration
+2019-05-01 09:27:40,200 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally disallowed bot configuration update
+2019-05-01 09:27:40,200 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,200 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 8.90.51 for run 39549 bot 8
+2019-05-01 09:27:40,262 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 8.90.51 for run 39549 bot 8 botconfig 50560 saved with assignment count 6
+2019-05-01 09:27:40,278 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 53665.
+2019-05-01 09:27:40,278 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 8 because another existed.
+2019-05-01 09:27:40,278 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 32232.
+2019-05-01 09:27:40,278 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally required bot configuration
+2019-05-01 09:27:40,278 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:27:40,294 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:27:40,294 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,294 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.61.14 for run 39549 bot 9
+2019-05-01 09:27:40,294 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.61.14 for run 39549 bot 9 botconfig 50561 saved with assignment count 0
+2019-05-01 09:27:40,294 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,294 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.89.43 for run 39549 bot 9
+2019-05-01 09:27:40,294 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.89.43 for run 39549 bot 9 botconfig 50562 saved with assignment count 1
+2019-05-01 09:27:40,294 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 32232.
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:27:40,309 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65692.
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking quantity bot configuration
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 54 - TEST_8000001_RFG/Removal
+2019-05-01 09:27:40,309 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:27:40,309 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39549 bot 11
+2019-05-01 09:27:40,419 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39549 bot 11 botconfig 50563 saved with assignment count 1
+2019-05-01 09:27:40,419 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39549 bot 11
+2019-05-01 09:27:40,715 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39549 bot 11 botconfig 50563 saved with assignment count 1
+2019-05-01 09:27:40,715 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65692.
+2019-05-01 09:27:40,715 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:27:40,715 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:27:40,715 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Salvage.SalvageBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'QCompanyConfig.Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 90851.
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking salvage bot configuration
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no salvage bot configuration update
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigSalvage - 4.76 for run 39549 for price list 362
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigSalvage - 4.76 for run 39549 for price list 362 saved
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report data imported.
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
+2019-05-01 09:27:40,731 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
+2019-05-01 09:38:38,317 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - Message received.
+2019-05-01 09:38:38,317 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing report data
+2019-05-01 09:38:38,332 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist LautrivWareDB.EFCoreModel.Models.QQualityRun object: Could not find member 'TotalBotLineItemValue' on object of type 'QQualityRunCalculation'. Path 'QProjectExport.QQualityRunCalculations[0].TotalBotLineItemValue', line 1, position 102314.
+2019-05-01 09:38:38,348 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Estimate
+2019-05-01 09:38:38,348 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - updating previous project exports - JobId = 77320 Claim Number = FirinSomeBots123
+2019-05-01 09:38:38,348 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report estimate - FirinSomeBots123
+2019-05-01 09:38:38,364 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report estimate - FirinSomeBots123 saved
+2019-05-01 09:38:38,364 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report Estimate imported
+2019-05-01 09:38:38,364 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Export
+2019-05-01 09:38:38,364 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - report Export imported
+2019-05-01 09:38:38,364 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report export - FirinSomeBots123
+2019-05-01 09:38:38,395 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report export - FirinSomeBots123 saved
+2019-05-01 09:38:38,395 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Disallowed result
+2019-05-01 09:38:38,395 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving disallowed result - cat:WTR sel:DRYN4 act:-
+2019-05-01 09:38:38,442 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - disallowed result - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 09:38:38,442 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Disallowed result imported
+2019-05-01 09:38:38,442 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Disallowed result
+2019-05-01 09:38:38,442 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional disallowed result - cat:DRY sel:TEX- act:+
+2019-05-01 09:38:38,457 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional disallowed result - cat:DRY sel:TEX- act:+ saved
+2019-05-01 09:38:38,457 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Disallowed result imported
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951124
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951124: 0
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951124: 0
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951124: 0
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951124
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951124: $150
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951124: $0
+2019-05-01 09:38:38,457 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951124: $0
+2019-05-01 09:38:38,457 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:WTR sel:DRYN4 act:-
+2019-05-01 09:38:38,489 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951125
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951125: 0
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951125: 0
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951125: 0
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951125
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951125: $0
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951125: $0
+2019-05-01 09:38:38,489 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951125: $0
+2019-05-01 09:38:38,489 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:AC act:+
+2019-05-01 09:38:38,535 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:AC act:+ saved
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951126
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951126: 0
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951126: 0
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951126: 0
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951126
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951126: $0
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951126: $0
+2019-05-01 09:38:38,535 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951126: $0
+2019-05-01 09:38:38,535 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DMO sel:DCHUT act:-
+2019-05-01 09:38:38,551 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DMO sel:DCHUT act:- saved
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951127
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951127: 0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951127: 0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951127: 0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951127
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951127: $0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951127: $0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951127: $0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:TEX- act:+
+2019-05-01 09:38:38,551 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:TEX- act:+ saved
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951128
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951128: 0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951128: 0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951128: 0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951128
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951128: $0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951128: $0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951128: $0
+2019-05-01 09:38:38,551 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:TEX act:+
+2019-05-01 09:38:38,567 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:TEX act:+ saved
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951129
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951129: 0
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951129: 0
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951129: 0
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951129
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951129: $0
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951129: $0
+2019-05-01 09:38:38,567 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951129: $0
+2019-05-01 09:38:38,567 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:FNC sel:SHOE act:&
+2019-05-01 09:38:38,567 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:FNC sel:SHOE act:& saved
+2019-05-01 09:38:38,567 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:&
+2019-05-01 09:38:38,598 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:& saved
+2019-05-01 09:38:38,598 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:&
+2019-05-01 09:38:38,614 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:& saved
+2019-05-01 09:38:38,614 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:+
+2019-05-01 09:38:38,629 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:+ saved
+2019-05-01 09:38:38,629 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:+
+2019-05-01 09:38:38,645 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:+ saved
+2019-05-01 09:38:38,645 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:3/8M act:&
+2019-05-01 09:38:38,692 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:3/8M act:& saved
+2019-05-01 09:38:38,692 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking dynamic derived fact configuration
+2019-05-01 09:38:38,692 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,692 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,692 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,707 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,707 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,707 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,707 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:38,707 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 44 for run 39554
+2019-05-01 09:38:38,739 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 44 for run 39554 saved with Id - 33918
+2019-05-01 09:38:38,739 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 50 for run 39554
+2019-05-01 09:38:38,754 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 50 for run 39554 saved with Id - 33919
+2019-05-01 09:38:38,754 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 72 for run 39554
+2019-05-01 09:38:38,770 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 72 for run 39554 saved with Id - 33920
+2019-05-01 09:38:38,770 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 73 for run 39554
+2019-05-01 09:38:38,786 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 73 for run 39554 saved with Id - 33921
+2019-05-01 09:38:38,786 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 74 for run 39554
+2019-05-01 09:38:38,832 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 74 for run 39554 saved with Id - 33922
+2019-05-01 09:38:38,832 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 75 for run 39554
+2019-05-01 09:38:38,832 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 75 for run 39554 saved with Id - 33923
+2019-05-01 09:38:38,832 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 76 for run 39554
+2019-05-01 09:38:38,848 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 76 for run 39554 saved with Id - 33924
+2019-05-01 09:38:38,848 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.AllowedOnP.AllowedOnPBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'AllowedOandPConfigs[0].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 30056.
+2019-05-01 09:38:38,864 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking allowedonp bot configuration
+2019-05-01 09:38:38,864 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no allowedonp bot configuration update
+2019-05-01 09:38:38,864 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 66, 
+2019-05-01 09:38:38,864 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 10.76 for run 39554 bot 10
+2019-05-01 09:38:38,911 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 10.76 for run 39554 bot 10 botconfig 50564 saved with assignment count 0
+2019-05-01 09:38:38,911 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 10 because another existed.
+2019-05-01 09:38:38,911 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.OpeningClosing.OpeningClosingStatementBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'OpeningStatementText[0].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 74372.
+2019-05-01 09:38:38,911 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking opening closing bot configuration
+2019-05-01 09:38:38,911 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:38:38,926 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:38:38,926 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:38:38,926 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39554 bot 6
+2019-05-01 09:38:38,926 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39554 bot 6 botconfig 50565 saved with assignment count 0
+2019-05-01 09:38:38,926 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:38:38,926 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39554 bot 6
+2019-05-01 09:38:38,957 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39554 bot 6 botconfig 50566 saved with assignment count 0
+2019-05-01 09:38:38,957 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 6 because another existed.
+2019-05-01 09:38:38,957 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 65, 
+2019-05-01 09:38:38,957 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 5.76 for run 39554 bot 5
+2019-05-01 09:38:38,989 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 5.76 for run 39554 bot 5 botconfig 50567 saved with assignment count 0
+2019-05-01 09:38:38,989 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 5 because another existed.
+2019-05-01 09:38:39,004 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 34123.
+2019-05-01 09:38:39,004 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking disallowed bot configuration
+2019-05-01 09:38:39,004 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:38:39,004 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:38:39,004 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:38:39,004 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:39,004 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.15.37 for run 39554 bot 7
+2019-05-01 09:38:39,051 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.15.37 for run 39554 bot 7 botconfig 50568 saved with assignment count 0
+2019-05-01 09:38:39,051 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:39,051 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.54.14 for run 39554 bot 7
+2019-05-01 09:38:39,098 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.54.14 for run 39554 bot 7 botconfig 50569 saved with assignment count 1
+2019-05-01 09:38:39,098 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:39,098 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.179.14 for run 39554 bot 7
+2019-05-01 09:38:39,145 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.179.14 for run 39554 bot 7 botconfig 50570 saved with assignment count 0
+2019-05-01 09:38:39,145 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 34123.
+2019-05-01 09:38:39,145 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:38:39,145 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:38:39,145 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:38:39,161 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 40745.
+2019-05-01 09:38:39,161 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally disallowed bot configuration
+2019-05-01 09:38:39,161 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally disallowed bot configuration update
+2019-05-01 09:38:39,161 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:39,161 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 8.90.51 for run 39554 bot 8
+2019-05-01 09:38:39,207 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 8.90.51 for run 39554 bot 8 botconfig 50571 saved with assignment count 6
+2019-05-01 09:38:39,207 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 40745.
+2019-05-01 09:38:39,207 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 8 because another existed.
+2019-05-01 09:38:39,207 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 32235.
+2019-05-01 09:38:39,223 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally required bot configuration
+2019-05-01 09:38:39,223 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:38:39,223 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:39,223 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.61.14 for run 39554 bot 9
+2019-05-01 09:38:39,254 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.61.14 for run 39554 bot 9 botconfig 50572 saved with assignment count 0
+2019-05-01 09:38:39,254 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 32235.
+2019-05-01 09:38:39,270 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:38:39,270 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65697.
+2019-05-01 09:38:39,270 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking quantity bot configuration
+2019-05-01 09:38:39,270 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:38:39,270 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:38:39,270 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 54 - TEST_8000001_RFG/Removal
+2019-05-01 09:38:39,270 [74 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:39,270 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39554 bot 11
+2019-05-01 09:38:39,286 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39554 bot 11 botconfig 50573 saved with assignment count 1
+2019-05-01 09:38:39,286 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39554 bot 11
+2019-05-01 09:38:39,332 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39554 bot 11 botconfig 50573 saved with assignment count 1
+2019-05-01 09:38:39,332 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65697.
+2019-05-01 09:38:39,332 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:38:39,332 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:38:39,332 [74 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Salvage.SalvageBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'QCompanyConfig.Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 77904.
+2019-05-01 09:38:39,348 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking salvage bot configuration
+2019-05-01 09:38:39,348 [74 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no salvage bot configuration update
+2019-05-01 09:38:39,348 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigSalvage - 4.76 for run 39554 for price list 362
+2019-05-01 09:38:39,426 [74 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigSalvage - 4.76 for run 39554 for price list 362 saved
+2019-05-01 09:38:39,457 [74 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report data imported.
+2019-05-01 09:38:39,457 [74 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
+2019-05-01 09:38:39,457 [74 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
+2019-05-01 09:38:53,864 [74 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - Message received.
+2019-05-01 09:38:53,864 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing report data
+2019-05-01 09:38:53,896 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist LautrivWareDB.EFCoreModel.Models.QQualityRun object: Could not find member 'TotalBotLineItemValue' on object of type 'QQualityRunCalculation'. Path 'QProjectExport.QQualityRunCalculations[0].TotalBotLineItemValue', line 1, position 100463.
+2019-05-01 09:38:53,911 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Estimate
+2019-05-01 09:38:53,911 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - updating previous project exports - JobId = 77320 Claim Number = FirinSomeBots123
+2019-05-01 09:38:53,911 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report estimate - FirinSomeBots123
+2019-05-01 09:38:53,943 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report estimate - FirinSomeBots123 saved
+2019-05-01 09:38:53,943 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report Estimate imported
+2019-05-01 09:38:53,943 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Export
+2019-05-01 09:38:53,943 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - report Export imported
+2019-05-01 09:38:53,943 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report export - FirinSomeBots123
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report export - FirinSomeBots123 saved
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Disallowed result
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving disallowed result - cat:WTR sel:DRYN4 act:-
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - disallowed result - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Disallowed result imported
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Disallowed result
+2019-05-01 09:38:53,989 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional disallowed result - cat:DRY sel:TEX- act:+
+2019-05-01 09:38:54,005 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional disallowed result - cat:DRY sel:TEX- act:+ saved
+2019-05-01 09:38:54,005 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Disallowed result imported
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951130
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951130: 0
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951130: 0
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951130: 0
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951130
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951130: $150
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951130: $0
+2019-05-01 09:38:54,005 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951130: $0
+2019-05-01 09:38:54,005 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:WTR sel:DRYN4 act:-
+2019-05-01 09:38:54,021 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951131
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951131: 0
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951131: 0
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951131: 0
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951131
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951131: $0
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951131: $0
+2019-05-01 09:38:54,021 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951131: $0
+2019-05-01 09:38:54,021 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:AC act:+
+2019-05-01 09:38:54,036 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:AC act:+ saved
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951132
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951132: 0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951132: 0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951132: 0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951132
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951132: $0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951132: $0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951132: $0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DMO sel:DCHUT act:-
+2019-05-01 09:38:54,036 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DMO sel:DCHUT act:- saved
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951133
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951133: 0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951133: 0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951133: 0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951133
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951133: $0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951133: $0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951133: $0
+2019-05-01 09:38:54,036 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:TEX- act:+
+2019-05-01 09:38:54,052 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:TEX- act:+ saved
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951134
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951134: 0
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951134: 0
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951134: 0
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951134
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951134: $0
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951134: $0
+2019-05-01 09:38:54,052 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951134: $0
+2019-05-01 09:38:54,052 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:TEX act:+
+2019-05-01 09:38:54,068 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:TEX act:+ saved
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951135
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951135: 0
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951135: 0
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951135: 0
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951135
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951135: $0
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951135: $0
+2019-05-01 09:38:54,068 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951135: $0
+2019-05-01 09:38:54,068 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:FNC sel:SHOE act:&
+2019-05-01 09:38:54,083 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:FNC sel:SHOE act:& saved
+2019-05-01 09:38:54,083 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:&
+2019-05-01 09:38:54,099 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:& saved
+2019-05-01 09:38:54,099 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:&
+2019-05-01 09:38:54,114 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:& saved
+2019-05-01 09:38:54,114 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:+
+2019-05-01 09:38:54,146 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:+ saved
+2019-05-01 09:38:54,146 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:+
+2019-05-01 09:38:54,146 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:+ saved
+2019-05-01 09:38:54,146 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:3/8M act:&
+2019-05-01 09:38:54,146 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:3/8M act:& saved
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking dynamic derived fact configuration
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 09:38:54,161 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 44 for run 39555
+2019-05-01 09:38:54,177 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 44 for run 39555 saved with Id - 33925
+2019-05-01 09:38:54,177 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 50 for run 39555
+2019-05-01 09:38:54,177 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 50 for run 39555 saved with Id - 33926
+2019-05-01 09:38:54,177 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 72 for run 39555
+2019-05-01 09:38:54,193 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 72 for run 39555 saved with Id - 33927
+2019-05-01 09:38:54,193 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 73 for run 39555
+2019-05-01 09:38:54,224 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 73 for run 39555 saved with Id - 33928
+2019-05-01 09:38:54,224 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 74 for run 39555
+2019-05-01 09:38:54,239 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 74 for run 39555 saved with Id - 33929
+2019-05-01 09:38:54,239 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 75 for run 39555
+2019-05-01 09:38:54,255 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 75 for run 39555 saved with Id - 33930
+2019-05-01 09:38:54,255 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 76 for run 39555
+2019-05-01 09:38:54,271 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 76 for run 39555 saved with Id - 33931
+2019-05-01 09:38:54,271 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.AllowedOnP.AllowedOnPBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'AllowedOandPConfigs[0].Company.QCompanyDisallowedAssignments[1].QDisallowedConfig.QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 75818.
+2019-05-01 09:38:54,271 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking allowedonp bot configuration
+2019-05-01 09:38:54,286 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no allowedonp bot configuration update
+2019-05-01 09:38:54,286 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 66, 
+2019-05-01 09:38:54,286 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 10.76 for run 39555 bot 10
+2019-05-01 09:38:54,302 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 10.76 for run 39555 bot 10 botconfig 50574 saved with assignment count 0
+2019-05-01 09:38:54,302 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 10 because another existed.
+2019-05-01 09:38:54,302 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.OpeningClosing.OpeningClosingStatementBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'OpeningStatementText[0].Company.QCompanyConditionallyDisallowedAssignments[0].QConditionallyDisallowedConfig.QConditionallyDisallowedDetailConfigs[0].QConditionallyDisallowedItemDetail.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 87612.
+2019-05-01 09:38:54,318 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking opening closing bot configuration
+2019-05-01 09:38:54,318 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:38:54,318 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 09:38:54,318 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:38:54,318 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39555 bot 6
+2019-05-01 09:38:54,333 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39555 bot 6 botconfig 50575 saved with assignment count 0
+2019-05-01 09:38:54,333 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 09:38:54,333 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39555 bot 6
+2019-05-01 09:38:54,349 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39555 bot 6 botconfig 50576 saved with assignment count 0
+2019-05-01 09:38:54,349 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 6 because another existed.
+2019-05-01 09:38:54,349 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 65, 
+2019-05-01 09:38:54,349 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 5.76 for run 39555 bot 5
+2019-05-01 09:38:54,364 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 5.76 for run 39555 bot 5 botconfig 50577 saved with assignment count 0
+2019-05-01 09:38:54,364 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 5 because another existed.
+2019-05-01 09:38:54,380 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.QCompanyDisallowedAssignments[1].QDisallowedConfig.QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 76945.
+2019-05-01 09:38:54,380 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking disallowed bot configuration
+2019-05-01 09:38:54,380 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:38:54,380 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:38:54,380 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 09:38:54,380 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:54,380 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.15.37 for run 39555 bot 7
+2019-05-01 09:38:54,396 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.15.37 for run 39555 bot 7 botconfig 50578 saved with assignment count 0
+2019-05-01 09:38:54,396 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:54,396 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.54.14 for run 39555 bot 7
+2019-05-01 09:38:54,411 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.54.14 for run 39555 bot 7 botconfig 50579 saved with assignment count 1
+2019-05-01 09:38:54,411 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:54,411 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.179.14 for run 39555 bot 7
+2019-05-01 09:38:54,427 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.179.14 for run 39555 bot 7 botconfig 50580 saved with assignment count 0
+2019-05-01 09:38:54,427 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.QCompanyDisallowedAssignments[1].QDisallowedConfig.QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 76945.
+2019-05-01 09:38:54,427 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:38:54,427 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:38:54,443 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 09:38:54,443 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 82443.
+2019-05-01 09:38:54,443 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally disallowed bot configuration
+2019-05-01 09:38:54,458 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally disallowed bot configuration update
+2019-05-01 09:38:54,458 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:54,458 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 8.90.51 for run 39555 bot 8
+2019-05-01 09:38:54,474 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 8.90.51 for run 39555 bot 8 botconfig 50581 saved with assignment count 6
+2019-05-01 09:38:54,474 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.QCompanyConditionallyRequiredAssignments[0].QConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QDisallowedItemDetails[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 82443.
+2019-05-01 09:38:54,489 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 8 because another existed.
+2019-05-01 09:38:54,489 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.QCompanyQuantityConfigAssignments[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 75087.
+2019-05-01 09:38:54,489 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally required bot configuration
+2019-05-01 09:38:54,489 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 09:38:54,489 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:54,489 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.61.14 for run 39555 bot 9
+2019-05-01 09:38:54,505 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.61.14 for run 39555 bot 9 botconfig 50582 saved with assignment count 0
+2019-05-01 09:38:54,521 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.QCompanyQuantityConfigAssignments[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 75087.
+2019-05-01 09:38:54,521 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 09:38:54,521 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 57150.
+2019-05-01 09:38:54,521 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking quantity bot configuration
+2019-05-01 09:38:54,536 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:38:54,536 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 09:38:54,536 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 54 - TEST_8000001_RFG/Removal
+2019-05-01 09:38:54,536 [69 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 09:38:54,536 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39555 bot 11
+2019-05-01 09:38:54,568 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39555 bot 11 botconfig 50583 saved with assignment count 1
+2019-05-01 09:38:54,568 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39555 bot 11
+2019-05-01 09:38:54,583 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39555 bot 11 botconfig 50583 saved with assignment count 1
+2019-05-01 09:38:54,583 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 57150.
+2019-05-01 09:38:54,583 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:38:54,583 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 09:38:54,599 [69 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Salvage.SalvageBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'QCompanyConfig.Company.QCompanyConditionallyDisallowedAssignments[0].QConditionallyDisallowedConfig.QConditionallyDisallowedDetailConfigs[0].QConditionallyDisallowedItemDetail.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 91145.
+2019-05-01 09:38:54,599 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking salvage bot configuration
+2019-05-01 09:38:54,599 [69 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no salvage bot configuration update
+2019-05-01 09:38:54,599 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigSalvage - 4.76 for run 39555 for price list 362
+2019-05-01 09:38:54,630 [69 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigSalvage - 4.76 for run 39555 for price list 362 saved
+2019-05-01 09:38:54,630 [69 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report data imported.
+2019-05-01 09:38:54,630 [69 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
+2019-05-01 09:38:54,630 [69 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
+2019-05-01 16:01:37,600 [69 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - Message received.
+2019-05-01 16:01:37,600 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing report data
+2019-05-01 16:01:37,631 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist LautrivWareDB.EFCoreModel.Models.QQualityRun object: Could not find member 'TotalBotLineItemValue' on object of type 'QQualityRunCalculation'. Path 'QProjectExport.QQualityRunCalculations[0].TotalBotLineItemValue', line 1, position 107196.
+2019-05-01 16:01:37,631 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Estimate
+2019-05-01 16:01:37,631 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - updating previous project exports - JobId = 77422 Claim Number = MakingAnErr1233
+2019-05-01 16:01:37,834 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report estimate - MakingAnErr1233
+2019-05-01 16:01:38,084 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report estimate - MakingAnErr1233 saved
+2019-05-01 16:01:38,084 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report Estimate imported
+2019-05-01 16:01:38,084 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing new report Export
+2019-05-01 16:01:38,084 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - report Export imported
+2019-05-01 16:01:38,084 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving report export - MakingAnErr1233
+2019-05-01 16:01:38,334 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - report export - MakingAnErr1233 saved
+2019-05-01 16:01:38,334 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Disallowed result
+2019-05-01 16:01:38,334 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving disallowed result - cat:WTR sel:DRYN4 act:-
+2019-05-01 16:01:38,397 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - disallowed result - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 16:01:38,397 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Disallowed result imported
+2019-05-01 16:01:38,397 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Disallowed result
+2019-05-01 16:01:38,397 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional disallowed result - cat:DRY sel:TEX- act:+
+2019-05-01 16:01:38,662 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional disallowed result - cat:DRY sel:TEX- act:+ saved
+2019-05-01 16:01:38,662 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Disallowed result imported
+2019-05-01 16:01:38,662 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Importing Conditionally Required result
+2019-05-01 16:01:38,662 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving conditional required result - cat:PNT sel:SHOE act:+
+2019-05-01 16:01:39,319 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - conditional required result - cat:PNT sel:SHOE act:+ saved
+2019-05-01 16:01:39,319 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Conditionally Required result imported
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951573
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951573: 0
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951573: 0
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951573: 0
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951573
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951573: $150
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951573: $0
+2019-05-01 16:01:39,319 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951573: $0
+2019-05-01 16:01:39,319 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:WTR sel:DRYN4 act:-
+2019-05-01 16:01:39,553 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:WTR sel:DRYN4 act:- saved
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951574
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951574: 0
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951574: 0
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951574: 0
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951574
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951574: $0
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951574: $0
+2019-05-01 16:01:39,553 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951574: $0
+2019-05-01 16:01:39,553 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:AC act:+
+2019-05-01 16:01:39,631 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:AC act:+ saved
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951575
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951575: 0
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951575: 0
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951575: 0
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951575
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951575: $0
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951575: $0
+2019-05-01 16:01:39,631 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951575: $0
+2019-05-01 16:01:39,631 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DMO sel:DCHUT act:-
+2019-05-01 16:01:39,662 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DMO sel:DCHUT act:- saved
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951576
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951576: 0
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951576: 0
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951576: 0
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951576
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951576: $0
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951576: $0
+2019-05-01 16:01:39,662 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951576: $0
+2019-05-01 16:01:39,662 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:TEX- act:+
+2019-05-01 16:01:39,834 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:TEX- act:+ saved
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951577
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951577: 0
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951577: 0
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951577: 0
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951577
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951577: $0
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951577: $0
+2019-05-01 16:01:39,834 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951577: $0
+2019-05-01 16:01:39,834 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:TEX act:+
+2019-05-01 16:01:39,866 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:TEX act:+ saved
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Severity Points for scope Item Id 951578
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951578: 0
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951578: 0
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951578: 0
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Calculating Opportunity Dollar Value for scope Item Id 951578
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Disallowed Bot scopeItemId 951578: $0
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Conditionally Disallowed Bot scopeItemId 951578: $0
+2019-05-01 16:01:39,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Quantity Bot scopeItemId 951578: $0
+2019-05-01 16:01:39,866 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:FNC sel:SHOE act:&
+2019-05-01 16:01:39,897 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:FNC sel:SHOE act:& saved
+2019-05-01 16:01:39,897 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - GetItemSeverityForConditionallyRequired CompanyId=76, CRDC ID=3955, RBT=All, Severity=, Severity Divider=1
+2019-05-01 16:01:39,897 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow -  calculated null
+2019-05-01 16:01:39,897 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:PNT sel:SHOE act:+
+2019-05-01 16:01:39,944 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:PNT sel:SHOE act:+ saved
+2019-05-01 16:01:39,944 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:&
+2019-05-01 16:01:39,975 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:& saved
+2019-05-01 16:01:39,975 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:&
+2019-05-01 16:01:39,991 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:& saved
+2019-05-01 16:01:39,991 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:1/2 act:+
+2019-05-01 16:01:40,006 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:1/2 act:+ saved
+2019-05-01 16:01:40,006 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:5/8 act:+
+2019-05-01 16:01:40,116 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:5/8 act:+ saved
+2019-05-01 16:01:40,116 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving lineItem - cat:DRY sel:3/8M act:&
+2019-05-01 16:01:40,194 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - lineItem - cat:DRY sel:3/8M act:& saved
+2019-05-01 16:01:40,209 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking dynamic derived fact configuration
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no dynamic derived fact configuration update
+2019-05-01 16:01:40,241 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 44 for run 39766
+2019-05-01 16:01:40,444 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 44 for run 39766 saved with Id - 33932
+2019-05-01 16:01:40,444 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 50 for run 39766
+2019-05-01 16:01:40,491 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 50 for run 39766 saved with Id - 33933
+2019-05-01 16:01:40,491 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 72 for run 39766
+2019-05-01 16:01:40,584 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 72 for run 39766 saved with Id - 33934
+2019-05-01 16:01:40,584 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 73 for run 39766
+2019-05-01 16:01:40,631 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 73 for run 39766 saved with Id - 33935
+2019-05-01 16:01:40,631 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 74 for run 39766
+2019-05-01 16:01:40,694 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 74 for run 39766 saved with Id - 33936
+2019-05-01 16:01:40,694 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 75 for run 39766
+2019-05-01 16:01:40,709 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 75 for run 39766 saved with Id - 33937
+2019-05-01 16:01:40,709 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigDynamicDerivedFact - 76 for run 39766
+2019-05-01 16:01:40,725 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigDynamicDerivedFact - 76 for run 39766 saved with Id - 33938
+2019-05-01 16:01:40,725 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.AllowedOnP.AllowedOnPBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'AllowedOandPConfigs[0].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 30047.
+2019-05-01 16:01:40,725 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking allowedonp bot configuration
+2019-05-01 16:01:40,741 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no allowedonp bot configuration update
+2019-05-01 16:01:40,741 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 66, 
+2019-05-01 16:01:40,741 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 10.76 for run 39766 bot 10
+2019-05-01 16:01:40,803 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 10.76 for run 39766 bot 10 botconfig 50584 saved with assignment count 0
+2019-05-01 16:01:40,819 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 10 because another existed.
+2019-05-01 16:01:40,819 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.OpeningClosing.OpeningClosingStatementBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'OpeningStatementText[0].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 87307.
+2019-05-01 16:01:40,834 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking opening closing bot configuration
+2019-05-01 16:01:40,850 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 16:01:40,850 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no open close bot configuration update
+2019-05-01 16:01:40,850 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 16:01:40,850 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39766 bot 6
+2019-05-01 16:01:40,959 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39766 bot 6 botconfig 50585 saved with assignment count 0
+2019-05-01 16:01:40,959 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 67, 
+2019-05-01 16:01:40,959 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 6.76 for run 39766 bot 6
+2019-05-01 16:01:40,991 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 6.76 for run 39766 bot 6 botconfig 50586 saved with assignment count 0
+2019-05-01 16:01:40,991 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 6 because another existed.
+2019-05-01 16:01:40,991 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Found 0 Severity OutcomeTexts for SeverityGroupID 65, 
+2019-05-01 16:01:40,991 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 5.76 for run 39766 bot 5
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 5.76 for run 39766 bot 5 botconfig 50587 saved with assignment count 0
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for bot 5 because another existed.
+2019-05-01 16:01:41,038 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 34114.
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking disallowed bot configuration
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no disallowed bot configuration update
+2019-05-01 16:01:41,038 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:41,038 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.15.37 for run 39766 bot 7
+2019-05-01 16:01:41,225 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.15.37 for run 39766 bot 7 botconfig 50588 saved with assignment count 0
+2019-05-01 16:01:41,225 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:41,225 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.54.14 for run 39766 bot 7
+2019-05-01 16:01:41,397 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.54.14 for run 39766 bot 7 botconfig 50589 saved with assignment count 1
+2019-05-01 16:01:41,397 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:41,397 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 7.179.14 for run 39766 bot 7
+2019-05-01 16:01:41,491 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 7.179.14 for run 39766 bot 7 botconfig 50590 saved with assignment count 0
+2019-05-01 16:01:41,491 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.DisallowedItems.DisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConfigInstances[0].QDisallowedConfig.QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 34114.
+2019-05-01 16:01:41,491 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 16:01:41,491 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 16:01:41,506 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 7 because another existed.
+2019-05-01 16:01:41,506 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 53651.
+2019-05-01 16:01:41,506 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally disallowed bot configuration
+2019-05-01 16:01:41,569 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally disallowed bot configuration update
+2019-05-01 16:01:41,569 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:41,569 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 8.90.51 for run 39766 bot 8
+2019-05-01 16:01:41,819 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 8.90.51 for run 39766 bot 8 botconfig 50591 saved with assignment count 6
+2019-05-01 16:01:41,819 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyDisallowedItems.ConditionallyDisallowedItemsBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].ConditionallyDisallowedConfig.QCompanyConditionallyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 53651.
+2019-05-01 16:01:41,819 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 8 because another existed.
+2019-05-01 16:01:41,819 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 32226.
+2019-05-01 16:01:41,834 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking conditionally required bot configuration
+2019-05-01 16:01:41,866 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 16:01:41,866 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no conditionally required bot configuration update
+2019-05-01 16:01:41,866 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:41,866 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.61.14 for run 39766 bot 9
+2019-05-01 16:01:42,022 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.61.14 for run 39766 bot 9 botconfig 50592 saved with assignment count 0
+2019-05-01 16:01:42,022 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:42,022 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 9.89.43 for run 39766 bot 9
+2019-05-01 16:01:42,147 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 9.89.43 for run 39766 bot 9 botconfig 50593 saved with assignment count 1
+2019-05-01 16:01:42,147 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.ConditionallyRequired.ConditionallyRequiredBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'ConditionallyRequiredConfigs[0].ConditionallyRequiredConfig.ConfigPush.QDisallowedConfigs[0].QReportCategory.QDisallowedConfigs[1].QCompanyDisallowedAssignments[1].Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 32226.
+2019-05-01 16:01:42,147 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 16:01:42,147 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 9 because another existed.
+2019-05-01 16:01:42,163 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65688.
+2019-05-01 16:01:42,163 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking quantity bot configuration
+2019-05-01 16:01:42,178 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 16:01:42,194 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no quantity bot configuration update
+2019-05-01 16:01:42,194 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - invalid quantity bot configuration - 54 - TEST_8000001_RFG/Removal
+2019-05-01 16:01:42,194 [71 ] T1UAT01 DEBUG MessageConsumer.ImportWorkflow - Not looking for Severity OutcomeTexts because the severity group ID was null
+2019-05-01 16:01:42,194 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39766 bot 11
+2019-05-01 16:01:42,288 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39766 bot 11 botconfig 50594 saved with assignment count 1
+2019-05-01 16:01:42,288 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigBot - 11.53.53 for run 39766 bot 11
+2019-05-01 16:01:42,569 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigBot - 11.53.53 for run 39766 bot 11 botconfig 50594 saved with assignment count 1
+2019-05-01 16:01:42,569 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Quantity.QuantityBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'Configurations[0].QQuantityConfig.ConfigPush.QQuantityConfigs[1].Ddf1QDynamicDerivedFact.QDynamicDerivedFactResults[0].QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 65688.
+2019-05-01 16:01:42,569 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 16:01:42,585 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - scoring configuration not updated for items bot 11 because another existed.
+2019-05-01 16:01:42,585 [71 ] T1UAT01 WARN  MessageConsumer.ImportWorkflow - JSON Parse Errors Found. MessageConsumer may need to be updated to match QualityAssist Accurence.QualityAssist.Bots.Salvage.SalvageBotConfiguration object: Could not find member 'IsUnderCoverageADeductible' on object of type 'QDerivedFactResultSet1'. Path 'QCompanyConfig.Company.Jobs[0].QJobDetail.QProjectExports[0].QGroups[0].QScopeItems[0].QDisallowedItemResults[0].QDisallowedItemDetails.QQualityRun.QDerivedFactResultSet1[0].IsUnderCoverageADeductible', line 1, position 90839.
+2019-05-01 16:01:42,585 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - checking salvage bot configuration
+2019-05-01 16:01:42,631 [71 ] T1UAT01 INFO  sumer.ConfigurationSyncManager - no salvage bot configuration update
+2019-05-01 16:01:42,631 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - saving ConfigSalvage - 4.76 for run 39766 for price list 362
+2019-05-01 16:01:42,772 [71 ] T1UAT01 INFO  sageConsumer.LautrivWareDWRepo - ConfigSalvage - 4.76 for run 39766 for price list 362 saved
+2019-05-01 16:01:42,772 [71 ] T1UAT01 INFO  MessageConsumer.ImportWorkflow - Report data imported.
+2019-05-01 16:01:42,772 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client message imported
+2019-05-01 16:01:42,772 [71 ] T1UAT01 INFO  ng.ReportImportMessageConsumer - RabbitMQ Client listening for another message
