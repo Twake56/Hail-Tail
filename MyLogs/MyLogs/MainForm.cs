@@ -240,7 +240,7 @@ namespace MyLogs
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveCurrentSession();
+            SaveCurrentSession(null);
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -325,7 +325,34 @@ namespace MyLogs
                     file.Delete();
                 }
             }
+            SaveCurrentSession(null);
             
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveSessionDialog = new SaveFileDialog();
+            saveSessionDialog.Filter = "XML files | *.xml";
+            saveSessionDialog.Title = "Save Session File";
+            saveSessionDialog.ShowDialog();
+
+            if(saveSessionDialog.FileName != "")
+            {
+                SaveCurrentSession(saveSessionDialog.FileName);
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openSessionDialog = new OpenFileDialog();
+            openSessionDialog.Filter = "XML files | *.xml";
+            openSessionDialog.Title = "Open Session From File";
+            openSessionDialog.ShowDialog();
+
+            if (openSessionDialog.FileName != "")
+            {
+                LoadSession(openSessionDialog.FileName);
+            }
         }
     }
 }

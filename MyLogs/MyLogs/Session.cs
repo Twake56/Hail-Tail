@@ -11,7 +11,7 @@ namespace MyLogs
 {
     public partial class MainForm
     {
-        private void SaveCurrentSession()
+        private void SaveCurrentSession(string path)
         {
             XDocument SessionXML = new XDocument(new XElement("Session", new XElement("Files"), new XElement("Folders")));
             for(var i = 0; i < TabControlParent.TabPages.Count; i++)
@@ -48,9 +48,9 @@ namespace MyLogs
                     }
                 }
             }
-            if (!Directory.Exists(@"./Assets/Session/"))
-                Directory.CreateDirectory(@"./Assets/Session/");
-            SessionXML.Save("./Assets/Session/Session.xml");
+                if (!Directory.Exists(@"./Assets/Session/"))
+                    Directory.CreateDirectory(@"./Assets/Session/");
+                SessionXML.Save(path ?? "./Assets/Session/Session.xml");
         }
 
         private void LoadSession(string path)
