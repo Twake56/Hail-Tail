@@ -29,6 +29,23 @@ namespace MyLogs
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (SelectedTabPage.Name == "")
+            {
+                openFileDialog.InitialDirectory = @"C:\";
+            }
+            else
+            {
+                if (Directory.Exists(Path.GetDirectoryName(Path.GetFullPath(SelectedTabPage.Name))))
+                {
+                    openFileDialog.InitialDirectory = Path.GetDirectoryName(Path.GetFullPath(SelectedTabPage.Name));
+                }
+                else
+                {
+                    openFileDialog.InitialDirectory = @"C:\";
+                }
+            }
+
+            //openFileDialog.InitialDirectory = SelectedTabPage.Name;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 foreach (TabPage tab in TabControlParent.TabPages)
@@ -304,14 +321,22 @@ namespace MyLogs
                 var selectedTab = (sender as TabControl).SelectedTab as Classes.LogTabPage;
                 if (selectedTab.IsFolder && (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).TabCount > 0)
                 {
+                    SelectedFolder = selectedTab;
                     selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
                 }
+                SetTitle(selectedTab);
+                SelectedTabPage = selectedTab;
                 TabViewChange(selectedTab);
             }
             catch (NullReferenceException err)
             {
                 Console.WriteLine(err.Message);
             }
+        }
+
+        private void SetTitle(Classes.LogTabPage tab)
+        {
+            this.Text = "Hail Tail - " + tab.Name;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -353,6 +378,12 @@ namespace MyLogs
             {
                 LoadSession(openSessionDialog.FileName);
             }
+        }
+
+        private void highlightingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.ShowDialog();
         }
     }
 }
