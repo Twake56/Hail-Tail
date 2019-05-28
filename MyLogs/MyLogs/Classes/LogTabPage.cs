@@ -19,8 +19,8 @@ namespace MyLogs.Classes
         public FileSystemWatcher watcher = null;
         public ListViewNF ListView { get; set; } = null;
         public int TopVisibleIndex { get; set; } = 0;
-        private Thread thread;
-        private bool shouldStopThread = false;
+        public Thread thread;
+        public bool shouldStopThread = false;
         private bool isLoaded { get; set; } = false;
         BackgroundWorker worker = new BackgroundWorker();
         private string tempFileName { get; set; } = null;
@@ -221,7 +221,14 @@ namespace MyLogs.Classes
            
             if (this.InvokeRequired)
             {
-                this.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+                try
+                {
+                    this.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+                }
+                catch(Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                }
             }
             else
             {

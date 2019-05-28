@@ -91,7 +91,7 @@ namespace MyLogs
             iconList.Images.Add("folder", Image.FromFile(@"./Assets/Icons/folder-icon.png"));
             iconList.Images.Add("x", Image.FromFile(@"./Assets/Icons/x-icon.png"));
             
-            TabControl subTabControl = new TabControl();
+            TabControl subTabControl = new Classes.LogTabControl();
             subTabControl.Name = "SubTabControl";
             subTabControl.Dock = DockStyle.Fill;
             subTabControl.ShowToolTips = true;

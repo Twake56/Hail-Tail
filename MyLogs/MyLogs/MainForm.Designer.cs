@@ -36,7 +36,7 @@
             this.FileLengthTB = new System.Windows.Forms.TextBox();
             this.followTailCheckBox = new System.Windows.Forms.CheckBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
-            this.TabControlParent = new System.Windows.Forms.TabControl();
+            this.TabControlParent = new Classes.LogTabControl();
             this.PrimaryMenus = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -346,13 +346,13 @@
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // themeToolStripMenuItem
@@ -360,7 +360,7 @@
             this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBox1});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.themeToolStripMenuItem.Text = "Theme";
             // 
             // toolStripComboBox1
@@ -372,7 +372,7 @@
             // highlightingToolStripMenuItem
             // 
             this.highlightingToolStripMenuItem.Name = "highlightingToolStripMenuItem";
-            this.highlightingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.highlightingToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.highlightingToolStripMenuItem.Text = "Highlighting";
             this.highlightingToolStripMenuItem.Click += new System.EventHandler(this.highlightingToolStripMenuItem_Click);
             // 

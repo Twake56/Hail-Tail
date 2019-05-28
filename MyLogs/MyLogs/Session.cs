@@ -57,7 +57,26 @@ namespace MyLogs
         {
             if(TabControlParent.TabPages.Count > 0)
             {
-                TabControlParent.TabPages.Clear();
+                for (var i = 0; i < TabControlParent.TabPages.Count; i++)
+                {
+                    Classes.LogTabPage logTabPage = TabControlParent.TabPages[i] as Classes.LogTabPage;
+                    if (logTabPage.IsFolder)
+                    {
+                        TabControl subTabControl = (logTabPage.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                        for (var ik = 0; ik < subTabControl.TabPages.Count; ik++)
+                        {
+                            (subTabControl.TabPages[ik] as Classes.LogTabPage).thread.Abort();
+                            
+                        }
+                    }
+                    logTabPage.thread.Abort();
+                   
+                }
+                    TabControlParent.TabPages.Clear();
+            }
+            while(TabControlParent.TabPages.Count > 0)
+            {
+
             }
             try
             {
