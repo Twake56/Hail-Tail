@@ -65,11 +65,29 @@ namespace MyLogs
                         TabControl subTabControl = (logTabPage.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
                         for (var ik = 0; ik < subTabControl.TabPages.Count; ik++)
                         {
-                            (subTabControl.TabPages[ik] as Classes.LogTabPage).thread.Abort();
+                            try
+                            {
+                                (subTabControl.TabPages[ik] as Classes.LogTabPage).Deconstruct();
+                            //(subTabControl.TabPages[ik] as Classes.LogTabPage).watcher.EnableRaisingEvents = false;
+                            }
+                            catch (NullReferenceException er)
+                            {
+                                Console.WriteLine(er.Message);
+                            }
+                            //(subTabControl.TabPages[ik] as Classes.LogTabPage).thread.Abort();
                             
                         }
                     }
-                    logTabPage.thread.Abort();
+                    try
+                    {
+                        logTabPage.Deconstruct();
+                      //  logTabPage.watcher.EnableRaisingEvents = false;
+                    }
+                    catch(NullReferenceException er)
+                    {
+                        Console.WriteLine(er.Message);
+                    }
+                    //logTabPage.thread.Abort();
                    
                 }
                     TabControlParent.TabPages.Clear();

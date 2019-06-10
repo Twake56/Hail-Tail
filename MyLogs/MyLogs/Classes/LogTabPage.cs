@@ -50,6 +50,15 @@ namespace MyLogs.Classes
             this.thread.Abort();
         }
 
+        public void Deconstruct()
+        {
+            this.watcher.EnableRaisingEvents = false;
+            ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+            listView.Clear();
+            this.thread.Abort();
+           // TabControl TabControlParent = this.Parent as TabControl;
+           // TabControlParent.TabPages.Remove(this);
+        }
         private void InitializeWorker()
         {
             worker.DoWork += new DoWorkEventHandler(worker_DoWork);
