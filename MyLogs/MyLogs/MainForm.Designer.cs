@@ -36,7 +36,7 @@
             this.FileLengthTB = new System.Windows.Forms.TextBox();
             this.followTailCheckBox = new System.Windows.Forms.CheckBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
-            this.TabControlParent = new Classes.LogTabControl();
+            this.TabControlParent = new MyLogs.Classes.LogTabControl();
             this.PrimaryMenus = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -522,7 +522,6 @@
       private System.Windows.Forms.TextBox FileSizeTB;
       private System.Windows.Forms.TextBox FileLengthTB;
       public System.Windows.Forms.CheckBox followTailCheckBox;
-      public System.Windows.Forms.TabControl TabControlParent;
       private System.Windows.Forms.MenuStrip PrimaryMenus;
       private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -564,6 +563,7 @@
         private System.Windows.Forms.ToolStripMenuItem loadLastSessionMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private Classes.LogTabControl TabControlParent;
     }
 }
 

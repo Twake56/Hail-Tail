@@ -38,35 +38,42 @@ namespace MyLogs.Classes
         {
 
             ListViewItem lastVisible = this.TopItem;
-            var newBounds = this.Items[this.Items.Count - 1].Bounds; // Dont include length of item
-            newBounds.Width = 0;
-            if ((this.Parent as LogTabPage).ClientRectangle.Contains(newBounds))
+            try
             {
-                MainForm main = null;
-                if (this.Parent.Parent.Parent.Parent is MainForm)
+                var newBounds = this.Items[this.Items.Count - 1].Bounds; // Dont include length of item
+                newBounds.Width = 0;
+                if ((this.Parent as LogTabPage).ClientRectangle.Contains(newBounds))
                 {
-                    main = this.Parent.Parent.Parent.Parent as MainForm;
+                    MainForm main = null;
+                    if (this.Parent.Parent.Parent.Parent is MainForm)
+                    {
+                        main = this.Parent.Parent.Parent.Parent as MainForm;
+                    }
+                    else
+                    {
+                        main = this.Parent.Parent.Parent.Parent.Parent.Parent as MainForm;
+                    }
+
+                    main.ScrolledToBottom(this);
                 }
                 else
                 {
-                    main = this.Parent.Parent.Parent.Parent.Parent.Parent as MainForm;
-                }
+                    MainForm main = null;
+                    if (this.Parent.Parent.Parent.Parent is MainForm)
+                    {
+                        main = this.Parent.Parent.Parent.Parent as MainForm;
+                    }
+                    else
+                    {
+                        main = this.Parent.Parent.Parent.Parent.Parent.Parent as MainForm;
+                    }
 
-                main.ScrolledToBottom(this);
+                    main.ScrolledFromBottom(this);
+                }
             }
-            else
+            catch(ArgumentOutOfRangeException err)
             {
-                MainForm main = null;
-                if (this.Parent.Parent.Parent.Parent is MainForm)
-                {
-                    main = this.Parent.Parent.Parent.Parent as MainForm;
-                }
-                else
-                {
-                    main = this.Parent.Parent.Parent.Parent.Parent.Parent as MainForm;
-                }
-
-                main.ScrolledFromBottom(this);
+                Console.WriteLine(err.Message);
             }
         
         }

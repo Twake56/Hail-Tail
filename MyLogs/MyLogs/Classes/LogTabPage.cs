@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Timers;
 
 namespace MyLogs.Classes
 {
@@ -22,9 +23,12 @@ namespace MyLogs.Classes
         public Thread thread;
         public bool shouldStopThread = false;
         private bool isLoaded { get; set; } = false;
-        BackgroundWorker worker = new BackgroundWorker();
+        BackgroundWorker initialWorker = new BackgroundWorker();
+        BackgroundWorker upkeepWorker = new BackgroundWorker();
         private string tempFileName { get; set; } = null;
         private DateTime fileRefreshedAt { get; set; } = DateTime.Now;
+        System.Timers.Timer timer = new System.Timers.Timer();
+
 
         public LogTabPage()
         {
@@ -32,7 +36,10 @@ namespace MyLogs.Classes
             this.thread = new Thread(new ThreadStart(this.ThreadProc));
             this.thread.IsBackground = true;
             this.thread.Start();
-            InitializeWorker();
+            InitializeWorkers();
+            timer.Interval = 2500;
+            timer.AutoReset = false;
+            timer.Elapsed += new ElapsedEventHandler(TimerElapsed);
         }
         public void ThreadProc()
         {
@@ -56,13 +63,15 @@ namespace MyLogs.Classes
             ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
             listView.Clear();
             this.thread.Abort();
-           // TabControl TabControlParent = this.Parent as TabControl;
-           // TabControlParent.TabPages.Remove(this);
+            // TabControl TabControlParent = this.Parent as TabControl;
+            // TabControlParent.TabPages.Remove(this);
         }
-        private void InitializeWorker()
+        private void InitializeWorkers()
         {
-            worker.DoWork += new DoWorkEventHandler(worker_DoWork);
-            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_Complete);
+            initialWorker.DoWork += new DoWorkEventHandler(initialWorker_DoWork);
+            initialWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(initialWorker_Complete);
+            upkeepWorker.DoWork += new DoWorkEventHandler(upkeepWorker_DoWork);
+            upkeepWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(upkeepWorker_Complete);
         }
 
         public void MouseScroll(object sender, MouseEventArgs e)
@@ -87,16 +96,16 @@ namespace MyLogs.Classes
             Console.WriteLine(this.thread.Name);
         }
 
-        public void ScrollToIndex ()
+        public void ScrollToIndex()
         {
             try
             {
                 ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
                 listView.EnsureVisible(TopVisibleIndex);
-                
+
             }
-            catch(IndexOutOfRangeException)
-            {}//Caught folder ignore
+            catch (IndexOutOfRangeException)
+            { }//Caught folder ignore
         }
 
         public void ScrollToBottom()
@@ -121,7 +130,7 @@ namespace MyLogs.Classes
                 ListViewItem FirstVisible = listView.TopItem;
                 this.TopVisibleIndex = FirstVisible.Index;
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 if (err is NullReferenceException || err is IndexOutOfRangeException)
                 {
@@ -140,156 +149,210 @@ namespace MyLogs.Classes
             {
                 return null;
             }
-            if(DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
+            if (DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
             {
                 Thread.Sleep(3000);
             }
-
-                string tempPath = "./Assets/TempFiles/" + tempFileName;
-                File.Copy(path, tempPath, true);
-                using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (var sr = new StreamReader(fs))
+            Console.WriteLine("ReadLines thread: " + Thread.CurrentThread.ManagedThreadId + " " + this.thread.ManagedThreadId);
+            string tempPath = "./Assets/TempFiles/" + tempFileName;
+            File.Copy(path, tempPath, true);
+            using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var sr = new StreamReader(fs))
+            {
+                List<string> file = new List<string>();
+                while (!sr.EndOfStream)
                 {
-                    List<string> file = new List<string>();
-                    while (!sr.EndOfStream)
-                    {
-                        file.Add(sr.ReadLine());
-                    }
-
-                    return file.ToArray();
+                    file.Add(sr.ReadLine());
                 }
-            
+
+                return file.ToArray();
+            }
+
         }
 
-        private void worker_DoWork(object sender, DoWorkEventArgs e)
+        private void initialWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             TabControl TabControlParent = this.Parent as TabControl;
 
             if (this.InvokeRequired)
             {
-                this.Invoke((MethodInvoker)delegate { worker_DoWork(sender, e); });
+                this.Invoke((MethodInvoker)delegate { initialWorker_DoWork(sender, e); });
             }
             else
             {
                 try
                 {
                     string path = this.Name;
-                    string[] lines = ReadLines(path);
-                    if (lines == null)
+                    //string[] lines = ReadLines(path);
+                    string tempPath = "./Assets/TempFiles/" + tempFileName;
+                    File.Copy(path, tempPath, true);
+                    using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var sr = new StreamReader(fs))
                     {
-                        this.ImageIndex= 2;
-                        return;  
-                    }
-                    var ListViewControl = this.Controls.Find("ListViewText", true);
-                    ListViewNF ListViewText = ListViewControl[0] as ListViewNF;
-                    
-                    var ItemsCount = ListViewText.Items.Count;
-                    ListViewItem[] itemArray = new ListViewItem[lines.Length];
-                    for(var i = 0; i < lines.Length; i++)
-                    {
-                        ListViewItem item = new ListViewItem((i + 1).ToString());
-                        item.SubItems.Add(lines[i]);
-                        itemArray[i] = item;
-                    }
-                    if (ItemsCount == 0 || lines.Length < ItemsCount)
-                    {
-                        ListViewText.Items.Clear();
-                        ListViewText.Items.AddRange(itemArray);
-                    }
-                    else
-                    {
-                        ListViewText.Items.AddRange(itemArray);
+                        List<string> file = new List<string>();
+                        while (!sr.EndOfStream)
+                        {
+                            file.Add(sr.ReadLine());
+                        }
+
+                        string[] lines = file.ToArray();
+                        if (lines.Length < 1 || lines == null)
+                        {
+                            this.ImageIndex = 2;
+                            return;
+                        }
+                        var ListViewControl = this.Controls.Find("ListViewText", true);
+                        ListViewNF ListViewText = ListViewControl[0] as ListViewNF;
+
+                        var ItemsCount = ListViewText.Items.Count;
+                        ListViewItem[] itemArray = new ListViewItem[lines.Length];
+                        for (var i = 0; i < lines.Length; i++)
+                        {
+                            ListViewItem item = new ListViewItem((i + 1).ToString());
+                            item.SubItems.Add(lines[i]);
+                            itemArray[i] = item;
+                        }
+                        if (ItemsCount == 0 || lines.Length < ItemsCount)
+                        {
+                            ListViewText.Items.Clear();
+                            ListViewText.Items.AddRange(itemArray);
+                        }
+                        else
+                        {
+                            ListViewText.Items.AddRange(itemArray);
+                        }
                     }
                 }
                 catch (IOException IOex)
                 {
                     Console.WriteLine(IOex.Message);
+                    this.ImageIndex = 2;
                 }
             }
+
+
         }
 
-        private void worker_Complete(object sender, RunWorkerCompletedEventArgs e)
+        private void upkeepWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            this.isLoaded = true;
-        }
-
-        public void InitialLoad()
-        {
-            worker.RunWorkerAsync();
-            
-        }
-
-        private void OnChanged(object source, FileSystemEventArgs e)
-        {
-            
-            while (!isLoaded) // Wait till worker completes
+            if (!isLoaded || timer.Enabled) // Wait till initialWorker completes
             {
-                Thread.Sleep(200);
+                return;
             }
-            TabControl TabControlParent = this.Parent as TabControl;
-           
+
+            if (DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
+            {
+                timer.Start();
+            }
+
+                TabControl TabControlParent = this.Parent as TabControl;
+
             if (this.InvokeRequired)
             {
                 try
                 {
-                    this.Invoke((MethodInvoker)delegate { OnChanged(source, e); });
+                    this.Invoke((MethodInvoker)delegate { upkeepWorker_DoWork(sender, e); });
                 }
-                catch(Exception err)
+                catch (Exception err)
                 {
                     Console.WriteLine(err.Message);
                 }
             }
             else
             {
-               try
+                try
                 {
                     SetLastVisibleItem();
-
-                    if (!File.Exists(e.FullPath))
+                    string path = this.Name;
+                    if (!File.Exists(path))
                     {
                         return;
                     }
-                    string[] lines = ReadLines(e.FullPath);
-                    var ListViewControl = this.Controls.Find("ListViewText", true);
-                    ListView ListViewText = ListViewControl[0] as ListView;
-                    
-
-
-                    var ItemsCount = ListViewText.Items.Count;
-
-                    if (ItemsCount == 0 || lines.Length < ItemsCount)
+                    //string[] lines = ReadLines(path);
+                    string tempPath = "./Assets/TempFiles/" + tempFileName;
+                    File.Copy(path, tempPath, true);
+                    using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var sr = new StreamReader(fs))
                     {
-                        // If logs reset or issue occurs, clear listview and reload async
-                        ListViewText.Items.Clear();
-                        this.isLoaded = false;
-                        this.InitialLoad();
-                    }
-                    else
-                    {
-                        for (var start = ItemsCount; start < lines.Length; start++)
+                        List<string> file = new List<string>();
+                        while (!sr.EndOfStream)
                         {
-                            ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                            file.Add(sr.ReadLine());
+                        }
+                        string[] lines = file.ToArray();
+                        var ListViewControl = this.Controls.Find("ListViewText", true);
+                        ListView ListViewText = ListViewControl[0] as ListView;
+
+
+
+                        var ItemsCount = ListViewText.Items.Count;
+
+                        if (ItemsCount == 0 || lines.Length < ItemsCount)
+                        {
+                            // If logs reset or issue occurs, clear listview and reload async
+                            ListViewText.Items.Clear();
+                            this.isLoaded = false;
+                            this.InitialLoad();
+                        }
+                        else
+                        {
+                            for (var start = ItemsCount; start < lines.Length; start++)
+                            {
+                                ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                            }
+                        }
+                        //this.fileRefreshedAt = DateTime.Now;
+
+                        //Grabs the Number of lines in a file
+                        //FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
+                        //Create the long for the file size value
+                        //long FileSizeValue = new FileInfo(e.FullPath).Length;
+                        //Convert File size from bytes to KB
+                        //FileSizeTB.Text = (FileSizeValue / 1024) + " KB";
+
+                        if (TailFollowed)
+                        {
+                            ScrollToBottom();
                         }
                     }
-
-                    //Grabs the Number of lines in a file
-                    //FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
-                    //Create the long for the file size value
-                    //long FileSizeValue = new FileInfo(e.FullPath).Length;
-                    //Convert File size from bytes to KB
-                    //FileSizeTB.Text = (FileSizeValue / 1024) + " KB";
-
-                    if (TailFollowed)
-                    {
-                        ScrollToBottom();
-                    }
                 }
+
                 catch (IOException IOex)
                 {
                     Console.WriteLine(IOex.Message);
                 }
+
             }
             
+        }
+
+
+        private void TimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (!upkeepWorker.IsBusy)
+                upkeepWorker.RunWorkerAsync();
+        }
+
+        private void upkeepWorker_Complete(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void initialWorker_Complete(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.isLoaded = true;
+        }
+
+        public void InitialLoad()
+        {
+            initialWorker.RunWorkerAsync();
+
+        }
+
+        private void OnChanged(object source, FileSystemEventArgs e)
+        {
+            if(!upkeepWorker.IsBusy)
+                upkeepWorker.RunWorkerAsync();
         }
     }
 }

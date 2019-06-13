@@ -68,33 +68,23 @@ namespace MyLogs
                             try
                             {
                                 (subTabControl.TabPages[ik] as Classes.LogTabPage).Deconstruct();
-                            //(subTabControl.TabPages[ik] as Classes.LogTabPage).watcher.EnableRaisingEvents = false;
                             }
-                            catch (NullReferenceException er)
+                            catch (NullReferenceException err)
                             {
-                                Console.WriteLine(er.Message);
+                                Console.WriteLine(err.Message);
                             }
-                            //(subTabControl.TabPages[ik] as Classes.LogTabPage).thread.Abort();
-                            
                         }
                     }
                     try
                     {
                         logTabPage.Deconstruct();
-                      //  logTabPage.watcher.EnableRaisingEvents = false;
                     }
-                    catch(NullReferenceException er)
+                    catch(NullReferenceException err)
                     {
-                        Console.WriteLine(er.Message);
+                        Console.WriteLine(err.Message);
                     }
-                    //logTabPage.thread.Abort();
-                   
                 }
                     TabControlParent.TabPages.Clear();
-            }
-            while(TabControlParent.TabPages.Count > 0)
-            {
-
             }
             try
             {
