@@ -35,3 +35,7 @@ C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Icon
 C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Icons\x-icon.png
 C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\Session\Session.xml
 C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Assets\TempFiles\PlaceHolder.txt
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Castle.Core.dll
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Config.Net.dll
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\bin\Debug\Castle.Core.xml
+C:\Users\twakeman\Documents\GitHub\Hail-Tail\MyLogs\MyLogs\obj\Debug\HailTail.csproj.CopyComplete

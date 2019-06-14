@@ -63,15 +63,13 @@ namespace MyLogs.Classes
             ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
             listView.Clear();
             this.thread.Abort();
-            // TabControl TabControlParent = this.Parent as TabControl;
-            // TabControlParent.TabPages.Remove(this);
         }
         private void InitializeWorkers()
         {
             initialWorker.DoWork += new DoWorkEventHandler(initialWorker_DoWork);
             initialWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(initialWorker_Complete);
             upkeepWorker.DoWork += new DoWorkEventHandler(upkeepWorker_DoWork);
-            upkeepWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(upkeepWorker_Complete);
+           // upkeepWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(upkeepWorker_Complete);
         }
 
         public void MouseScroll(object sender, MouseEventArgs e)
@@ -143,7 +141,7 @@ namespace MyLogs.Classes
             }
         }
 
-        private string[] ReadLines(String path)
+        /*private string[] ReadLines(String path)
         {
             if (!File.Exists(path))
             {
@@ -168,7 +166,7 @@ namespace MyLogs.Classes
                 return file.ToArray();
             }
 
-        }
+        }*/
 
         private void initialWorker_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -301,7 +299,7 @@ namespace MyLogs.Classes
                                 ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
                             }
                         }
-                        //this.fileRefreshedAt = DateTime.Now;
+                        this.fileRefreshedAt = DateTime.Now;
 
                         //Grabs the Number of lines in a file
                         //FileLengthTB.Text = ListViewText.Items.Count.ToString() + " lines";
@@ -333,10 +331,10 @@ namespace MyLogs.Classes
                 upkeepWorker.RunWorkerAsync();
         }
 
-        private void upkeepWorker_Complete(object sender, RunWorkerCompletedEventArgs e)
+        /*private void upkeepWorker_Complete(object sender, RunWorkerCompletedEventArgs e)
         {
 
-        }
+        }*/
 
         private void initialWorker_Complete(object sender, RunWorkerCompletedEventArgs e)
         {

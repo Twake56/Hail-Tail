@@ -29,6 +29,7 @@ namespace MyLogs
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
             if (SelectedTabPage.Name == "")
             {
                 openFileDialog.InitialDirectory = @"C:\";
@@ -91,7 +92,7 @@ namespace MyLogs
                 ListViewText.MultiSelect = true;
                 ListViewText.Name = "ListViewText";//used to find listview later
 
-                SelectedTabPage = tab;
+                //SelectedTabPage = tab;
                 TabViewChange(tab);
                 tab.InitialLoad();
 
@@ -325,7 +326,7 @@ namespace MyLogs
                     selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
                 }
                 SetTitle(selectedTab);
-                SelectedTabPage = selectedTab;
+               // SelectedTabPage = selectedTab;
                 TabViewChange(selectedTab);
             }
             catch (NullReferenceException err)
