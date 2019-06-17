@@ -110,9 +110,20 @@ namespace MyLogs.Classes
         {
             var ListViewControl = this.Controls.Find("ListViewText", true);
             ListView ListViewText = ListViewControl[0] as ListView;
+
             try
             {
-                ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                if (ListViewText.InvokeRequired)
+                {
+                    ListViewText.Invoke(new MethodInvoker(delegate
+                    {
+                        ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                    }));
+                }
+                else
+                {
+                    ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                }
             }
             catch (ArgumentOutOfRangeException IndErr)
             {
@@ -124,9 +135,36 @@ namespace MyLogs.Classes
         {
             try
             {
+
                 ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
-                ListViewItem FirstVisible = listView.TopItem;
-                this.TopVisibleIndex = FirstVisible.Index;
+                if (listView.InvokeRequired)
+                {
+                    listView.Invoke(new MethodInvoker(delegate
+                    {
+                        try
+                        {
+                            ListViewItem FirstVisible = listView.TopItem;
+                            this.TopVisibleIndex = FirstVisible.Index;
+                        }
+                        catch (Exception err)
+                        {
+                            if (err is NullReferenceException || err is IndexOutOfRangeException)
+                            {
+                                Console.WriteLine(err.Message);
+                            }
+                            else
+                            {
+                                throw;
+                            }
+                        }
+                    }));
+                }
+
+                else
+                {
+                    ListViewItem FirstVisible = listView.TopItem;
+                    this.TopVisibleIndex = FirstVisible.Index;
+                }
             }
             catch (Exception err)
             {
@@ -172,12 +210,12 @@ namespace MyLogs.Classes
         {
             TabControl TabControlParent = this.Parent as TabControl;
 
-            if (this.InvokeRequired)
+            /*if (this.InvokeRequired)
             {
                 this.Invoke((MethodInvoker)delegate { initialWorker_DoWork(sender, e); });
             }
             else
-            {
+            {*/
                 try
                 {
                     string path = this.Name;
@@ -210,6 +248,23 @@ namespace MyLogs.Classes
                             item.SubItems.Add(lines[i]);
                             itemArray[i] = item;
                         }
+                    if (ListViewText.InvokeRequired)
+                    {
+                        ListViewText.Invoke(new MethodInvoker(delegate
+                        {
+                            if (ItemsCount == 0 || lines.Length < ItemsCount)
+                            {
+                                ListViewText.Items.Clear();
+                                ListViewText.Items.AddRange(itemArray);
+                            }
+                            else
+                            {
+                                ListViewText.Items.AddRange(itemArray);
+                            }
+                        }));
+                    }
+                    else
+                    {
                         if (ItemsCount == 0 || lines.Length < ItemsCount)
                         {
                             ListViewText.Items.Clear();
@@ -220,13 +275,14 @@ namespace MyLogs.Classes
                             ListViewText.Items.AddRange(itemArray);
                         }
                     }
+                    }
                 }
                 catch (IOException IOex)
                 {
                     Console.WriteLine(IOex.Message);
-                    this.ImageIndex = 2;
+                    //this.ImageIndex = 2;
                 }
-            }
+            //}
 
 
         }
@@ -245,10 +301,11 @@ namespace MyLogs.Classes
 
                 TabControl TabControlParent = this.Parent as TabControl;
 
-            if (this.InvokeRequired)
+            /*if (this.InvokeRequired)
             {
                 try
                 {
+                    Console.WriteLine("Invoke required");
                     this.Invoke((MethodInvoker)delegate { upkeepWorker_DoWork(sender, e); });
                 }
                 catch (Exception err)
@@ -257,7 +314,7 @@ namespace MyLogs.Classes
                 }
             }
             else
-            {
+            {*/
                 try
                 {
                     SetLastVisibleItem();
@@ -284,7 +341,28 @@ namespace MyLogs.Classes
 
 
                         var ItemsCount = ListViewText.Items.Count;
-
+                    if (ListViewText.InvokeRequired)
+                    {
+                        ListViewText.Invoke(new MethodInvoker(delegate
+                        {
+                            if (ItemsCount == 0 || lines.Length < ItemsCount)
+                            {
+                                // If logs reset or issue occurs, clear listview and reload async
+                                ListViewText.Items.Clear();
+                                this.isLoaded = false;
+                                this.InitialLoad();
+                            }
+                            else
+                            {
+                                for (var start = ItemsCount; start < lines.Length; start++)
+                                {
+                                    ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
+                                }
+                            }
+                        }));
+                    }
+                    else
+                    {
                         if (ItemsCount == 0 || lines.Length < ItemsCount)
                         {
                             // If logs reset or issue occurs, clear listview and reload async
@@ -299,6 +377,7 @@ namespace MyLogs.Classes
                                 ListViewText.Items.Add((start + 1).ToString()).SubItems.Add(lines[start]);
                             }
                         }
+                    }
                         this.fileRefreshedAt = DateTime.Now;
 
                         //Grabs the Number of lines in a file
@@ -320,7 +399,7 @@ namespace MyLogs.Classes
                     Console.WriteLine(IOex.Message);
                 }
 
-            }
+            //}
             
         }
 
