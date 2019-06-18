@@ -16,7 +16,7 @@ namespace MyLogs
     {
         private Point DragStartPosition = Point.Empty;
         //private Classes.LogTabPage SelectedTabPage = new Classes.LogTabPage();
-        private Classes.LogTabPage SelectedFolder = new Classes.LogTabPage();
+        //private Classes.LogTabPage SelectedFolder = new Classes.LogTabPage();
 
         private Classes.LogTabPage GetSelectedTabPage()
         {
@@ -154,7 +154,7 @@ namespace MyLogs
                 //TabControl SubTabControl = GetTabControlByFolder();
                 try
                 { 
-                    TabControl subTabControl = (SelectedFolder.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                    TabControl subTabControl = (GetSelectedFolder().Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
                     for (int ix = 0; ix < subTabControl.TabCount; ++ix)
                     {
                         if (subTabControl.GetTabRect(ix).Contains(e.Location))
@@ -218,7 +218,7 @@ namespace MyLogs
                     }
                     else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                     {
-                        SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
+                        //SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
                         //TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                     }
                 }
@@ -231,7 +231,7 @@ namespace MyLogs
                     {
                         if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
                         {
-                            SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
+                            //SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
                            // TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
                         }
                         
@@ -247,6 +247,10 @@ namespace MyLogs
         {
             ToolStripItem clickedItem = e.ClickedItem;
             Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
+            if(SelectedTabPage == null)
+            {
+                SelectedTabPage = GetSelectedFolder();
+            }
             if (e.ClickedItem.Name == "TabToolStripMenuItem")
             {
                 RenameForm rename = new RenameForm();
@@ -297,7 +301,7 @@ namespace MyLogs
             else if (e.ClickedItem.Name == "deleteToolStripMenuItem")
             {
               
-                if (SelectedTabPage.Tag.ToString() == "Folder")
+                if (SelectedTabPage.IsFolder)
                 {
                     
                     TabControl subTabPageControl = SelectedTabPage.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;

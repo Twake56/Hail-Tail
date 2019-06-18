@@ -37,7 +37,7 @@ namespace MyLogs.Classes
             this.thread.IsBackground = true;
             this.thread.Start();
             InitializeWorkers();
-            timer.Interval = 2500;
+            timer.Interval = 1500;
             timer.AutoReset = false;
             timer.Elapsed += new ElapsedEventHandler(TimerElapsed);
         }
@@ -59,6 +59,10 @@ namespace MyLogs.Classes
 
         public void Deconstruct()
         {
+            if(upkeepWorker.IsBusy)
+            {
+                upkeepWorker.CancelAsync();
+            }
             this.watcher.EnableRaisingEvents = false;
             ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
             listView.Clear();
@@ -69,7 +73,7 @@ namespace MyLogs.Classes
             initialWorker.DoWork += new DoWorkEventHandler(initialWorker_DoWork);
             initialWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(initialWorker_Complete);
             upkeepWorker.DoWork += new DoWorkEventHandler(upkeepWorker_DoWork);
-           // upkeepWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(upkeepWorker_Complete);
+            upkeepWorker.WorkerSupportsCancellation = true;
         }
 
         public void MouseScroll(object sender, MouseEventArgs e)
@@ -117,7 +121,14 @@ namespace MyLogs.Classes
                 {
                     ListViewText.Invoke(new MethodInvoker(delegate
                     {
-                        ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                        try
+                        {
+                            ListViewText.Items[ListViewText.Items.Count - 1].EnsureVisible();
+                        }
+                        catch (ArgumentOutOfRangeException IndErr)
+                        {
+                            Console.WriteLine(IndErr.Message);
+                        }
                     }));
                 }
                 else
@@ -179,75 +190,40 @@ namespace MyLogs.Classes
             }
         }
 
-        /*private string[] ReadLines(String path)
-        {
-            if (!File.Exists(path))
-            {
-                return null;
-            }
-            if (DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
-            {
-                Thread.Sleep(3000);
-            }
-            Console.WriteLine("ReadLines thread: " + Thread.CurrentThread.ManagedThreadId + " " + this.thread.ManagedThreadId);
-            string tempPath = "./Assets/TempFiles/" + tempFileName;
-            File.Copy(path, tempPath, true);
-            using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(fs))
-            {
-                List<string> file = new List<string>();
-                while (!sr.EndOfStream)
-                {
-                    file.Add(sr.ReadLine());
-                }
-
-                return file.ToArray();
-            }
-
-        }*/
-
         private void initialWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             TabControl TabControlParent = this.Parent as TabControl;
-
-            /*if (this.InvokeRequired)
+            try
             {
-                this.Invoke((MethodInvoker)delegate { initialWorker_DoWork(sender, e); });
-            }
-            else
-            {*/
-                try
+                string path = this.Name;
+                string tempPath = "./Assets/TempFiles/" + tempFileName;
+                File.Copy(path, tempPath, true);
+                using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var sr = new StreamReader(fs))
                 {
-                    string path = this.Name;
-                    //string[] lines = ReadLines(path);
-                    string tempPath = "./Assets/TempFiles/" + tempFileName;
-                    File.Copy(path, tempPath, true);
-                    using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    using (var sr = new StreamReader(fs))
+                    List<string> file = new List<string>();
+                    while (!sr.EndOfStream)
                     {
-                        List<string> file = new List<string>();
-                        while (!sr.EndOfStream)
-                        {
-                            file.Add(sr.ReadLine());
-                        }
+                        file.Add(sr.ReadLine());
+                    }
 
-                        string[] lines = file.ToArray();
-                        if (lines.Length < 1 || lines == null)
-                        {
-                            this.ImageIndex = 2;
-                            return;
-                        }
-                        var ListViewControl = this.Controls.Find("ListViewText", true);
-                        ListViewNF ListViewText = ListViewControl[0] as ListViewNF;
+                    string[] lines = file.ToArray();
+                    if (lines.Length < 1 || lines == null)
+                    {
+                        this.ImageIndex = 2;
+                        return;
+                    }
+                    var ListViewControl = this.Controls.Find("ListViewText", true);
+                    ListViewNF ListViewText = ListViewControl[0] as ListViewNF;
 
-                        var ItemsCount = ListViewText.Items.Count;
-                        ListViewItem[] itemArray = new ListViewItem[lines.Length];
-                        for (var i = 0; i < lines.Length; i++)
-                        {
-                            ListViewItem item = new ListViewItem((i + 1).ToString());
-                            item.SubItems.Add(lines[i]);
-                            itemArray[i] = item;
-                        }
+                    var ItemsCount = ListViewText.Items.Count;
+                    ListViewItem[] itemArray = new ListViewItem[lines.Length];
+                    for (var i = 0; i < lines.Length; i++)
+                    {
+                        ListViewItem item = new ListViewItem((i + 1).ToString());
+                        item.SubItems.Add(lines[i]);
+                        itemArray[i] = item;
+                    }
                     if (ListViewText.InvokeRequired)
                     {
                         ListViewText.Invoke(new MethodInvoker(delegate
@@ -275,14 +251,24 @@ namespace MyLogs.Classes
                             ListViewText.Items.AddRange(itemArray);
                         }
                     }
-                    }
                 }
-                catch (IOException IOex)
+            }
+            catch (IOException IOex)
+            {
+                Console.WriteLine(IOex.Message);
+                if (this.InvokeRequired)
                 {
-                    Console.WriteLine(IOex.Message);
-                    //this.ImageIndex = 2;
+                    this.Invoke(new MethodInvoker(delegate
+                    {
+                        this.ImageIndex = 2;
+                    }));
                 }
-            //}
+                else
+                {
+                    this.ImageIndex = 2;
+                }
+
+            }
 
 
         }
@@ -294,27 +280,12 @@ namespace MyLogs.Classes
                 return;
             }
 
-            if (DateTime.Now < this.fileRefreshedAt.AddSeconds(3))
+            if (DateTime.Now < this.fileRefreshedAt.AddSeconds(2))
             {
                 timer.Start();
             }
 
                 TabControl TabControlParent = this.Parent as TabControl;
-
-            /*if (this.InvokeRequired)
-            {
-                try
-                {
-                    Console.WriteLine("Invoke required");
-                    this.Invoke((MethodInvoker)delegate { upkeepWorker_DoWork(sender, e); });
-                }
-                catch (Exception err)
-                {
-                    Console.WriteLine(err.Message);
-                }
-            }
-            else
-            {*/
                 try
                 {
                     SetLastVisibleItem();
@@ -323,7 +294,6 @@ namespace MyLogs.Classes
                     {
                         return;
                     }
-                    //string[] lines = ReadLines(path);
                     string tempPath = "./Assets/TempFiles/" + tempFileName;
                     File.Copy(path, tempPath, true);
                     using (var fs = new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))

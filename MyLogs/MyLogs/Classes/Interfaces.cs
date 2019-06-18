@@ -9,6 +9,6 @@ namespace HailTail.Classes
 {
     public interface IHighlightingSettings
     {
-        //List<Classes.HighlightStringObject> HighLightOptions { get; };
+       // List<HighlightStringObject> HighLightOptions = new List<HighlightStringObject>();
     }
 }

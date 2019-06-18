@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HailTail.Classes
 {
-    class HighlightStringObject
+    public class HighlightStringObject
     {
         int ForegroundColor { get; set; } = 0x0;
         int BackgroundColor { get; set; } = 0x0;

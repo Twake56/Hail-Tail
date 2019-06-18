@@ -136,7 +136,7 @@ namespace MyLogs
                 ListViewItem l = item as ListViewItem;
                 if (l != null)
                     foreach (ListViewItem.ListViewSubItem sub in l.SubItems)
-                        sb.Append(sub.Text + "\t");
+                        sb.Append(sub.Text);
                 sb.AppendLine();
             }
             Clipboard.SetDataObject(sb.ToString());
@@ -322,7 +322,7 @@ namespace MyLogs
                 var selectedTab = (sender as TabControl).SelectedTab as Classes.LogTabPage;
                 if (selectedTab.IsFolder && (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).TabCount > 0)
                 {
-                    SelectedFolder = selectedTab;
+                    //SelectedFolder = selectedTab;
                     selectedTab = (selectedTab.Controls.Find("SubTabControl", true)[0] as TabControl).SelectedTab as Classes.LogTabPage;
                 }
                 SetTitle(selectedTab);
@@ -342,16 +342,54 @@ namespace MyLogs
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-           DirectoryInfo tempDir = new DirectoryInfo("./Assets/TempFiles/");
+            SaveCurrentSession(null);
+            if (TabControlParent.TabPages.Count > 0)
+            {
+                for (var i = 0; i < TabControlParent.TabPages.Count; i++)
+                {
+                    Classes.LogTabPage logTabPage = TabControlParent.TabPages[i] as Classes.LogTabPage;
+                    if (logTabPage.IsFolder)
+                    {
+                        TabControl subTabControl = (logTabPage.Controls.Find("SubTabControl", true).FirstOrDefault()) as TabControl;
+                        for (var ik = 0; ik < subTabControl.TabPages.Count; ik++)
+                        {
+                            try
+                            {
+                                (subTabControl.TabPages[ik] as Classes.LogTabPage).Deconstruct();
+                            }
+                            catch (NullReferenceException err)
+                            {
+                                Console.WriteLine(err.Message);
+                            }
+                        }
+                    }
+                    try
+                    {
+                        logTabPage.Deconstruct();
+                    }
+                    catch (NullReferenceException err)
+                    {
+                        Console.WriteLine(err.Message);
+                    }
+                }
+                TabControlParent.TabPages.Clear();
+            }
+            DirectoryInfo tempDir = new DirectoryInfo("./Assets/TempFiles/");
             if (tempDir.GetFiles().Any())
             {
                 foreach (FileInfo file in tempDir.GetFiles())
                 {
-                    file.Delete();
+                    try
+                    {
+                        file.Delete();
+                    }
+                    catch(IOException err)
+                    {
+                        Console.WriteLine(err.Message);
+                    }
                 }
             }
-            SaveCurrentSession(null);
+            
             
         }
 
