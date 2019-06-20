@@ -30,7 +30,7 @@ namespace MyLogs
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
-            if (SelectedTabPage.Name == "")
+            if (SelectedTabPage == null || SelectedTabPage.Name == "")
             {
                 openFileDialog.InitialDirectory = @"C:\";
             }

@@ -106,7 +106,7 @@ namespace MyLogs.Classes
                 listView.EnsureVisible(TopVisibleIndex);
 
             }
-            catch (IndexOutOfRangeException)
+            catch (Exception)
             { }//Caught folder ignore
         }
 

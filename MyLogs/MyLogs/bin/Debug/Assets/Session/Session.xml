@@ -49,11 +49,11 @@
       <File Position="4" Name="SF Delta Node 2" Path="\\p1sfappv02\c$\Logs\Delta\Accurence.QualityAssist.Delta.p1sfappv02.StateFarm.log" IsTailFollowed="true" IsFolder="false" />
       <File Position="5" Name="SF WF Node 2" Path="\\p1sfappv02\c$\Logs\WorkflowLogsStateFarm\Accurence.Workflow.Service.P1SFAPPV02.StateFarm.log" IsTailFollowed="true" IsFolder="false" />
     </Folder>
-    <Folder Name="Allstate" Position="8" IsFolder="true">
+    <Folder Name="allwf" Position="8" IsFolder="true">
       <File Position="0" Name="ALL QA Node 1" Path="\\p1allappv01\logs\QualityAssistLogsAllstate\Accurence.QualityAssist.Service.p1allappv01.Allstate.log" IsTailFollowed="true" IsFolder="false" />
       <File Position="1" Name="ALL Delta Node 1" Path="\\p1allappv01\logs\Delta\Accurence.QualityAssist.Delta.p1allappv01.Allstate.log" IsTailFollowed="true" IsFolder="false" />
-      <File Position="2" Name="ALL WF Node 1" Path="\\p1allappv01\logs\WorkflowLogsAllstate\Accurence.Workflow.Service.P1ALLAPPV01.Allstate.log" IsTailFollowed="true" IsFolder="false" />
-      <File Position="3" Name="ALL QA Node 2" Path="\\p1allappv02\logs\QualityAssistLogsAllstate\Accurence.QualityAssist.Service.p1allappv02.Allstate.log" IsTailFollowed="true" IsFolder="false" />
+      <File Position="2" Name="ALL QA Node 2" Path="\\p1allappv02\logs\QualityAssistLogsAllstate\Accurence.QualityAssist.Service.p1allappv02.Allstate.log" IsTailFollowed="true" IsFolder="false" />
+      <File Position="3" Name="wfwf" Path="\\p1allappv01\logs\WorkflowLogsAllstate\Accurence.Workflow.Service.P1ALLAPPV01.Allstate.log" IsTailFollowed="true" IsFolder="false" />
       <File Position="4" Name="ALL Delta Node 2" Path="\\p1allappv02\logs\Delta\Accurence.QualityAssist.Delta.p1allappv02.Allstate.log" IsTailFollowed="true" IsFolder="false" />
       <File Position="5" Name="ALL WF Node 2" Path="\\p1allappv02\logs\WorkflowLogsAllstate\Accurence.Workflow.Service.P1ALLAPPV02.Allstate.log" IsTailFollowed="true" IsFolder="false" />
     </Folder>

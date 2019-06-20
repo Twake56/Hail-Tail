@@ -15,21 +15,29 @@ namespace MyLogs
     public partial class MainForm
     {
         private Point DragStartPosition = Point.Empty;
+        private Point lastClickedPoint = Point.Empty;
         //private Classes.LogTabPage SelectedTabPage = new Classes.LogTabPage();
         //private Classes.LogTabPage SelectedFolder = new Classes.LogTabPage();
 
         private Classes.LogTabPage GetSelectedTabPage()
         {
-            if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+            try
             {
-                TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
-                return (subTabControl.SelectedTab as Classes.LogTabPage);
+                if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+                {
+                    TabControl subTabControl = (TabControlParent.SelectedTab as Classes.LogTabPage).Controls.Find("SubTabControl", true)[0] as TabControl;
+                    return (subTabControl.SelectedTab as Classes.LogTabPage);
 
+                }
+                else
+                {
+                    return (TabControlParent.SelectedTab as Classes.LogTabPage);
+                }
             }
-            else
+            catch(NullReferenceException err)
             {
-                return (TabControlParent.SelectedTab as Classes.LogTabPage);
-               
+                Console.WriteLine(err.Message);
+                return null;
             }
         }
 
@@ -149,6 +157,7 @@ namespace MyLogs
 
         private void SubTab_Click(object source, MouseEventArgs e)
         {
+            lastClickedPoint = e.Location;
             if (e.Button == MouseButtons.Right)
             {
                 //TabControl SubTabControl = GetTabControlByFolder();
@@ -160,8 +169,10 @@ namespace MyLogs
                         if (subTabControl.GetTabRect(ix).Contains(e.Location))
                         {
                             TabContextMenuStrip.Show(this, e.Location);
-                            //SelectedTabPage = subTabControl.TabPages[ix] as Classes.LogTabPage;
-                            //TabViewChange(subTabControl.TabPages[ix] as Classes.LogTabPage);
+                            lastClickedPoint = e.Location;
+                            subTabControl.SelectedTab = subTabControl.TabPages[ix];
+                            TabViewChange(subTabControl.TabPages[ix] as Classes.LogTabPage);
+                            
                         }
                     }
                 }
@@ -178,10 +189,18 @@ namespace MyLogs
        ******************************/ 
         private void renameTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //NEEDS UDPATING
             RenameForm rename = new RenameForm();
             rename.ShowDialog();
+            Classes.LogTabPage SelectedFolder = GetSelectedFolder();
             Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
+
+            if (SelectedFolder != null)
+            {
+                if (TabControlParent.GetTabRect(TabControlParent.SelectedIndex).Contains(lastClickedPoint))
+                    SelectedTabPage = SelectedFolder;
+
+            }
             if (rename.DialogResult == DialogResult.OK)
             {
                 if(SelectedTabPage.Tag.ToString() == "Folder" && !CheckForExistingTabName(rename.RenameTextBox.Text))
@@ -206,6 +225,7 @@ namespace MyLogs
 
         private void TabControlParent_MouseClick(object sender, MouseEventArgs e)
         {
+            lastClickedPoint = e.Location;
             if (e.Button == MouseButtons.Right)
             {
                 for (int ix = 0; ix < TabControlParent.TabCount; ++ix)
@@ -213,13 +233,10 @@ namespace MyLogs
                     if (TabControlParent.GetTabRect(ix).Contains(e.Location))
                     {
                         TabContextMenuStrip.Show(this, e.Location);
-                        //SelectedTabPage = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                   //     TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
-                    }
-                    else if (TabControlParent.TabPages[ix].Tag.ToString() == "Folder")
-                    {
-                        //SelectedFolder = TabControlParent.TabPages[ix] as Classes.LogTabPage;
-                        //TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
+                   
+                        TabControlParent.SelectedTab = TabControlParent.TabPages[ix];
+                        TabViewChange(TabControlParent.TabPages[ix] as Classes.LogTabPage);
+                        
                     }
                 }
             }
@@ -245,12 +262,17 @@ namespace MyLogs
        ***************************/ 
         private void TabContextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            ToolStripItem clickedItem = e.ClickedItem;
+            Classes.LogTabPage SelectedFolder = GetSelectedFolder();
             Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
-            if(SelectedTabPage == null)
+
+            if(SelectedFolder != null)
             {
-                SelectedTabPage = GetSelectedFolder();
+                if(TabControlParent.GetTabRect(TabControlParent.SelectedIndex).Contains(lastClickedPoint) )
+                    SelectedTabPage = SelectedFolder;
+
             }
+     
+                    ToolStripItem clickedItem = e.ClickedItem;
             if (e.ClickedItem.Name == "TabToolStripMenuItem")
             {
                 RenameForm rename = new RenameForm();
@@ -301,12 +323,12 @@ namespace MyLogs
             else if (e.ClickedItem.Name == "deleteToolStripMenuItem")
             {
               
-                if (SelectedTabPage.IsFolder)
+                /*if (SelectedTabPage.IsFolder)
                 {
                     
                     TabControl subTabPageControl = SelectedTabPage.Controls.Find("SubTabControl", true).FirstOrDefault() as TabControl;
                     
-                }
+                }*/
                 Console.WriteLine(SelectedTabPage.Name);
                 TabControl tabControl = SelectedTabPage.Parent as TabControl;
                 tabControl.TabPages.Remove(SelectedTabPage);
