@@ -108,6 +108,7 @@
             this.ClientSize = new System.Drawing.Size(321, 134);
             this.Controls.Add(this.RenameMainLayoutPanel);
             this.Name = "RenameForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Rename Tab";
             this.RenameMainLayoutPanel.ResumeLayout(false);
             this.RenameMainLayoutPanel.PerformLayout();

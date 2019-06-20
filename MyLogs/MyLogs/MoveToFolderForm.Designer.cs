@@ -77,6 +77,7 @@
             this.ClientSize = new System.Drawing.Size(272, 371);
             this.Controls.Add(this.fileSelectTableLayoutPanel);
             this.Name = "MoveToFolderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Folder Selection";
             this.fileSelectTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);

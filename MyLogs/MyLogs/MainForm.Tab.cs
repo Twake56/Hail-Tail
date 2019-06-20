@@ -189,9 +189,9 @@ namespace MyLogs
        ******************************/ 
         private void renameTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //NEEDS UDPATING
+           
             RenameForm rename = new RenameForm();
-            rename.ShowDialog();
+            rename.ShowDialog(this);
             Classes.LogTabPage SelectedFolder = GetSelectedFolder();
             Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
 
@@ -276,7 +276,7 @@ namespace MyLogs
             if (e.ClickedItem.Name == "TabToolStripMenuItem")
             {
                 RenameForm rename = new RenameForm();
-                rename.ShowDialog();
+                rename.ShowDialog(this);
 
             if (rename.DialogResult == DialogResult.OK)
                 {
@@ -303,7 +303,7 @@ namespace MyLogs
                     }
 
                 }
-                MoveToForm.ShowDialog();
+                MoveToForm.ShowDialog(this);
                 if (MoveToForm.DialogResult == DialogResult.OK)
                 {
                     try
