@@ -57,6 +57,31 @@ namespace MyLogs.Classes
             this.thread.Abort();
         }
 
+        public void RefreshTab()
+        {
+            if (upkeepWorker.IsBusy)
+                upkeepWorker.CancelAsync();
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    isLoaded = false;
+                    ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+                    listView.Items.Clear();
+                    this.SetWatcher(this.Name);
+                    InitialLoad();
+                }));
+            }
+            else
+            {
+                isLoaded = false;
+                ListView listView = this.Controls.Find("ListViewText", true)[0] as ListView;
+                listView.Items.Clear();
+                this.SetWatcher(this.Name);
+                InitialLoad();
+            }
+        }
+
         public void Deconstruct()
         {
             if(upkeepWorker.IsBusy)
@@ -319,6 +344,8 @@ namespace MyLogs.Classes
                 TabControl TabControlParent = this.Parent as TabControl;
                 try
                 {
+                if (this.ImageIndex != 0)
+                    this.ImageIndex = 0;
                     SetLastVisibleItem();
                     string path = this.Name;
                     if (!File.Exists(path))
@@ -423,14 +450,22 @@ namespace MyLogs.Classes
 
         public void InitialLoad()
         {
-            initialWorker.RunWorkerAsync();
+            if(!initialWorker.IsBusy)
+                initialWorker.RunWorkerAsync();
 
         }
 
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-            if(!upkeepWorker.IsBusy)
-                upkeepWorker.RunWorkerAsync();
+            try
+            {
+                if (!upkeepWorker.IsBusy)
+                    upkeepWorker.RunWorkerAsync();
+            }
+            catch(InvalidOperationException)
+            {
+                Console.WriteLine("Worker is busy");
+            }
         }
     }
 }

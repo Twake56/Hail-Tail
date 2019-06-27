@@ -424,5 +424,19 @@ namespace MyLogs
             ColorDialog colorDialog = new ColorDialog();
             colorDialog.ShowDialog();
         }
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            bool handled = false;
+            switch (keyData)
+            {
+                case Keys.F5:
+                    GetSelectedTabPage().RefreshTab();
+                    break;
+            }
+            return handled;
+        }
+
     }
 }

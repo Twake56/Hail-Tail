@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Session>
-  <Files />
+  <Files>
+    <File Position="9" Name="GeocodingService.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\GeocodingService\GeocodingService.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
+  </Files>
   <Folders>
     <Folder Name="QA" Position="0" IsFolder="true">
       <File Position="0" Name="QAQA" Path="\\ltsrvdev03\logs\QualityAssistLogsQA\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
       <File Position="1" Name="BillingService.QA.log" Path="\\ltsrvdev03\logs\Billing\BillingService.QA.log" IsTailFollowed="true" IsFolder="false" />
-      <File Position="2" Name="GeocodingService.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\GeocodingService\GeocodingService.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />
     </Folder>
     <Folder Name="Other" Position="1" IsFolder="true">
       <File Position="0" Name="Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" Path="\\ltsrvdev03\logs\QualityAssistLogs\Accurence.QualityAssist.Service.LTSRVDEV03.QA.log" IsTailFollowed="true" IsFolder="false" />

@@ -36,7 +36,6 @@
             this.FileLengthTB = new System.Windows.Forms.TextBox();
             this.followTailCheckBox = new System.Windows.Forms.CheckBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
-            this.TabControlParent = new MyLogs.Classes.LogTabControl();
             this.PrimaryMenus = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +69,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.TabControlParent = new MyLogs.Classes.LogTabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TabContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -147,26 +147,6 @@
             this.SearchBox.Enter += new System.EventHandler(this.SearchBox_Enter);
             this.SearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox_EnterDown);
             this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
-            // 
-            // TabControlParent
-            // 
-            this.TabControlParent.AllowDrop = true;
-            this.TabControlParent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.TabControlParent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControlParent.HotTrack = true;
-            this.TabControlParent.Location = new System.Drawing.Point(3, 26);
-            this.TabControlParent.Name = "TabControlParent";
-            this.TabControlParent.SelectedIndex = 0;
-            this.TabControlParent.ShowToolTips = true;
-            this.TabControlParent.Size = new System.Drawing.Size(844, 340);
-            this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.TabControlParent.TabIndex = 1;
-            this.TabControlParent.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
-            this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControl_DragOver);
-            this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
-            this.TabControlParent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseClick);
-            this.TabControlParent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControl_MouseDown);
-            this.TabControlParent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabControl_MouseMove);
             // 
             // PrimaryMenus
             // 
@@ -434,6 +414,26 @@
             this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.MainTableLayoutPanel.Size = new System.Drawing.Size(850, 399);
             this.MainTableLayoutPanel.TabIndex = 0;
+            // 
+            // TabControlParent
+            // 
+            this.TabControlParent.AllowDrop = true;
+            this.TabControlParent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.TabControlParent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControlParent.HotTrack = true;
+            this.TabControlParent.Location = new System.Drawing.Point(3, 26);
+            this.TabControlParent.Name = "TabControlParent";
+            this.TabControlParent.SelectedIndex = 0;
+            this.TabControlParent.ShowToolTips = true;
+            this.TabControlParent.Size = new System.Drawing.Size(844, 340);
+            this.TabControlParent.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.TabControlParent.TabIndex = 1;
+            this.TabControlParent.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
+            this.TabControlParent.DragOver += new System.Windows.Forms.DragEventHandler(this.TabControl_DragOver);
+            this.TabControlParent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabControlParent_KeyUp);
+            this.TabControlParent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TabControlParent_MouseClick);
+            this.TabControlParent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControl_MouseDown);
+            this.TabControlParent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabControl_MouseMove);
             // 
             // contextMenuStrip1
             // 
