@@ -94,6 +94,7 @@ namespace MyLogs.Classes
             watch.Changed += new FileSystemEventHandler(OnChanged);
             watch.NotifyFilter = NotifyFilters.Size;
             watch.EnableRaisingEvents = true;
+            watch.Error += new ErrorEventHandler(WatcherError);
             this.watcher = watch;
             Console.WriteLine(this.thread.Name);
         }
@@ -108,6 +109,36 @@ namespace MyLogs.Classes
             }
             catch (Exception)
             { }//Caught folder ignore
+        }
+
+        private void WatcherError(object sender, ErrorEventArgs e)
+        {
+            if(this.InvokeRequired)
+            {
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    this.ImageIndex = 2;
+                    var path = this.Name;
+                    while (!File.Exists(path))
+                    {
+                        Thread.Sleep(4000);
+                    }
+                    this.SetWatcher(this.Name);
+                    this.ImageIndex = 0;
+                }));
+            }
+            else
+            {
+                this.ImageIndex = 2;
+                var path = this.Name;
+                while (!File.Exists(path))
+                {
+                    Thread.Sleep(4000);
+                }
+                this.SetWatcher(this.Name);
+                this.ImageIndex = 0;
+            }
+            
         }
 
         public void ScrollToBottom()

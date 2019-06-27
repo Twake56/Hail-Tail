@@ -43,16 +43,25 @@ namespace MyLogs
 
         private Classes.LogTabPage GetSelectedFolder()
         {
-            if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+            try
             {
-                
-                return (TabControlParent.SelectedTab as Classes.LogTabPage);
+                if ((TabControlParent.SelectedTab as Classes.LogTabPage).IsFolder)
+                {
 
+                    return (TabControlParent.SelectedTab as Classes.LogTabPage);
+
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (NullReferenceException err)
             {
+                Console.WriteLine(err.Message);
                 return null;
             }
+
         }
         public TabPage GetFolderByName(string FolderName)
         {
