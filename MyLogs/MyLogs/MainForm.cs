@@ -29,6 +29,11 @@ namespace MyLogs
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenNewFile();
+        }
+
+        private void OpenNewFile()
+        {
             Classes.LogTabPage SelectedTabPage = GetSelectedTabPage();
             if (SelectedTabPage == null || SelectedTabPage.Name == "")
             {
@@ -433,6 +438,12 @@ namespace MyLogs
             {
                 case Keys.F5:
                     GetSelectedTabPage().RefreshTab();
+                    break;
+                case Keys.Control | Keys.O:
+                    OpenNewFile();
+                    break;
+                case Keys.Control | Keys.C:
+                    copySelectedItemsToClipboard();
                     break;
             }
             return handled;

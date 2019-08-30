@@ -29,7 +29,10 @@ namespace MyLogs.Classes
         private DateTime fileRefreshedAt { get; set; } = DateTime.Now;
         System.Timers.Timer timer = new System.Timers.Timer();
 
-
+        /**********************************
+        * Log Tab Page Constructor
+        * 
+        * ********************************/
         public LogTabPage()
         {
             this.tempFileName = Path.GetRandomFileName() + ".tmp";
@@ -325,8 +328,10 @@ namespace MyLogs.Classes
                 }
 
             }
-
-
+            if (TailFollowed)
+            {
+                ScrollToBottom();
+            }
         }
 
         private void upkeepWorker_DoWork(object sender, DoWorkEventArgs e)
