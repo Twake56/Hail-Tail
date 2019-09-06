@@ -434,7 +434,7 @@ namespace MyLogs
       {
          if (tab != null)
          {
-            ListView ChildListView = Controls.Find("ListViewText", true).FirstOrDefault() as ListView;
+            ListView ChildListView = tab.Controls.Find("ListViewText", true)[0] as ListView;
             if (ChildListView != null)
             {
                return ChildListView;

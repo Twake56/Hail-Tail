@@ -13,7 +13,7 @@ namespace MyLogs
 {
     public partial class MainForm : Form
     {
-        public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
+        //public Dictionary<String, int> IndexKeeper = new Dictionary<String, int>();
 
 
         public MainForm()
@@ -51,7 +51,6 @@ namespace MyLogs
                 }
             }
 
-            //openFileDialog.InitialDirectory = SelectedTabPage.Name;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 foreach (TabPage tab in TabControlParent.TabPages)
@@ -133,7 +132,7 @@ namespace MyLogs
         //Copy lines from Logs
         public void copySelectedItemsToClipboard()
         {
-            ListView CurrentListView = GetListViewByTab(TabControlParent.SelectedTab);
+            ListView CurrentListView = GetListViewByTab(GetSelectedTabPage());
             ListView.SelectedListViewItemCollection selectedItems = CurrentListView.SelectedItems;
             StringBuilder sb = new StringBuilder();
             foreach (ListViewItem item in selectedItems)
